@@ -1,0 +1,54 @@
+# Workflows for manually managing the Python cache.
+#
+# HELM's dependencies (e.g. PyTorch, transformers) can be very large,
+# and the cache may contain multiple versions of these dependencies,
+# so we may have to purge the cache from time to time.
+
+name: Manage Python Cache
+
+on: workflow_dispatch
+
+jobs:
+  info:
+    name: Show cache info and package list
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.4"
+      - name: Get cache size
+        run: uv cache size
+
+  purge:
+    name: Purge and rebuild cache
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.4"
+      - name: Get cache size before clean
+        run: uv cache size
+      - name: Clean cache
+        run: uv cache clean
+      - name: Get cache size after clean
+        run: uv cache size
