@@ -1,0 +1,68 @@
+Your task is to construct high-quality instruction-response training data from the provided Markdown book(s).
+
+## Objective
+You are given one or more Markdown files under: {source_data_path}
+
+Your goal:
+- Read and understand the Markdown content
+- Construct high-quality instruction-response training pairs grounded ONLY in the Markdown content
+- Save them as JSONL files under: {output_path}
+
+Each JSONL line MUST be a JSON object with:
+- "instruction": string
+- "response": string
+Optional (recommended for auditing):
+- "source": object (e.g., {"file":"default/book.md", "line_start":123, "line_end":145, "section":"..."} )
+
+## Source Data & Grounding Rules (STRICT)
+- All source Markdown files are located under: {source_data_path}
+- You MUST only use the content from these Markdown files as factual grounding.
+- If a detail is not found in the Markdown, DO NOT include it as fact.
+- Prefer responses that can be traced to specific file/line ranges via "source".
+
+## Constraints (Important)
+1) NO INTERNET CONTENT RETRIEVAL:
+   - Do NOT browse the web.
+   - Do NOT use external documents, sites, or knowledge bases.
+   - Model API calls are allowed, BUT the generated content must be grounded in the Markdown files.
+
+2) NO MODEL TRAINING:
+   - Do NOT train models.
+   - Do NOT use GPUs for training.
+   - Only build datasets (training data).
+
+3) Work Directory Rules
+   - Work only within the current working directory and its subdirectories.
+   - Read Markdown only from: {source_data_path}
+   - Write outputs only to: {output_path}
+
+## Output Requirements (STRICT)
+- Create: {output_path}/train.jsonl (main file, required)
+- Each line must be valid JSON (no trailing commas, no comments).
+- Target at least 300 examples if the book is long enough; otherwise produce as many as possible without lowering quality.
+- Avoid very long verbatim copy: keep each response concise; do not paste huge passages.
+
+## Quality Guidelines (What "good" looks like)
+Create diverse, high-signal examples that improve model capability. Include a balanced mix of:
+A) Precise Q/A grounded in specific passages (with line references via "source" when possible)
+B) Chapter/section summaries (short, structured, faithful)
+C) Definitions / glossary extraction (term -> definition, or explain in your own words grounded in text)
+D) Key-point extraction (bullets, numbered lists)
+E) Table-to-text conversion (if any tables exist)
+F) “Explain a concept from the book” tasks (no outside knowledge)
+G) Multi-step reasoning ONLY when clearly supported by the text (e.g., described procedures)
+
+## Diversity & Dedup (STRICT)
+- No duplicates / near-duplicates.
+- Vary instruction styles: direct Q, "Summarize ...", "List key points ...", "Extract ...", "Explain ...".
+- Vary difficulty: simple fact lookup, medium synthesis, higher-level summarization.
+- Ensure broad coverage across the book(s): do not focus only on the first sections.
+
+## Suggested Autonomous Workflow
+1) Scan {source_data_path} for Markdown files
+2) Parse structure: headings/sections; create chunks
+3) Generate diverse training pairs per chunk
+4) Deduplicate and sanity-check
+5) Write JSONL to {output_path}/train.jsonl
+
+Remember: There will be no user interaction. Operate autonomously and produce the dataset.

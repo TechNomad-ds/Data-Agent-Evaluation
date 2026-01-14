@@ -1,0 +1,58 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%post
+    chmod 1777 /tmp
+    export DEBIAN_FRONTEND=noninteractive
+
+    apt-get update && apt-get install -y \
+        python3.10 \
+        python3-dev \
+        python3-pip \
+        git \
+        wget \
+        curl \
+        build-essential \
+        ca-certificates \
+        && rm -rf /var/lib/apt/lists/*
+
+    ln -sf /usr/bin/python3.10 /usr/bin/python3
+    ln -sf /usr/bin/python3.10 /usr/bin/python
+
+    # Node.js LTS (22.x)
+    curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+    apt-get install -y nodejs
+
+    # uv
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    export PATH="/root/.local/bin:$PATH"
+
+    # PDF + text tooling
+    uv pip install --system --no-cache \
+        pypdf \
+        PyPDF2 \
+        pdfplumber \
+        pymupdf \
+        pandas \
+        regex \
+        tqdm \
+        rapidfuzz
+
+    # AI CLI tools
+    npm install -g \
+        @anthropic-ai/claude-code \
+        @openai/codex \
+        @google/gemini-cli
+
+%environment
+    export PATH="/root/.local/bin:$PATH"
+    export NO_PROXY="localhost,127.0.0.1"
+    export no_proxy="localhost,127.0.0.1"
+    export PYTHONNOUSERSITE="1"
+
+%runscript
+    exec python3 "$@"
+
+%labels
+    Version v1.0
+    Description Minimal container for PDF-to-training-data construction + agent CLIs
