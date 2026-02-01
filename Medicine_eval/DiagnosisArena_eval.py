@@ -14,14 +14,16 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+
 # 项目配置
 PROJECT_CONFIG = {
-    "api_key": "sk-OqIPE7A0rEMX8Rwt5NFrxB5TKAruSRGQVw7dUPRh78QpwGUi",
+    "api_key": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "base_url": "http://123.129.219.111:3000/v1",
     "model": "deepseek-r1",  # 使用你API支持的模型
     "project_dir": "DiagnosisArena/code",  # 项目脚本目录
     "hf_data_path": "SII-SPIRAL-MED/DiagnosisArena",
-    "test_size": 10,  # 测试样本数（可选）
+    "test_size": 3,  # 测试样本数（可选）
     "folk_nums": 4,  # 并发数，根据API限制调整
     "test_timestamp": datetime.now().strftime("%Y%m%d_%H%M%S")
 }
@@ -32,8 +34,10 @@ class DiagnosisArenaAutoTester:
     def __init__(self, config):
         self.config = config
         self.project_dir = Path(self.config["project_dir"])
-        self.results_dir = Path("test_results")
-        self.results_dir.mkdir(exist_ok=True)
+        #self.results_dir = Path("test_results")
+        #self.results_dir = Path.cwd() / "test_results"
+        self.results_dir = (Path.cwd() / "test_results").resolve()
+        self.results_dir.mkdir(parents=True, exist_ok=True)
         
         # 测试结果文件路径
         self.test_id = f"test_{self.config['test_timestamp']}"
@@ -98,20 +102,23 @@ class DiagnosisArenaAutoTester:
             return None
     
     def modify_script_for_testing(self, script_path, test_size=None):
-        """修改脚本以限制测试样本数"""
+        """修改脚本：支持全量测试（test_size=0或None时）"""
         try:
             with open(script_path, 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            # 查找并取消注释测试行
+            # 目标行定义
             test_line = '# input_datas = input_datas.select(range(10))'
+            
             if test_line in content:
-                if test_size:
+                # 只有当 test_size 被明确指定且大于 0 时，才启用限制
+                if test_size and test_size > 0:
                     new_line = f'input_datas = input_datas.select(range({test_size}))'
+                    content = content.replace(test_line, new_line)
+                    print(f"  🔧 模式：抽样测试，样本数: {test_size}")
                 else:
-                    new_line = 'input_datas = input_datas.select(range(10))'
-                content = content.replace(test_line, new_line)
-                print(f"  🔧 修改脚本以测试 {test_size if test_size else 10} 个样本")
+                    # 如果 test_size 为 0, None 或负数，则保持注释状态（即运行全量数据）
+                    print(f"  🚀 模式：全量测试（跳过数据截断）")
             
             # 写入临时文件
             temp_path = script_path.with_suffix('.temp.py')
@@ -404,7 +411,7 @@ def main():
                        help='项目脚本目录路径')
     parser.add_argument('--model', type=str, default="deepseek-r1",
                        help='要测试的模型名称')
-    parser.add_argument('--test_size', type=int, default=10,
+    parser.add_argument('--test_size', type=int, default=5,
                        help='测试样本数量')
     parser.add_argument('--folk_nums', type=int, default=4,
                        help='并发请求数')

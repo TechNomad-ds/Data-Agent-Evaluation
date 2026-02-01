@@ -70,7 +70,7 @@ def calculate_rouge_l_score(generated_answer: str, reference_answer: str) -> Opt
 GPT4_1_GRADER_CONFIG = {
     "config_id": "gpt-4.1-grader",
     "type": "openrouter", 
-    "model_id": "openai/gpt-4.1",
+    "model_id": "gpt-4.1",
     "parameters": {
         "temperature": 0.0,
         "max_tokens": 10

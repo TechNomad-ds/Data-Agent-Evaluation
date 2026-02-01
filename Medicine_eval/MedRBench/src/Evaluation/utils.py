@@ -1,12 +1,28 @@
 import re
 from typing import List, Optional
 
+# def get_reasoning_content(content: str) -> str:
+#     content = content.replace('```', '').strip()
+#     if '### Reasoning:' in content:
+#         content = content.split('### Reasoning:')[1].strip()
+#     elif '**Reasoning:**' in reasoning_text:
+#         reasoning_text = reasoning_text.split('**Reasoning:**')[1].strip()
+#     elif '### Chain of Thought:' in content:
+#         content = content.split('### Chain of Thought:')[1].strip()
+                
+#     if '### Answer:' in content:
+#         content = content.split('### Answer:')[0].strip()
+        
+#     return content.strip()
 def get_reasoning_content(content: str) -> str:
-    content = content.replace('```', '').strip()
+    # 移除 Markdown 代码块标记
+    content = content.replace('```json', '').replace('```', '').strip()
+    
+    # 统一提取逻辑，确保变量名一致
     if '### Reasoning:' in content:
         content = content.split('### Reasoning:')[1].strip()
-    elif '**Reasoning:**' in reasoning_text:
-        reasoning_text = reasoning_text.split('**Reasoning:**')[1].strip()
+    elif '**Reasoning:**' in content:
+        content = content.split('**Reasoning:**')[1].strip()
     elif '### Chain of Thought:' in content:
         content = content.split('### Chain of Thought:')[1].strip()
                 

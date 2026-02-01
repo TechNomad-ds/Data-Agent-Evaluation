@@ -1,0 +1,38 @@
+{
+  "results": {
+    "flare_fpb": {
+      "acc": 0.8,
+      "acc_stderr": 0.20000000000000004,
+      "missing": 0.0,
+      "missing_stderr": 0.0,
+      "f1": 0.8,
+      "macro_f1": 0.7777777777777777,
+      "mcc": 0.75
+    },
+    "flare_fiqasa": {
+      "acc": 0.8,
+      "acc_stderr": 0.19999999999999998,
+      "missing": 0.0,
+      "missing_stderr": 0.0,
+      "f1": 0.8666666666666666,
+      "macro_f1": 0.8333333333333333,
+      "mcc": 0.6943650748294136
+    }
+  },
+  "versions": {
+    "flare_fpb": 1,
+    "flare_fiqasa": 1
+  },
+  "config": {
+    "model": "gpt-4o",
+    "model_args": "",
+    "num_fewshot": 0,
+    "batch_size": "1",
+    "batch_sizes": [],
+    "device": null,
+    "no_cache": false,
+    "limit": 5.0,
+    "bootstrap_iters": 100,
+    "description_dict": {}
+  }
+}

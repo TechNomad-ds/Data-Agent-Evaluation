@@ -1,0 +1,10 @@
+STDOUT:
+ 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5/5  [ 0:02:49 < 0:00:00 , 59,047 it/s ]
+
+
+STDERR:
+/mnt/DataFlow/djz/pdf2qa/Data-Agent-Evaluation/Medicine_eval/DiagnosisArena/code/evaluation.py:83: TqdmExperimentalWarning: rich is experimental/alpha
+  list(tqdm(executor.map(get_gpt_result_with_retry, input_data), total=len(input_data)))
+
+
+返回码: 0

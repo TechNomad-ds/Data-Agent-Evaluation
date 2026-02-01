@@ -1,0 +1,1110 @@
+,Unnamed: 0,id,task,question,choice,ground_truth,figure,fin_capability,gold_fin_term_id,model_response,model_answer,model_ans_bool,model_ans_err5_bool,execute_time
+4,4,vali_4,mcq,"A protective put combines a long position in a put option with a long position in the underlying shares, providing a form of investment insurance.What position in call options is equivalent to a protective put?","A. A short position in a call option plus a certain amount of cash
+B. A long position in a call option minus a certain amount of shares
+C. A long position in a call option plus a certain amount of cash",C,,TU,term_695,"To determine which position in call options is equivalent to a protective put, let's first break down what a protective put involves:
+
+1. **Protective Put**: This strategy combines a long position in a put option and a long position in the underlying shares. The long put provides downside protection if the price of the underlying shares drops, while the long stock position allows for potential upside gains.
+
+Now we need to identify the equivalent position using call options. The goal of equivalent strategies is to achieve the same payoff pattern using different financial instruments.
+
+2. **Protective Puts** typically create payoff patterns similar to:
+   - **Long Call Options:** A call option allows the holder to purchase the underlying asset at the strike price, which secures upside potential while limiting downside risk to the premium paid for the call.
+
+3. **Constructing Equivalent Strategy Using Calls**:
+   - A long position in a call option provides the right to buy the underlying asset at the strike price, allowing for potential profit if the market price goes above the strike price, akin to the upside of owning the shares and having a put for protection.
+   - To mirror the protective put, the strategy must include having cash equivalent to the purchase price of the underlying shares, minus any premium paid for the call.
+
+Looking at these components:
+
+- **Choice A** mentions a short position in a call option plus a certain amount of cash, which does not provide upside potential similar to the protective put.
+
+- **Choice B** refers to a long call position minus shares, which is not equivalent as it does not provide cash for purchase if exercised, nor does it inherently offer the same downside protection.
+
+- **Choice C** describes a long position in a call option plus a certain amount of cash. This setup provides upside potential (through the call) while securing downside protection (as cash can be used to purchase shares if needed, akin to the protective put strategy).
+
+Thus, the equivalent position using call options is a combination of a long call option and having cash.
+
+Therefore, my answer is C. A long position in a call option plus a certain amount of cash.",C,1,0,2026-01-24 21:02:13.099348
+5,5,vali_5,mcq,Earnings announcements by companies frequently result in share price revisions.Which one of the following happens when unexpectedly low earnings are announced?,"A. Market participants reduce estimates of future growth rates and cash flows.
+B. Market participants increase their estimates of the company's valuation.
+C. The company issues additional shares to raise capital.",A,,TU,term_1611,"When a company announces unexpectedly low earnings, several implications typically result due to the new information presented to the market:
+
+1. **Market Reaction to Low Earnings**: Market participants usually adjust their perceptions and expectations about the company based on the new earnings information. Unexpectedly low earnings suggest that the company did not perform as well as anticipated, which may lead investors to re-evaluate their future expectations for the company's financial performance.
+
+2. **Impact on Estimates of Future Growth Rates and Cash Flows**: Given the disappointing earnings, market participants often reduce their estimates of the company's future growth rates and cash flows. This is because lower earnings may indicate that the company's operations or market conditions are not as favorable as previously thought.
+
+3. **Impact on Company's Valuation**: A decrease in the company's future growth rates and cash flow projections typically leads to a decrease in the company's valuation. Valuation models often rely on expected future earnings and cash flows to determine the present value of a company, and lower expectations will likely result in a reduced valuation.
+
+4. **Capital Raising Activities**: The issuance of additional shares to raise capital (Choice C) is a separate decision made by the company and is not directly linked to unexpectedly low earnings. While a company might issue shares to raise capital, this decision is more strategic and is not a direct response to earnings announcements.
+
+5. **Market Participants' Estimation Changes**: The increase in estimates of company's valuation (Choice B) does not logically fit the context of unexpectedly low earnings. Typically, lower earnings lead to a negative reassessment of valuation rather than an increase.
+
+Therefore, considering all these factors, when unexpectedly low earnings are announced, the most likely market behavior is a reduction in estimates of future growth rates and cash flows (Choice A).
+
+Therefore, my answer is A. Market participants reduce estimates of future growth rates and cash flows.",A,1,0,2026-01-24 21:02:17.679920
+19,19,vali_19,mcq,Broslofski Co. maintains a positive retention ratio and keeps its debt-equity ratio constant every year.What happens to Broslofski Co.'s projected EFN if the retention ratio is increased?,"A. The EFN will remain unchanged
+B. The EFN will rise
+C. The EFN will decline",C,,TU,term_1917,"To determine what happens to Broslofski Co.'s projected External Financing Needed (EFN) when the retention ratio is increased, we need to understand the relationship between retention ratio and EFN.
+
+1. **Retention Ratio and Its Impact**: The retention ratio (also known as the plowback ratio) is the proportion of net income that is retained in the company instead of being paid out as dividends. An increase in the retention ratio means a higher portion of profits is retained within the company.
+
+2. **Effect on Internal Capital**: With a higher retention ratio, the company retains more of its earnings, which increases internal capital available for growth. This means the company has more internal funds to finance its operations.
+
+3. **Impact on External Financing Needed (EFN)**: EFN is the amount of capital that a company needs from external sources (like debt or equity) to support its growth. If a company retains more earnings (i.e., increases its retention ratio), it may be able to finance more of its growth internally, potentially reducing the need for external funding.
+
+4. **Debt-Equity Ratio Considerations**: Since Broslofski Co. keeps its debt-equity ratio constant, it implies that any reduction in external financing needs will proportionately affect the levels of debt and equity to maintain that constant ratio.
+
+Considering these points:
+
+- Increasing the retention ratio results in more internal funds.
+- More internal funds reduce the reliance on external financing.
+- When external financing needs decrease, EFN declines. 
+
+Therefore, my answer is C. The EFN will decline.",C,1,0,2026-01-24 21:02:21.658487
+21,21,vali_21,mcq,"Suppose a stock market crash causes autonomous consumer expenditure to fall. Given the diagram of ISLM model, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,B,vali_figure_21,FF,term_1810,,,0,0,2026-01-24 21:02:24.935992
+22,22,vali_22,mcq,Balance-of-payments deficits can have varying effects on a country's international reserves depending on the country's involvement in the foreign exchange market.Which one of the following reasons explains why a balance-of-payments deficit for the United States affects its international reserves differently compared to the Netherlands?,"A. The United States' deficit causes an immediate reduction in foreign reserves
+B. Foreign countries intervene in the foreign exchange market during a U.S. deficit
+C. The United States' international reserves automatically increase due to its deficit",B,,TU,term_1082,"First, let's understand the concept of a balance-of-payments deficit and international reserves. A balance-of-payments deficit occurs when a country imports more goods, services, and capital than it exports or when it experiences net capital outflow, requiring it to finance the deficit through its international reserves.
+
+1. Choice A states that the United States' deficit causes an immediate reduction in foreign reserves. Generally, a balance-of-payments deficit can lead to a reduction in a country's international reserves as the country may need to use its reserves to finance the deficit or to stabilize the currency.
+
+2. Choice B suggests that foreign countries intervene in the foreign exchange market during a U.S. deficit. The intervention by foreign countries in response to a U.S. deficit is plausible because the U.S. dollar is the world's primary reserve currency. Many countries hold considerable amounts of U.S. dollars in their reserves, and a deficit might prompt these countries to intervene in foreign exchange markets to maintain currency stability.
+
+3. Choice C suggests that the United States' international reserves automatically increase due to its deficit. This is unlikely because typically, a deficit does not lead to an automatic increase in reserves. Instead, it pressures reserves as they might be used to cover the deficit.
+
+Comparing the U.S. and the Netherlands, the U.S. operates under a unique situation due to the dollar's status as the world's reserve currency. During a deficit, foreign countries might intervene to manage their currency reserves or stabilize the exchange rate due to the influence and international usage of the U.S. dollar. 
+
+Therefore, B is the choice that directly reflects the difference between the U.S. and a smaller economy like the Netherlands in terms of foreign exchange market intervention.
+
+Therefore, my answer is B. Foreign countries intervene in the foreign exchange market during a U.S. deficit.",B,1,0,2026-01-24 21:02:24.939294
+34,34,vali_34,mcq,"Suppose the demand for reserves has a large unexpected increase. Given the supply and demand diagram of reserve market, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,A,vali_figure_34,FF,term_2038,,,0,0,2026-01-24 21:02:28.435903
+43,43,vali_43,mcq,Credit default swaps (CDS) are financial derivatives that offer protection against the default of a specific company.Which one of the following reasons explains the potential asymmetric information problem in credit default swaps?,"A. The value of credit default swaps is independent of the creditworthiness of the underlying company.
+B. Some market participants may have more information about the likelihood of a company defaulting than others.
+C. Credit default swaps are always settled in foreign currencies.",B,,TU,term_674,"Credit default swaps (CDS) are financial instruments used to hedge against or speculate on the probability of default by a particular company. They essentially serve as insurance against the possibility of default by the entity issuing the underlying debt.
+
+To understand the potential asymmetric information problem in CDS, let's consider the implications of each choice:
+
+A. The statement, ""The value of credit default swaps is independent of the creditworthiness of the underlying company,"" is incorrect because the value and pricing of CDS are inherently tied to the perceived risk of default by the underlying company. If the creditworthiness of the company were independent, traders wouldn't be able to price CDS accurately, and investors wouldn't be interested in using them to hedge risk. This statement does not address asymmetric information; it describes an incorrect feature of CDS.
+
+B. ""Some market participants may have more information about the likelihood of a company defaulting than others"" directly addresses the concept of asymmetric information. Asymmetric information occurs when one party in a transaction has more or better information compared to the other party. In CDS markets, if some participants possess superior knowledge about a company's creditworthiness or its potential to default, they can gain a trading advantage. This imbalance can lead to unfair practices and inefficient pricing of the CDS.
+
+C. The statement, ""Credit default swaps are always settled in foreign currencies,"" is unrelated to the issue of asymmetric information. CDS can be settled in various currencies, but this aspect does not inherently cause information asymmetries. The settlement currency choice is generally an operational matter rather than a fundamental cause of market inefficiencies.
+
+Consequently, the answer that explicitly acknowledges the role of differing information distribution concerning the probability of default is:
+
+Therefore, my answer is B. Some market participants may have more information about the likelihood of a company defaulting than others.",B,1,0,2026-01-24 21:02:28.975006
+52,52,vali_52,mcq,The control variate approach is used to improve the estimate of the delta of an American option when utilizing the binomial tree approach.Which one of the following steps involves calculating the delta of a European option with the same parameters as an American option?,"A. Estimate the American option delta in the usual way
+B. Calculate \(\Delta_{B}^{*}\) using the same tree
+C. Use a Monte Carlo simulation for the European option",B,,TU,term_641,"To determine which step involves calculating the delta of a European option with the same parameters as an American option within the control variate approach, we can evaluate each choice: 
+
+A. Estimate the American option delta in the usual way - This step pertains to estimating the delta for the American option, not the European option. Therefore, it doesn't involve calculating the European option delta.
+
+B. Calculate \(\Delta_{B}^{*}\) using the same tree - This step involves using the binomial tree to calculate \(\Delta_{B}^{*}\), which is typically related to the calculation of the European option’s delta once the tree parameters are set identically to the American option. Therefore, this choice aligns with calculating the European option delta as per the requirement stated.
+
+C. Use a Monte Carlo simulation for the European option - Monte Carlo simulation is an alternative method that can be used for various purposes including estimating option values or greeks. However, in the context of a binomial tree approach, it is unrelated to the direct calculation of the delta using the binomial method.
+
+Given these evaluations, choice B is the correct step because it uses the binomial tree (same as for the American option) to calculate the delta of a European option with exactly the same parameters.
+
+Therefore, my answer is B. Calculate \(\Delta_{B}^{*}\) using the same tree.",B,1,0,2026-01-24 21:02:32.449274
+55,55,vali_55,mcq,"Traders utilize different strategies such as hedging, speculation, and arbitrage when dealing with financial assets.Which one of the following best describes speculation?","A. Taking a position in a derivative to offset an existing exposure to the price of an asset
+B. Taking a position in multiple markets to lock in a profit
+C. Betting on the future movements in the price of an asset without an existing exposure",C,,TU,term_1396,"To address this question, let's consider the definitions of each term:
+
+1. **Hedging**: This involves taking a position in a derivative to offset an existing exposure to the price of an asset. The goal is to limit or reduce potential losses from fluctuations in the price of the asset. Thus, A describes hedging.
+
+2. **Arbitrage**: This strategy involves taking a position in multiple markets to lock in a profit. It essentially exploits price differences of the same asset in different markets for a risk-free profit. Thus, B describes arbitrage.
+
+3. **Speculation**: This involves betting on the future movements in the price of an asset without an existing exposure. Speculators attempt to profit from market fluctuations by predicting future price movements. Therefore, C describes speculation.
+
+Given the definitions:
+
+- Choice A describes hedging.
+- Choice B describes arbitrage.
+- Choice C describes speculation.
+
+The question specifically asks which choice best describes speculation. Therefore, option C is the correct choice.
+
+Therefore, my answer is C. Betting on the future movements in the price of an asset without an existing exposure.",C,1,0,2026-01-24 21:02:35.371458
+58,58,vali_58,mcq,"In practice, macroeconomic effects can cause spreads in floating-for-floating currency swaps, leading financial institutions to adjust the discount rates they use.Why might a bank choose to discount cash flows on a currency swap at a rate slightly different from LIBOR?","A. To account for macroeconomic effects that give rise to spreads
+B. To increase the profitability of the swap
+C. To adhere to international banking regulations",A,,TU,term_1186,"Let's examine the context and each choice carefully:
+
+1. **Currency Swaps and Discount Rates**: Currency swaps involve exchanging cash flows in different currencies. The discount rate typically relates to expected future interest rates, influencing the present value of cash flows.
+
+2. **LIBOR**: LIBOR is a commonly used benchmark interest rate that banks refer to when setting the rates for different financial products like loans and swaps.
+
+3. **Macroeconomic Effects and Spreads**: Macroeconomic effects such as changes in interest rate policy, inflation expectations, and credit risk can affect the spreads in currency swaps. When spreads change, financial institutions might reconsider the risk and the expected returns which leads to adjusting discount rates to reflect these changes.
+
+4. **Examining the Choices**:
+   - **Choice A**: ""To account for macroeconomic effects that give rise to spreads"" seems directly relevant. A bank might adjust the discount rate from LIBOR to better reflect the current risk or economic conditions affecting the swap, or to account for peculiarities in the spread observed in the market.
+   - **Choice B**: ""To increase the profitability of the swap."" While banks are interested in profitability, discounting at a rate different from LIBOR for purely profit motives might not align with risk consideration practices, unless profitability arises from a correct assessment of risk or market conditions driven by macroeconomic effects.
+   - **Choice C**: ""To adhere to international banking regulations."" Regulations are crucial, but they typically specify methodology rather than rates per se. Adjustments like the ones in this context are primarily based on market conditions rather than preset regulatory directives.
+
+Considering these points, the most appropriate reason for a bank choosing a different discount rate from LIBOR is to reflect actual spread changes driven by macroeconomic effects, thereby aligning the rates with perceived risk and market conditions. 
+
+Therefore, my answer is A.",A,1,0,2026-01-24 21:02:37.603445
+60,60,vali_60,mcq,"When using a futures contract for hedging, it is important to be aware of potential cash flow problems that may arise due to daily settlements.Which one of the following reasons can lead to cash flow problems when using a futures contract for hedging?","A. Predictable cash inflows
+B. Margin calls creating cash outflows
+C. Immediate profit realization",B,,TU,term_119,"Step 1: Understand futures contracts and hedging.
+- Futures contracts are financial derivatives that oblige the buyer to purchase or the seller to sell an asset at a predetermined future date and price.
+- Hedging involves using financial instruments or market strategies to offset the risk of adverse price movements in an asset.
+
+Step 2: Determine how daily settlements can affect cash flows.
+- Futures contracts involve daily settlement of gains and losses, known as ""mark to market.""
+- This process can lead to variable cash flows: if the market moves against the position, losses need to be covered immediately, leading to cash outflows.
+
+Step 3: Analyze the choices with respect to cash flow problems.
+A. Predictable cash inflows:
+   - Predictable cash inflows typically help with budgeting and managing liquidity, not causing cash flow problems.
+B. Margin calls creating cash outflows:
+   - Margin calls occur when the maintenance margin falls below required levels. This requires the investor to deposit additional funds, leading to cash outflows and potential cash flow problems.
+C. Immediate profit realization:
+   - Immediate profit realization from daily settlement would potentially strengthen cash flow rather than causing problems.
+
+Step 4: Identify the choice that directly leads to cash flow problems.
+- Margin calls create cash outflows, thereby directly leading to potential cash flow problems.
+
+Therefore, my answer is B. Margin calls creating cash outflows.",B,1,0,2026-01-24 21:02:41.229627
+82,82,vali_82,mcq,"The lemons problem refers to a market situation where there is asymmetric information between buyers and sellers, leading to the market being flooded with lower-quality products.Which one of the following environments typically lists larger corporations that are better known in the marketplace?","A. Commodity futures market
+B. Over-the-counter market
+C. New York Stock Exchange",C,,TU,term_2013,"To address the question, we need to consider the context of the ""lemons problem"" in relation to the proposed environments. The ""lemons problem"" is typically associated with markets that suffer from asymmetric information, where sellers have more information about the quality of a product than buyers, often leading to a prevalence of lower-quality goods.
+
+Let's evaluate each choice:
+
+A. **Commodity futures market**: This market involves trading contracts based on the future delivery of commodities. While there are large corporations involved, it is primarily focused on contracts and commodities, rather than corporate listings. Therefore, it is not particularly relevant to listing larger corporations known in the marketplace.
+
+B. **Over-the-counter market**: This market involves trading securities that are not listed on formal exchanges, such as the New York Stock Exchange. It is often perceived as less centralized, offering a space where lesser-known or smaller companies may engage in trading, which could correlate with the occurrence of asymmetric information.
+
+C. **New York Stock Exchange (NYSE)**: This is one of the largest and most famous stock exchanges in the world, known for listing well-established, larger corporations. Companies listed on the NYSE are typically those with a good reputation, transparency, and are subject to strict regulatory requirements. Therefore, this environment does not typically engage with the lemons problem scenario as described, since the transparency and reputation mitigate asymmetric information.
+
+Therefore, my answer is C. New York Stock Exchange, as it typically lists larger corporations that are better known in the marketplace.",C,1,0,2026-01-24 21:02:44.283751
+83,83,vali_83,mcq,The Federal Reserve Banks play a role in influencing monetary policy in the United States.Which one of the following methods do the regional Federal Reserve Banks use to influence monetary policy?,"A. Setting the base interest rates directly
+B. Issuing new currency independently
+C. Administration of the discount facilities at each bank",C,,TU,term_1047,"The regional Federal Reserve Banks, as part of the Federal Reserve System, play significant roles in the implementation and influence of monetary policy in the United States.
+
+Step 1: Examine Choice A - Setting the base interest rates directly.
+- The Federal Reserve System influences monetary policy primarily through the Federal Open Market Committee (FOMC) which decides on the federal funds rate, the interest rate at which depository institutions trade balances held at the Federal Reserve. However, the individual regional banks themselves do not set these rates directly. Therefore, Choice A is not the method used by regional Federal Reserve Banks to influence monetary policy.
+
+Step 2: Examine Choice B - Issuing new currency independently.
+- Regional Federal Reserve Banks have the authority to issue currency, but they do so under the guidance of the Federal Reserve System. They cannot independently decide to issue currency without the overarching system's consent or directive. Hence, Choice B is not correct.
+
+Step 3: Examine Choice C - Administration of the discount facilities at each bank.
+- Regional Federal Reserve Banks administer the discount window operations as part of their responsibilities. The discount rate, which influences monetary policy, is determined by the Board of Governors, but regional banks implement these policies through their discount facilities. This operational role contributes to the overall monetary policy influence as it impacts banks' access to funds and liquidity.
+
+Therefore, the most appropriate choice reflecting a method used by regional Federal Reserve Banks to influence monetary policy is the administration of the discount facilities at each bank. 
+
+Therefore, my answer is C. Administration of the discount facilities at each bank.",C,1,0,2026-01-24 21:02:47.404037
+89,89,vali_89,mcq,"The concept of deposit insurance is designed to protect depositors, but its presence can also influence the behavior of banks.Which one of the following reasons suggests that limiting deposit insurance may help reduce moral hazard in banking?","A. It discourages banks from taking excessive risks.
+B. It decreases the interest rates offered by banks.
+C. It increases the liquidity of financial markets.",A,,TU,term_385,"Step 1: Understand deposit insurance and moral hazard
+- Deposit insurance is a system where a government or another entity guarantees the deposits of individuals in banks up to a certain amount. This is designed to protect depositors from losing their money if a bank fails.
+- Moral hazard occurs when a party involved in a transaction is incentivized to take risks because they do not bear the full consequences of their actions. In the context of banking, banks might engage in riskier behavior knowing that depositors are protected by insurance.
+
+Step 2: Analyze the choices in relation to moral hazard
+- Choice A: It discourages banks from taking excessive risks. If deposit insurance is limited, banks might be more cautious about taking big risks because the safety net provided by insurance is less comprehensive. Thus, they would have a greater incentive to manage risk more effectively to prevent failure.
+- Choice B: It decreases the interest rates offered by banks. This choice focuses on pricing rather than risk behavior. Limiting deposit insurance does not directly impact the interest rates, and it does not specifically address moral hazard.
+- Choice C: It increases the liquidity of financial markets. This choice talks about market liquidity, which is broader than the individual behavior of banks regarding risk. It does not directly address the reason for reducing moral hazard through limiting insurance.
+
+Step 3: Determine the most relevant choice
+- Choice A directly addresses how limiting deposit insurance affects banks' risk-taking behavior, which is central to reducing moral hazard.
+
+Therefore, my answer is A.",A,1,0,2026-01-24 21:02:50.203659
+95,95,vali_95,mcq,Bank regulations aim to reduce the moral hazard problems created by deposit insurance.Will bank regulations that restrict risky asset holdings and require large amounts of capital completely eliminate the moral hazard problem?,"A. Yes, because all risky behavior will be detected by regulators
+B. Yes, because banks will always comply with regulations without fail
+C. No, because bankers have incentives to hide risky assets and overstate their capital",C,,TU,term_289,"Step 1: Understand the concept of moral hazard in the context of banking.
+- Moral hazard refers to the situation where a party is more likely to take risks because the costs will not be borne by them but by another party. In banking, deposit insurance can lead banks to take on riskier investments because the insurance guarantees depositor funds.
+
+Step 2: Consider how bank regulations aim to reduce moral hazard.
+- Regulations that restrict risky asset holdings and require banks to maintain large amounts of capital are designed to ensure banks have a safety buffer and are not exposed to excessive risks. These regulations are meant to reduce the likelihood of bank failures and protect depositors.
+
+Step 3: Evaluate the effectiveness of regulations in completely eliminating moral hazard.
+- While regulations can mitigate moral hazard by limiting risky asset holdings and ensuring sufficient capital, they cannot completely eliminate it. Bankers may still find ways to circumvent regulations, such as hiding risky assets or overstating their capital levels. The incentive exists for banks to potentially engage in non-compliant behavior in pursuit of higher returns.
+
+Step 4: Identify the most appropriate choice.
+- Choice A states that all risky behavior will be detected by regulators, which is overly optimistic as it's challenging for regulators to detect all risky behaviors.
+- Choice B suggests banks will always comply with regulations, which is unrealistic since there is always the possibility of non-compliance.
+- Choice C acknowledges the incentives bankers have to engage in behaviors that regulations may not entirely prevent, which aligns with the persistent nature of moral hazard.
+
+Therefore, my answer is C. No, because bankers have incentives to hide risky assets and overstate their capital.",C,1,0,2026-01-24 21:02:53.094496
+99,99,vali_99,mcq,An American option and a European option can be based on the same asset with the same strike price and exercise date.Which one of the following explains why an American option is always worth at least as much as a European option on the same asset?,"A. The European option offers more flexibility in exercising the option.
+B. The holder of an American option has additional rights compared to the holder of a European option.
+C. American options typically have a lower risk associated with them.",B,,TU,term_1485;term_2388,"To analyze why an American option is always worth at least as much as a European option on the same asset, let's explore the characteristics of each type of option:
+
+1. **European Option**: This type of option can only be exercised on its expiration date. That means the holder does not have any flexibility in choosing the timing of the exercise based on market conditions that might be favorable before expiration.
+
+2. **American Option**: This type of option can be exercised at any point before the expiration date. This flexibility allows the holder to take advantage of favorable market conditions and exercise the option before expiration, potentially maximizing their gains or minimizing losses.
+
+Let's evaluate the choices:
+
+- **A. The European option offers more flexibility in exercising the option.**
+  - This statement is incorrect, as European options can only be exercised at expiration, providing less flexibility than an American option.
+
+- **B. The holder of an American option has additional rights compared to the holder of a European option.**
+  - This statement is accurate. The main difference between American and European options is that the American option grants the holder additional rights, specifically the right to exercise the option at any point before expiration, which enhances the option's value.
+
+- **C. American options typically have a lower risk associated with them.**
+  - While American options may offer more control over risk exposure due to their exercisable nature, the risk is not typically lower; rather, it's the flexibility in timing that increases its value compared to a European option.
+
+Considering that the primary reason an American option is worth at least as much as, if not more than, a European option is the additional rights and flexibility it provides, choice B is the most appropriate explanation.
+
+Therefore, my answer is B. The holder of an American option has additional rights compared to the holder of a European option.",B,1,0,2026-01-24 21:02:57.175236
+108,108,vali_108,mcq,A floating lookback call option's valuation depends on the frequency of asset price observations.How does increasing the frequency of observing the asset price affect the value of a floating lookback call option?,"A. It increases the value
+B. It decreases the value
+C. It has no effect on the value",A,,TU,term_1531,"To determine how increasing the frequency of observing the asset price affects the value of a floating lookback call option, we need to consider the nature of this type of exotically structured option.
+
+1. **Understanding Floating Lookback Call Options:**
+   - A floating lookback call option allows the holder to buy the underlying asset at the lowest price observed over the life of the option. Therefore, the payoff depends on the minimum price of the asset recorded during the option's lifespan.
+
+2. **Impact of Observation Frequency:**
+   - As the frequency of asset pricing observations increases, the recorded minimum price over the option's life is likely to decrease or at least remain the same (because more frequent observations give more opportunities to record a lower price).
+   - Consequently, the opportunity to purchase the asset at a lower price increases, as the option compares many price points.
+
+3. **Effect on Option Value:**
+   - Lower recorded prices over the option's life generally increase the potential payoff for the option holder, as the difference between the market price at expiry and the minimum observed price tends to increase.
+   - An increased potential payoff means the value of the lookback call option increases as you observe the asset price more frequently.
+
+Based on this analysis, increasing the frequency of observing the asset price generally increases the value of a floating lookback call option due to the higher possibility of a lower recorded price to exercise the option against.
+
+Therefore, my answer is A. It increases the value.",A,1,0,2026-01-24 21:03:00.496440
+113,113,vali_113,mcq,"The new chairman of the Federal Reserve Board has announced a plan to reduce inflation and lower unemployment through monetary growth adjustments.In the traditional model, what is the expected outcome of the Fed chairman's plan?","A. The short-run aggregate supply curve will decrease
+B. The public's belief will significantly impact inflation levels
+C. The outcome will be the same regardless of whether the public believes him",C,,TU,term_1343,"To determine the expected outcome of the Fed chairman's plan in the traditional model, we need to consider the impact of monetary growth adjustments on inflation and unemployment.
+
+1. **Traditional Economic Model and Monetary Policy:**
+   - In the traditional model, monetary policy, such as adjusting monetary growth, is used to influence the economy. When the Federal Reserve increases the money supply, it can stimulate economic activity, potentially reducing unemployment in the short run. However, it may also lead to higher inflation if the increased money supply leads to higher demand and increased prices.
+   
+2. **Role of Expectations:**
+   - The role of expectations in economics is crucial, especially concerning inflation. If the public believes that the Federal Reserve will act effectively to control inflation, their expectations about future inflation might change. For example, if the Fed announces plans to reduce inflation and the public believes this, it might lead to lower anticipated inflation, which can actually help reduce inflation in reality through mechanisms such as wage-setting and price-setting behaviors.
+
+3. **Impact of Belief:**
+   - Therefore, the belief of the public in the Fed's ability to control inflation is significant. If the public doesn't believe the Fed can reduce inflation, they might continue to expect higher future inflation, which could in turn lead to actual high inflation.
+   - Thus, public belief in the Fed's plan can significantly impact inflation levels.
+
+Considering these points, the expected outcome of the Fed chairman's plan significantly depends on whether the public believes in the effectiveness of these measures.
+
+**Choice Analysis:**
+- **Choice A:** ""The short-run aggregate supply curve will decrease"" - This doesn't directly relate to the monetary plans impacting inflation and unemployment. Typically, aggregate supply is more about production costs and factors that influence them rather than monetary growth alone.
+- **Choice B:** ""The public's belief will significantly impact inflation levels"" - This directly relates to how expectations can influence inflation, which is crucial in understanding the outcomes of monetary policies.
+- **Choice C:** ""The outcome will be the same regardless of whether the public believes him"" - This overlooks the importance of expectations in economic models, especially in regard to inflation.
+
+Therefore, the most appropriate choice is the one acknowledging the role of public belief, as it directly influences inflation levels in the model described.
+
+Therefore, my answer is B. The public's belief will significantly impact inflation levels.",B,0,0,2026-01-24 21:03:03.665920
+117,117,vali_117,mcq,"A US company has to pay 3 million euros in three months, and the current exchange rate is 1.3500 dollars per euro. To manage the exchange rate risk, the company is considering using financial instruments.Which one of the following financial instruments can the US company use to lock in a future exchange rate at no cost?","A. Call option
+B. Forward contract
+C. Put option",B,,TU,term_2599,"To determine which financial instrument a US company can use to lock in a future exchange rate at no cost, let's consider each of the options:
+
+1. **Call Option:** A call option gives the purchaser the right, but not the obligation, to buy a currency at a predetermined rate before the option's expiration date. However, purchasing a call option typically involves paying a premium upfront, which means there is a cost associated with using a call option.
+
+2. **Forward Contract:** A forward contract involves agreeing now to exchange currency at a specific rate on a future date. This contract locks in the exchange rate and typically involves no upfront cost. Therefore, it offers a way to manage exchange rate risk with certainty about future costs and no premium like options.
+
+3. **Put Option:** A put option gives the holder the right to sell a currency at a predetermined rate before the option expires, and similar to a call option, purchasing a put option requires paying a premium. Hence, it involves a cost.
+
+Given these explanations, the most appropriate instrument that allows locking in a future exchange rate at no cost is the forward contract, as it provides certainty of the exchange rate without any premium or upfront cost.
+
+Therefore, my answer is B. Forward contract.",B,1,0,2026-01-24 21:03:08.549314
+124,124,vali_124,mcq,Most open market operations are conducted through repurchase agreements.Which one of the following conclusions can be drawn about the volume of defensive open market operations relative to dynamic open market operations?,"A. Both defensive and dynamic open market operations occur with the same frequency.
+B. Dynamic open market operations are more common than defensive operations.
+C. Defensive open market operations are more common than dynamic operations.",C,,TU,term_725;term_1356,"Let's think step by step about open market operations:
+
+1. **Understanding Open Market Operations (OMOs):** Open Market Operations are activities carried out by central banks to control money supply and interest rates by buying or selling government securities in the open market.
+
+2. **Types of Open Market Operations:**
+   - **Dynamic Open Market Operations:** These operations aim to change the level of reserves and influence the broader monetary conditions. They are often used when a central bank wants to adjust the stance of monetary policy, such as changing interest rates.
+   - **Defensive Open Market Operations:** These operations are meant to counteract short-term fluctuations in the money supply. They are used to smooth out temporary disturbances in the supply of money and are not aimed at changing monetary policy.
+
+3. **Repurchase Agreements:** Most open market operations, including defensive ones, are conducted through repurchase agreements, which are essentially short-term loans backed by collateral.
+
+4. **Frequency and Volume of Operations:** 
+   - Defensive operations can be more frequent as they address short-term fluctuations and are continuously adjusted based on daily changes.
+   - Dynamic operations are typically less frequent as they are used to alter the broader monetary stance rather than adjust daily fluctuations.
+
+5. **Drawing Conclusions:**
+   - If repurchase agreements are primarily used, and they are generally associated with defensive operations which aim at stabilizing short-term fluctuations without altering policy stance, then it indicates that defensive operations might occur more often or in higher volumes compared to dynamic operations.
+   
+Therefore, based on the understanding that defensive operations are more about frequent adjustments to maintain stability and are typically carried out through repurchase agreements, it suggests that defensive operations are likely more common than dynamic operations.
+
+Therefore, my answer is C. Defensive open market operations are more common than dynamic operations.",C,1,0,2026-01-24 21:03:12.676637
+129,129,vali_129,mcq,The treasurer of a corporation is trying to hedge the corporation's foreign exchange risk.Which one of the following disadvantages is associated with forward contracts in hedging foreign exchange risk?,"A. Up-front cost involved
+B. Limited flexibility
+C. Worse outcome compared to no hedging",C,,TU,term_2114,"When considering the disadvantages of forward contracts in hedging foreign exchange risk, we should examine each choice carefully:
+
+A. Up-front cost involved: Forward contracts typically do not involve any up-front costs. They are agreements that set a price for exchanging currency at a future date with no need for payment until the maturity date. Therefore, up-front costs are not a disadvantage associated with forward contracts.
+
+B. Limited flexibility: Forward contracts are indeed less flexible compared to other hedging instruments such as options. Once a forward contract is agreed upon, the terms are fixed, including the exchange rate, amount, and maturity date. This lack of flexibility can be considered a disadvantage because it does not allow for adjustments should the corporation's circumstances or the market conditions change before the contract matures.
+
+C. Worse outcome compared to no hedging: Hedging is typically employed to mitigate risk, and while it may not always result in a better financial outcome than not hedging in every scenario, the purpose of hedging is to reduce uncertainty and potential loss from unfavorable exchange rate movements. This choice implies that hedging leads to a systematically worse outcome, which is generally not the case; rather, it aims to protect against adverse movements. Therefore, this statement is more about specific outcomes rather than an inherent disadvantage of forward contracts.
+
+After analyzing the given choices, B. Limited flexibility stands out as the most appropriate choice regarding the disadvantages of using forward contracts to hedge foreign exchange risk.
+
+Therefore, my answer is B. Limited flexibility.",B,0,0,2026-01-24 21:03:16.900585
+136,136,vali_136,mcq,"The cost of debt for a company can be determined through various methods, depending on whether the debt is privately placed or publicly traded.How can a company estimate its cost of debt if its only debt issues are privately held by institutional investors?","A. Ignore the debt cost as it cannot be estimated
+B. Consult analysts and investment bankers
+C. Use the average debt cost for firms without any credit rating",B,,TU,term_1710,"To estimate the cost of debt when debt issues are privately held by institutional investors, we need to consider methodologies that can be used in absence of market prices. Let's evaluate each choice:
+
+A. Ignore the debt cost as it cannot be estimated: This is not a viable option because even privately placed debt must have some form of cost estimation to inform financial decision-making and valuation.
+
+B. Consult analysts and investment bankers: Analysts and investment bankers might provide valuable insights or estimates by comparing similar instruments or using their industry knowledge to make informed approximations. This could be a suitable approach since they can provide estimates using financial models that factor in risk, creditworthiness, and other economic indicators that affect interest rates or borrowing costs.
+
+C. Use the average debt cost for firms without any credit rating: This choice presumes that estimating the cost of debt can be generalized based on some average for similar entities. However, privately held debts might have specific terms and conditions that make such generalizations inaccurate.
+
+Therefore, my answer is B: Consult analysts and investment bankers, as they can provide tailored cost estimates considering the specific circumstances and conditions of the company's privately held debt.",B,1,0,2026-01-24 21:03:20.042134
+139,139,vali_139,mcq,The S&L crisis highlighted the principal-agent problem in the financial system.Which one of the following explains why the S&L crisis can be attributed to the principal-agent problem?,"A. The crisis was caused primarily by external economic factors
+B. Taxpayers were more willing to engage in regulatory forbearance
+C. Politicians and regulators had different incentives compared to taxpayers",C,,TU,term_2577,"The Savings and Loan (S&L) crisis of the 1980s is often attributed to the principal-agent problem. In this context, the principal-agent problem occurs when individuals (agents) acting on behalf of others (principals) have different incentives, which can lead to decisions that do not align with the best interests of the principals.
+
+Let's examine the choices:
+
+A. The crisis was caused primarily by external economic factors - While external economic factors certainly played a role in the S&L crisis, attributing the crisis to such factors does not directly address the principal-agent problem. External factors do not inherently involve a conflict of interests between principals and agents.
+
+B. Taxpayers were more willing to engage in regulatory forbearance - This choice focuses on taxpayers, but fails to directly connect their willingness to regulatory forbearance as a representation of the principal-agent problem. Regulatory forbearance is typically a decision made by regulators, not taxpayers.
+
+C. Politicians and regulators had different incentives compared to taxpayers - This choice directly addresses the principal-agent problem. Politicians and regulators (agents) may have incentives that differ from those of the taxpayers (principals). Politicians and regulators might prioritize re-election, political favor, or other personal or institutional interests that don't align with taxpayer interests, thus leading to decisions and policies that contributed to the crisis.
+
+Therefore, my answer is C. Politicians and regulators had different incentives compared to taxpayers.",C,1,0,2026-01-24 21:03:22.957711
+158,158,vali_158,mcq,When did the LIBOR-OIS spread achieve its peak given the attached figure?,"A. 2011
+B. 2008
+C. 2007",B,vali_figure_21,TR,term_902,,,0,0,2026-01-24 21:03:25.460001
+163,163,vali_163,mcq,"The term ""agency costs"" describes the expenses incurred when the interests of two parties are not perfectly aligned.Which one of the following describes an example of agency costs in the context of the credit crisis?","A. The misalignment of interests between customers and their real estate agents
+B. The misalignment of interests between mortgage originators and investors
+C. The perfect alignment of interests between mortgage originators and investors",B,,TU,term_1825,"To determine the correct example of agency costs in the context of the credit crisis, let's examine each choice:
+
+A. The misalignment of interests between customers and their real estate agents - While this scenario does describe a potential misalignment of interests, it is not directly related to the credit crisis. Real estate agents typically help customers buy or sell property, and any agency costs incurred in this relationship would be more closely related to real estate transactions rather than the broader financial credit crisis.
+
+B. The misalignment of interests between mortgage originators and investors - This choice directly relates to the credit crisis. Mortgage originators are responsible for issuing loans to borrowers and may have incentives to approve as many loans as possible without thorough vetting to increase their commissions or profits. Investors, on the other hand, purchase these mortgage-backed securities expecting them to be safe investments. If mortgage originators issue risky loans, the interests of these two parties are misaligned, exemplifying agency costs whereby mortgage originators act in their self-interest at the potential expense of investors.
+
+C. The perfect alignment of interests between mortgage originators and investors - This choice contradicts the definition of agency costs. Agency costs arise from a misalignment, not a perfect alignment. Therefore, this choice does not illustrate agency costs and is a reversal of what is expected.
+
+Given the explanation, the most appropriate choice describing agency costs in the context of the credit crisis is option B: The misalignment of interests between mortgage originators and investors.
+
+Therefore, my answer is B.",B,1,0,2026-01-24 21:03:25.462290
+167,167,vali_167,mcq,European down-and-out options on an asset and on the asset's futures price may have different values.Which one of the following statements is correct regarding the values of a European down-and-out option on an asset and on the asset's futures price?,"A. The futures price does not affect the option's worth.
+B. They are not worth the same.
+C. They always have the same value.",B,,TU,term_2611;term_429,"To determine which choice is correct, we need to understand the differences between options on an asset and options on the asset's futures price.
+
+1. **Down-and-out options:** These are a type of barrier option where the option becomes worthless if the underlying asset's price falls below a certain level (the barrier) during a specific period. Therefore, the value of these options is influenced by both the price of the underlying asset or futures and the barrier level.
+
+2. **Option on an asset vs. on futures price:** An option on an asset is directly influenced by the asset's price movements, whereas an option on the futures price is influenced by the futures contract of the asset. Futures contracts can have different pricing dynamics owing to factors such as interest rates, carry costs, and expected future asset prices.
+
+3. **Comparing two types:** Since the futures price can differ from the current spot price of the asset due to market expectations and other factors, the values of options on these two underlying metrics can vary. The boundary conditions (barrier levels) and pricing model inputs (like volatility, interest rates, etc.) can further affect their respective valuations.
+
+Given these points, options on an asset and options on the asset’s futures price can indeed have different valuations because they are influenced by different pricing mechanisms and market conditions. Thus, choice C is incorrect: they do not always have the same value.
+
+Finally, choice A is incorrect as well because, for an option on the futures price, the futures price is indeed what directly affects its valuation.
+
+Therefore, the correct choice is:
+B. They are not worth the same.
+
+Therefore, my answer is B.",B,1,0,2026-01-24 21:03:28.436303
+176,176,vali_176,mcq,What trend can be observed with excess reserves ratio \(e\) during the first bank panic in the attached figure?,"A. \(e\) remained constant
+B. \(e\) more than doubled
+C. \(e\) increased to more than 0.06",B,vali_figure_21,TR,term_865,,,0,0,2026-01-24 21:03:32.948644
+178,178,vali_178,mcq,"The health of financial institutions can significantly impact economic activity. When these institutions face deteriorations in their balance sheets and failures, the effects ripple through the economy.Which one of the following impacts does a deterioration in financial institutions’ balance sheets have on economic activity?","A. Lending will remain unchanged, having no effect on investment spending and economic activity.
+B. Lending will increase, leading to higher investment spending and faster economic activity.
+C. Lending will decline, leading to decreased investment spending and slower economic activity.",C,,TU,term_2095,"When financial institutions experience deteriorations in their balance sheets, it often means they are facing financial challenges such as losses or reduced asset values. This situation can lead these institutions to become more risk-averse. 
+
+1. **Impact on Lending:** Financial institutions typically provide loans to businesses and consumers. When their balance sheets are weakened, they may reduce their lending because they have less capital available or they may want to minimize further risk exposure. 
+
+2. **Impact on Investment Spending:** If lending declines, businesses might find it harder to obtain the financing they need for investment in their operations, such as purchasing new equipment or expanding facilities. This reduction in available credit can lead to decreased investment spending.
+
+3. **Impact on Economic Activity:** With decreased investment spending, economic activity tends to slow down because businesses are not expanding or improving productivity as extensively as they could with more financing. This can lead to lower levels of growth in the economy overall.
+
+Now, let's evaluate the choices:
+
+- **Choice A:** Lending remains unchanged, so it suggests no effect on investment spending or economic activity. This does not align with the typical impact of deteriorations in financial institutions' balance sheets.
+  
+- **Choice B:** Lending increases, leading to higher investment spending and faster economic activity. This is contrary to the expectation from deterioration in balance sheets, as lending typically decreases, not increases.
+  
+- **Choice C:** Lending declines, leading to decreased investment spending and slower economic activity. This is consistent with the expectation because when financial institutions face balance sheet problems, lending usually declines, affecting broader economic activity.
+
+Therefore, my answer is C. Lending will decline, leading to decreased investment spending and slower economic activity.",C,1,0,2026-01-24 21:03:32.950792
+179,179,vali_179,mcq,"The chairman of the Federal Reserve Board announces a reduction in the annual rate of money growth, and the public believes this announcement.According to the new Keynesian model, what might happen to the aggregate output when the money growth rate is reduced to 5%?","A. It may either rise or fall, depending on the shifts in the short-run aggregate supply and aggregate demand curves
+B. It will definitely rise due to lower expected inflation
+C. It will definitely fall, as aggregate supply shifts more than aggregate demand",A,,TU,term_2433,"The new Keynesian model emphasizes the role of price stickiness and imperfect competition in the economy, which can lead to fluctuations in aggregate output in the short run due to changes in expected inflation and monetary policy.
+
+1. **Reduction in Money Growth Rate**: When the Federal Reserve reduces the annual rate of money growth, it essentially tightens monetary policy. This action might affect expectations of inflation in the market.
+
+2. **Expectations and Aggregate Demand**: According to the Keynesian framework, if the public believes the reduction in money growth will lead to lower future inflation, nominal interest rates might adjust accordingly. This could affect consumption and investment decisions, altering the aggregate demand.
+
+3. **Aggregate Supply**:
+   - In the short run, prices are sticky (do not adjust immediately to changes in economic conditions). Therefore, a reduction in expected inflation could reduce firms' willingness to increase prices, affecting aggregate supply.
+   - However, the direct impact of a tightened monetary policy (reduced money growth) might initially reduce aggregate demand more prominently than supply, as firms and households adjust their expectations.
+
+4. **Short-Run Dynamics**:
+   - If aggregate demand falls more than aggregate supply due to tighter monetary policy and reduced inflation expectations, the aggregate output could potentially fall.
+   - The degree to which aggregate output falls or rises depends significantly on the responsiveness of the short-run aggregate supply and demand curves.
+
+Thus, considering how the new Keynesian model accounts for price stickiness and shifts in expectations, the reduction in money growth rate leads to a decrease in expected inflation. This can impact the short-run dynamics between aggregate supply and demand, but it doesn’t provide a definitive answer as to whether aggregate output will rise or fall without additional context on how the curves shift.
+
+Therefore, the most appropriate choice is *A*, as it acknowledges the uncertainty and the potential for either rise or fall in aggregate output, depending on various factors.
+
+Therefore, my answer is A.",A,1,0,2026-01-24 21:03:36.453028
+192,192,vali_192,mcq,A company is aware that it will receive a specific amount of foreign currency in four months.Which one of the following option contracts is appropriate for hedging against the exchange rate falling below a certain level?,"A. A short position in a four-month put option
+B. A long position in a four-month call option
+C. A long position in a four-month put option",C,,TU,term_886,"To determine the appropriate option contract for hedging against the exchange rate falling below a certain level, we need to understand the implications of each type of option position.
+
+1. A put option gives the holder the right, but not the obligation, to sell a certain amount of currency at a predetermined price (strike price) on or before the expiration date. Therefore, taking a long position in a put option allows the company to sell the foreign currency at the strike price even if the exchange rate falls below this level. This effectively sets a floor on the exchange rate and provides insurance against it declining below the strike price.
+
+2. A call option gives the holder the right, but not the obligation, to buy a certain amount of currency at a predetermined price. Taking a long position in a call option would be useful if the company wanted to protect against the exchange rate rising above a certain level, which is opposite to the company's current concern.
+
+3. A short position in a put option would involve selling the put option, which would not provide protection if the exchange rate falls, as it obligates the seller to buy the foreign currency at the strike price if the holder exercises the option.
+
+Given these explanations, the company is concerned about the exchange rate falling below a certain level. Therefore, it should take a long position in a put option to set a minimum exchange rate they will receive, ensuring insurance against declines.
+
+Therefore, my answer is C. A long position in a four-month put option.",C,1,0,2026-01-24 21:03:40.437879
+193,193,vali_193,mcq,"The Federal Reserve (Fed) lends five banks an additional total of $100 million, and depositors withdraw $50 million to hold as currency.Which one of the following changes correctly describes what happens to the monetary base after the Fed lends an additional $100 million to five banks and depositors withdraw $50 million as currency?","A. Monetary base increases by $50 million
+B. Monetary base increases by $100 million
+C. Monetary base decreases by $50 million",B,,TU; FF,term_2342,"The monetary base is the sum of currency in circulation and reserves held by banks with the Federal Reserve. 
+
+1. Initially, the Fed lends an additional $100 million to five banks. This lending increases the reserves held by these banks with the Federal Reserve, thereby increasing the monetary base by this amount.
+   
+2. Subsequently, depositors withdraw $50 million to hold as currency. When depositors withdraw currency, it moves from reserves (held by banks) to currency in circulation. However, this withdrawal doesn't change the total monetary base. The monetary base remains unchanged by withdrawals, as it merely shifts the form of money from reserves to currency.
+
+To sum up, while the total monetary base is affected by the initial Fed lending, the withdrawal action merely alters the composition (more currency in circulation, less reserves at banks), without changing the overall monetary base size.
+
+Therefore, the net effect of these actions is that the monetary base increases by $100 million.
+
+Therefore, my answer is B. Monetary base increases by $100 million.",B,1,0,2026-01-24 21:03:43.152427
+195,195,vali_195,mcq,"In the corn futures market, different delivery months are available for trading contracts.Which one of the following corn futures contracts should be used for hedging when the expiration of the hedge is in July?","A. September
+B. May
+C. January",A,,TU,term_202,"In a futures market, hedging involves using futures contracts to protect against price risk for a commodity that will be needed at a future date. The goal is to use a futures contract that closely matches the timing of the exposure to the price risk.
+
+1. **Understanding the Role of Delivery Months:** 
+   Futures contracts have specific delivery months when they expire. These months influence which contract would best match the timing needs for the hedger's exposure.
+
+2. **The Timing of the Hedge:** 
+   The question specifies that the expiration of the hedge is in July. This means the hedger wants protection for price movements up until July.
+
+3. **Matching the Contract with the Hedge Expiration:** 
+   To effectively hedge against price volatility up to July, the futures contract should be active through this period. Typically, the delivery month of a futures contract should be equal to or follow soon after the period for which you're seeking price protection.
+
+4. **Evaluating the Choices:**
+   - **A. September:** 
+     A September delivery month offers coverage through and beyond July, making it suitable for hedges expiring in July.
+   - **B. May:** 
+     A May delivery month expires before July, meaning the hedge would not provide protection up to the desired period.
+   - **C. January:** 
+     A January delivery month also expires before July, thus failing to cover the period needed for the hedge.
+
+Given this assessment, the September contract provides coverage and aligns best with the hedger's need to protect against risks up until July.
+
+Therefore, my answer is A. September.",A,1,0,2026-01-24 21:03:46.562686
+198,198,vali_198,mcq,When was the budget surpluses achieved after the peak of the budget deficit relative to the size of the U.S. economy?,"A. Around 1955
+B. Around 2000
+C. Around 1985",B,vali_figure_21,TR,term_553,,,0,0,2026-01-24 21:03:50.081513
+208,208,vali_208,mcq,The efficient market hypothesis implies that high costs of managing a portfolio can be a challenge for small investors.Which one of the following strategies is frequently sensible for a small investor according to the efficient market hypothesis?,"A. Invest in individual stocks with high brokerage commissions
+B. Choose mutual funds with high management fees
+C. Buy into a low-fee, commission-free mutual fund",C,,TU,term_1229,"To address the question, we need to understand the efficient market hypothesis (EMH). The EMH suggests that asset prices reflect all available information, meaning it's impossible to consistently outperform the market through expert stock selection or market timing. As a result, investing in individual stocks with high brokerage commissions (Choice A) or choosing mutual funds with high management fees (Choice B) is not sensible, as these strategies involve higher costs that do not guarantee better returns due to the nature of the efficient market.
+
+Small investors, facing the challenge of high portfolio management costs, should look for investment strategies that minimize fees, since trying to beat the market is generally unfruitful according to EMH. This leads us to examine Choice C: ""Buy into a low-fee, commission-free mutual fund.""
+
+Investing in a mutual fund with low fees aligns well with the efficient market hypothesis. Low-fee mutual funds reduce the financial burden on investors and are often passive funds that track a market index, a strategy that EMH proponents frequently endorse. Since the market is efficient and reflects all available information, low-cost passive investing allows investors to capture market returns without the heavy costs associated with active management attempts to outperform it.
+
+Therefore, considering these steps, Choice C is frequently sensible for small investors according to the efficient market hypothesis. 
+
+Therefore, my answer is C.",C,1,0,2026-01-24 21:03:50.083764
+210,210,vali_210,mcq,The treasurer of a corporation is trying to hedge the corporation's foreign exchange risk.Which one of the following advantages do forward contracts provide when hedging foreign exchange risk?,"A. Insurance against exchange rate worsening
+B. No up-front cost
+C. Elimination of exchange rate uncertainty",C,,TU,term_2114,"To determine the advantages that forward contracts provide when hedging foreign exchange risk, let's consider each choice:
+
+A. Insurance against exchange rate worsening: This phrase suggests that forward contracts provide protection against unfavorable movements in exchange rates. While forward contracts do offer protection by locking in an exchange rate for a future date, they do not provide ""insurance"" in the traditional sense of compensating for unfavorable movements. Rather, they eliminate uncertainty by fixing the rate.
+
+B. No up-front cost: Forward contracts typically do not require an upfront payment, which is indeed an advantage. Parties involved simply agree to exchange currencies at a predetermined rate in the future, avoiding any immediate cash outlay.
+
+C. Elimination of exchange rate uncertainty: Forward contracts allow a corporation to lock in an exchange rate for a future transaction, thus removing the uncertainty associated with fluctuating rates. This is a key benefit for corporations looking to hedge their foreign exchange exposure.
+
+Upon evaluating these options, the most direct advantage of forward contracts concerning hedging foreign exchange risk is the elimination of exchange rate uncertainty, as they secure an agreed-upon rate to be used in the future, thereby stabilizing costs and revenues against currency fluctuations.
+
+Therefore, my answer is C. Elimination of exchange rate uncertainty.",C,1,0,2026-01-24 21:03:53.321513
+214,214,vali_214,mcq,A butterfly spread involves a position in options with three different strike prices.When should an investor consider purchasing a butterfly spread?,"A. When the price of the underlying stock is expected to stay close to the central strike price
+B. When the price of the underlying stock is expected to have high volatility
+C. When the price of the underlying stock is expected to exceed the highest strike price",A,,TU,term_656,"To determine when an investor should consider purchasing a butterfly spread, we need to understand the characteristics and goals of this options strategy.
+
+1. **Butterfly Spread Explained**: 
+   - A butterfly spread is an options trading strategy that involves both buying and selling options at different strike prices but typically with the same expiration date.
+   - Specifically, it involves buying one option at a lower strike price, selling two options at a central strike price, and buying one option at a higher strike price.
+   - This creates a ""spread"" where the profits are maximized when the price of the underlying asset is at the central strike price at expiration, and losses are limited if it deviates significantly from it.
+
+2. **Ideal Market Conditions**:
+   - A butterfly spread is typically used when an investor expects the underlying asset to remain relatively stable in price, especially close to the central strike price.
+   - This is because the strategy profits when the price is around the central strike price, and could result in losses if the price moves too far from it.
+
+3. **Analysis of Choices**:
+   - **Choice A**: When the price of the underlying stock is expected to stay close to the central strike price. This describes perfectly the condition under which a butterfly spread is profitable, as it aims to capitalize on stability.
+   - **Choice B**: When the price of the underlying stock is expected to have high volatility. High volatility would not be ideal for a butterfly spread because extreme movements away from the central strike price would reduce profitability.
+   - **Choice C**: When the price of the underlying stock is expected to exceed the highest strike price. This would not be ideal either, as butterfly spreads are not designed for benefiting from significant upward movements beyond the highest strike price involved.
+
+Based on this analysis, the most appropriate condition for considering a butterfly spread is when the underlying stock is expected to stay close to the central strike price. 
+
+Therefore, my answer is A.",A,1,0,2026-01-24 21:03:56.087993
+216,216,vali_216,mcq,"In the world of financial derivatives, forward start options and chooser options offer different structures and benefits to investors.Which one of the following describes a forward start option?","A. An option that is paid for now but starts at a future date
+B. An option that can be executed at any time before the expiration date
+C. An option that allows the holder to choose between a call or a put at a future date",A,,TU,term_739;term_311,"To determine which choice accurately describes a forward start option, let's analyze each option:
+
+A. An option that is paid for now but starts at a future date.
+- A forward start option is indeed characterized by the fact that it is priced and paid for at the present time but does not begin until a specified future date. This structure allows an investor to secure an option contract while postponing the time at which the option rights come into effect.
+
+B. An option that can be executed at any time before the expiration date.
+- This describes an American option rather than a forward start option. An American option gives the holder the right to exercise the option at any point up to the expiration date.
+
+C. An option that allows the holder to choose between a call or a put at a future date.
+- This describes a chooser option, not a forward start option. A chooser option gives the holder the flexibility to choose whether the option will be a call or a put at a future date.
+
+After reviewing the choices, option A correctly describes a forward start option. Therefore, my answer is A.",A,1,0,2026-01-24 21:03:59.485613
+225,225,vali_225,mcq,Firms deal with various types of float in their banking activities.Which type of float is more desirable for a firm?,"A. Net collection float
+B. Zero float
+C. Net disbursement float",C,,TU,term_2269,"To determine which type of float is more desirable for a firm, it's crucial to understand what each type of float represents in banking activities:
+
+1. **Net Collection Float**: This occurs when the collection of funds by a firm is delayed after the firm has deposited checks but before the funds are made available. Essentially, this is the delay between when a firm deposits a check and when the bank makes the funds available for use.
+
+2. **Zero Float**: This indicates a situation where there is no delay between the depositing of checks and the availability of funds. Essentially, it means there is no float, and funds are available immediately.
+
+3. **Net Disbursement Float**: This occurs when there is a delay between when a firm issues a check and when the funds are actually deducted from the firm's account. This means that the firm can continue using the money for a period even after issuing a check.
+
+Understanding these definitions, let's evaluate which one is more desirable for a firm:
+
+- **Net collection float** can be undesirable because it delays the availability of funds which the firm might need to use immediately.
+
+- **Zero float** ensures that funds are available instantly when deposits are made, which can be beneficial but doesn't provide any time advantage in terms of managing cash flows.
+
+- **Net disbursement float**, on the other hand, allows firms to benefit from the delay between when a payment is issued and when the cash actually leaves the firm's account. This provides the firm the advantage of using that money for a longer period and optimizing its cash flow management.
+
+In the context of maximizing cash management efficiency, firms generally find **Net Disbursement Float** to be more desirable because it allows them to retain and utilize money for a longer period even after initiating disbursements. Therefore, firms prefer having a longer disbursement float which aids in better cash flow management.
+
+Therefore, my answer is C. Net disbursement float.",C,1,0,2026-01-24 21:04:02.762967
+227,227,vali_227,mcq,"A stop-loss trading rule can be implemented for the writer of an out-of-the-money call option, although it may not provide an effective hedge.Which one of the following explains why a stop-loss trading rule provides a relatively poor hedge for the writer of an out-of-the-money call option?","A. The scheme guarantees a profit as the asset price fluctuates
+B. The scheme assumes the next move in price will continue in the same direction
+C. The scheme reduces the cost of trading significantly",B,,TU,term_1283,"To determine which explanation best reflects why a stop-loss trading rule provides a relatively poor hedge for the writer of an out-of-the-money call option, we must understand the mechanics and assumptions of a stop-loss trading rule.
+
+1. **Understanding of a stop-loss trading rule**: A stop-loss rule is designed to limit potential losses by selling an asset if it falls to a predetermined price level. For a writer of a call option, stop-loss rules could mean buying back the call option or buying the underlying asset if certain price conditions are met, potentially at a loss.
+
+2. **Examine each choice**:
+    - **Choice A: The scheme guarantees a profit as the asset price fluctuates** – This statement is incorrect in the context of stop-loss rules, because these rules are intended to limit losses, not guarantee profits. A stop-loss order executes to prevent further loss, rather than ensuring profit as prices fluctuate.
+    - **Choice B: The scheme assumes the next move in price will continue in the same direction** – Stop-loss rules are indeed based on the premise that if an asset hits a certain price, it might continue moving in that direction, prompting the loss prevention mechanism. However, this assumption can be flawed, because markets are unpredictable, and a temporary price dip could trigger a stop-loss unnecessarily, making it a poor hedging instrument.
+    - **Choice C: The scheme reduces the cost of trading significantly** – This choice is not relevant in explaining why stop-loss rules provide a poor hedge. Stop-loss rules do not inherently reduce trading costs; they aim to manage risk.
+
+3. **Reasoning**:
+    - The main limitation of a stop-loss rule for hedging, especially for options writers, comes from its underlying assumption that price movements will continue in the same direction after hitting a trigger point. This may lead to unnecessary exits, as markets can reverse directions, and thus it may not be effective for maintaining a hedge against risk exposures.
+
+Based on the analysis, Choice B captures the fundamental flaw of stop-loss rules as a hedge mechanism due to its reliance on potentially incorrect assumptions about market behavior. 
+
+Therefore, my answer is B. The scheme assumes the next move in price will continue in the same direction.",B,1,0,2026-01-24 21:04:06.477638
+244,244,vali_244,mcq,"Suppose the Federal Reserve buys dollars in the foreign exchange market but does not sterilize the intervention. Given the supply and demand diagram of foreign exchange market, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,A,vali_figure_21,FF,term_3014;term_2168,,,0,0,2026-01-24 21:04:11.847629
+250,250,vali_250,mcq,"The end-of-year bonus reflects performance during the year and influences the behavior of traders and other employees of banks.Why is the end-of-year bonus referred to as ""short-term compensation""?","A. It is a legally mandated annual reward.
+B. It leads traders to focus on their next bonus and short-term performance.
+C. It compensates executives for their long-term achievements.",B,,TU,term_1825,"To determine why the end-of-year bonus is referred to as ""short-term compensation,"" we need to examine what each choice signifies:
+
+A. ""It is a legally mandated annual reward."" - While this choice indicates that the bonus is given annually, it does not explicitly explain why it is considered ""short-term"" compensation. Legal mandates focus more on obligation than the nature of compensation.
+
+B. ""It leads traders to focus on their next bonus and short-term performance."" - This choice clearly links the concept of short-term compensation with behavior and focus on short-term performance. If bonuses encourage staff, like traders, to prioritize immediate gains and decisions that will affect their next bonus period, this aligns with the idea of short-term incentives.
+
+C. ""It compensates executives for their long-term achievements."" - This choice contradicts the idea of short-term compensation, as it refers specifically to long-term achievements rather than immediate results.
+
+Therefore, the most appropriate choice to explain why the end-of-year bonus is considered ""short-term compensation"" is one that emphasizes its impact on immediate focus and behaviors – essentially, how it drives employees to concentrate on short-term goals or performance outcomes.
+
+Therefore, my answer is B. It leads traders to focus on their next bonus and short-term performance.",B,1,0,2026-01-24 21:04:11.849942
+255,255,vali_255,mcq,The slope of the LM curve can be inferred from the behavior of the equilibrium interest rate in relation to aggregate output.Which one of the following statements correctly describes the implication for the slope of the LM curve when aggregate output falls?,"A. The LM curve slopes up due to the positive association between aggregate output and the equilibrium interest rate.
+B. The LM curve is horizontal because there is no association between aggregate output and the equilibrium interest rate.
+C. The LM curve slopes down due to the negative association between aggregate output and the equilibrium interest rate.",A,,TU,term_1957,"To determine the correct answer, we need to understand the relationship between the LM curve, aggregate output, and interest rates:
+
+1. **Understanding the LM Curve:**
+   - The LM curve represents money market equilibrium, where demand for money equals supply.
+   - It is typically depicted in the space of interest rates (y-axis) against real GDP or aggregate output (x-axis).
+
+2. **LM Curve Behavior:**
+   - Generally, the LM curve has a positive slope, indicating that as aggregate output increases, the equilibrium interest rates rise (assuming money supply is constant). This is due to increased demand for transactions money as the economy's output grows, driving up interest rates.
+   - Conversely, as aggregate output falls, the reduced demand for transactions lowers pressure on interest rates, which tends to decrease.
+
+Now, looking at the given choices:
+
+- Choice A suggests a positive slope of the LM curve due to a positive association between aggregate output and interest rates.
+- Choice B suggests the LM curve is horizontal, implying no association.
+- Choice C suggests a negative slope, which is incorrect given the explanation above.
+
+Given this analysis, when aggregate output falls, interest rates typically fall too, maintaining the positive slope association. 
+
+Therefore, choice A correctly aligns with the LM curve's typical behavior. As such, the implication for the slope when output falls should still be the characteristic positive slope of the LM curve.
+
+Therefore, my answer is A.",A,1,0,2026-01-24 21:04:14.543649
+261,261,vali_261,mcq,The inflation rate in the United States varied significantly between the 1950s and the 1970s.In which decade was money a better store of value in the United States?,"A. 1980s
+B. 1950s
+C. 1970s",B,,TU,term_368,"To determine which decade money was a better store of value, we need to consider the inflation rates during each period:
+
+1. **1950s**: Inflation rates in the U.S. during the 1950s were relatively low and stable. This means that the purchasing power of money did not decrease significantly over the decade, making money a relatively good store of value.
+
+2. **1970s**: The 1970s are characterized by high inflation rates, especially after the oil price shocks and various economic factors. There were periods of stagflation where inflation was high, and economic growth was stagnating. High inflation erodes the purchasing power of money, making it a poor store of value.
+
+3. **1980s**: While the question asks about the 1950s and 1970s specifically, we must note that the 1980s saw efforts to combat inflation through monetary policy, resulting in relatively higher interest rates, but improved inflation rates compared to the 1970s. However, this choice is not relevant given the question focuses on assessing between the 1950s and 1970s.
+
+Based on these observations, money was a better store of value during the 1950s compared to the 1970s due to lower and stable inflation rates. 
+
+Therefore, my answer is B. 1950s.",B,1,0,2026-01-24 21:04:18.254586
+273,273,vali_273,mcq,"In the corn futures market, different delivery months are available for trading contracts.Which one of the following corn futures contracts should be used for hedging when the expiration of the hedge is in June?","A. March
+B. December
+C. July",C,,TU,term_202,"To determine the appropriate futures contract for hedging, you need to consider the expiration of the hedge. The hedge expires in June, so ideally, the futures contract you choose should align closely with that time frame or shortly thereafter.
+
+1. **March Contract:** This contract expires too early for a June hedge. Since March is three months before June, using a March contract would not effectively cover the price movements during the period leading up to June.
+
+2. **December Contract:** The December contract expires several months after June, making it less suitable for hedging specifically during or immediately after June. There could be significant price movements from June to December that won't be effectively covered for the hedge that expires in June.
+
+3. **July Contract:** The July contract is close to the expiration of the hedge in June. It allows for coverage through June and even slightly beyond into early July. This timing ensures that price movements leading up to and immediately after June can be effectively managed, thereby aligning well with the hedge expiration.
+
+Considering these options, the July contract offers the closest alignment to a hedge that expires in June, providing more appropriate coverage for the relevant period.
+
+Therefore, my answer is C. July.",C,1,0,2026-01-24 21:04:21.468111
+280,280,vali_280,mcq,"Black's approach to evaluating an American call option on a dividend-paying stock can provide an approximate answer even when only one dividend is anticipated.According to Black's approach, which one of the following choices correctly identifies the maturity times the holder must decide between for an American call option on a dividend-paying stock?","A. American option maturing at time \(t_{n}\) or American option maturing at time \(T\)
+B. European option maturing at time \(t_{n}\) or European option maturing at time \(T\)
+C. European option maturing at time \(t_{n+1}\) or American option maturing at time \(T\)",B,,TU,term_498,"To determine the correct choice according to Black's approach for evaluating an American call option on a dividend-paying stock, we need to consider the impact of dividends on option pricing and the nature of American options.
+
+1. **Understanding the Problem Context**:
+   - An American option allows exercising at any time before expiration.
+   - Dividends affect option value, as they lower the stock price when paid, potentially making it more advantageous to exercise before the dividend is paid.
+   - Black's approach accounts for dividends in assessing whether early exercise might be favorable.
+
+2. **Analyzing Each Choice**:
+   - **Choice A**: Considers an ""American option maturing at time \(t_{n}\) or American option maturing at time \(T\)"". This suggests two different expiration terms for American options, but doesn't align well with the scenario of assessing dividend impact since exercising before the dividend is important rather than choosing between two American expirations.
+   
+   - **Choice B**: Describes ""European option maturing at time \(t_{n}\) or European option maturing at time \(T\)"". European options can't be exercised early, so this doesn't fit American options' criteria regarding dividends, where early exercise can be advantageous.
+   
+   - **Choice C**: Describes ""European option maturing at time \(t_{n+1}\) or American option maturing at time \(T\)"". This is peculiar because it sets one decision at a future European maturity where exercise isn't possible before maturity. However, it then incorporates an American option with maturity \(T\), this suggests evaluating the benefit of exercising before the dividend (characteristic of American options).
+
+3. **Understanding Black's Approach and Dividends**:
+   - Black's approach considers comparing the holding value of an option considering potential dividend impacts and whether exercising before dividend dates offers better value.
+   - For American call options, the idea is to assess whether to exercise just before dividend impact, reflected in an option with maturity leveraging dividend timing.
+
+4. **Determining Best Fit**:
+   - Within American options on dividend-paying stocks, the holder should decide based on a dividend timeline, exercise rights before or at endpoints considering dividends efficiently.
+   - Choice C reflects comparing a dividend-affected European timeline with American advantage opportunities, emphasizing evaluation at milestones, typically aligned with dividend impacts.
+
+Therefore, analyzing based on promoting decisions around dividend moments and respective complications, incorporating American attributes, Choice C best aligns with Black's approach accommodating dividends in theory.
+
+Therefore, my answer is C.",C,0,0,2026-01-24 21:04:25.083108
+291,291,vali_291,mcq,Higher deposit insurance premiums for banks with riskier assets can influence economic behavior.Which one of the following describes a challenge in implementing higher deposit insurance premiums for riskier banks?,"A. Simplified risk identification by external auditors
+B. Increased transparency in loan risk assessment
+C. Difficulty monitoring the degree of risk in bank assets",C,,TU,term_385,"To address the question, we need to understand the concept of deposit insurance premiums and how they relate to the risk profile of a bank's assets. 
+
+1. **Higher deposit insurance premiums for riskier banks**: The idea here is that banks with riskier assets should pay higher insurance premiums as a means to incentivize better risk management. This is designed to protect the deposit insurance fund from losses by ensuring that banks with higher risk profiles contribute more to the insurance pool.
+
+2. **Identification and monitoring of risk**: Implementing higher premiums requires accurately assessing the risk level of a bank's assets. This involves evaluating complex financial instruments, derivatives, loan portfolios, and other assets to determine the appropriate premium rate.
+
+Let's evaluate the choices:
+
+A. **Simplified risk identification by external auditors**: This choice suggests that external auditors can easily identify risks, which seems contrary to the challenge mentioned. The real challenge is typically the complexity and difficulty of risk identification, not simplification.
+
+B. **Increased transparency in loan risk assessment**: This choice implies that loan risk assessment is transparent and straightforward, which would be beneficial and not necessarily a challenge.
+
+C. **Difficulty monitoring the degree of risk in bank assets**: This choice points directly to the challenge described in the question. Accurately assessing risk in bank assets, especially complex or opaque ones, can be a significant challenge. This includes the need for sophisticated risk modeling, data analysis, and constant monitoring due to fluctuating market conditions, inconsistent reporting standards, and creative financial structures.
+
+Considering these points, the most appropriate challenge related to implementing higher deposit insurance premiums is difficulty monitoring the degree of risk in bank assets. 
+
+Therefore, my answer is C. Difficulty monitoring the degree of risk in bank assets.",C,1,0,2026-01-24 21:04:30.638724
+293,293,vali_293,mcq,"A five-year swap involves paying LIBOR in the usual way and receiving LIBOR compounded at LIBOR on the other side with a principal of $100 million. Payment and compounding dates are every six months, and the LIBOR zero curve is flat at 5% with semiannual compounding.What is the value of a five-year swap where LIBOR is paid and LIBOR compounded at LIBOR is received?","A. $5 million
+B. $10 million
+C. Zero",C,,TU; TR,term_2501,"The problem involves evaluating the value of a swap where LIBOR payments are made on one side and LIBOR compounded at LIBOR is received on the other side. The LIBOR zero curve is at a flat rate of 5% with semiannual compounding, and the principal is $100 million.
+
+1. **Understanding Swap Payments:**
+    - The swap involves (a) paying LIBOR, which, per the arrangement, would mean paying LIBOR rates calculated every six months, and (b) receiving LIBOR compounded at LIBOR.
+
+2. **LIBOR Compounding:**
+    - The interest received (compounded at LIBOR on the receiving side) equals the payoff if LIBOR is compounded semiannually at 5% every six months.
+
+3. **Basic Equation for Flat LIBOR Curve:**
+    - We understand that LIBOR, in this scenario, will pay interest equivalent to the derivative part that we are simultaneously receiving in this swap. Hence, under a flat curve, the compounded interest rate is equivalent to the rate being paid. 
+
+4. **Net Cash Flows:**
+    - Given that the LIBOR curve is flat, the net cash flows on swapping payments and receiving payments cancel out each other exactly. Therefore, there is no net gain or loss from swapping LIBOR differentials since they equalize.
+
+5. **Conclude Swap Value:**
+    - As there are no net cash flows and as receiving LIBOR compounded at LIBOR equals paying LIBOR in a flat LIBOR environment, the value of the swap should be zero.
+
+Therefore, my answer is C. Zero.",C,1,0,2026-01-24 21:04:34.369160
+304,304,vali_304,mcq,Bank regulations aim to reduce the moral hazard problems created by deposit insurance.Which one of the following regulations is designed to directly reduce the moral hazard of risk taking by banks?,"A. Increasing interest rates on deposits
+B. Limiting the number of branch locations
+C. Restrictions on holding risky assets",C,,TU,term_289,"To determine which regulation is designed to directly reduce the moral hazard of risk-taking by banks, we need to analyze each choice:
+
+A. Increasing interest rates on deposits: This would typically attract more depositors to the bank by offering better returns. However, it does not directly address the issue of risk-taking by banks. It does not influence the bank's decision making regarding risky assets or investments, but is rather a method to increase deposits.
+
+B. Limiting the number of branch locations: This regulation may impact the bank's ability to expand operations geographically, but does not directly address the moral hazard concerning risky asset holdings or investments. The number of branches is more related to market access and operational scale rather than the specific risk of asset choices.
+
+C. Restrictions on holding risky assets: This choice directly targets the core of the moral hazard problem. It aims to prevent banks from engaging in overly risky investment practices that might be incentivized by the safety net offered by deposit insurance. By restricting the type and amount of risky assets that banks can hold, this regulation directly reduces the likelihood of banks taking excessive risks, thereby addressing the moral hazard problem.
+
+Therefore, my answer is C. Restrictions on holding risky assets.",C,1,0,2026-01-24 21:04:38.445541
+305,305,vali_305,mcq,"In a pure flexible exchange rate system, the foreign exchange market operates without direct intervention from the central bank.Why does the foreign exchange market have no direct effects on the money supply in a pure flexible exchange rate system?","A. Banks do not engage in foreign exchange transactions
+B. Exchange rates remain constant
+C. There is no central bank intervention affecting international reserves",C,,TU,term_1939,"Step 1: Understanding the pure flexible exchange rate system.
+- In a pure flexible exchange rate system, exchange rates are determined by the forces of supply and demand in the foreign exchange market without government or central bank intervention. 
+
+Step 2: Evaluating the choices.
+- Choice A: Banks do not engage in foreign exchange transactions. This is incorrect because banks and other financial institutions do engage in foreign exchange transactions; such transactions are a normal part of the international financial system and do not rule out a flexible exchange rate system.
+
+- Choice B: Exchange rates remain constant. This is incorrect because flexible exchange rate systems are characterized by fluctuating exchange rates due to changes in market dynamics.
+
+- Choice C: There is no central bank intervention affecting international reserves. This is correct because in a flexible exchange rate system, the central bank does not intervene in the foreign exchange market to maintain a particular exchange rate, and as a result, changes in exchange rates do not directly affect the country's money supply through the adjustment of international reserves.
+
+Step 3: Drawing the conclusion based on the explanation above.
+- Since the central bank does not intervene, there is no need to buy or sell reserves to influence exchange rates, thus ensuring the foreign exchange market does not have direct effects on the money supply due to adjustments in international reserves.
+
+Therefore, my answer is C. There is no central bank intervention affecting international reserves.",C,1,0,2026-01-24 21:04:41.347977
+306,306,vali_306,mcq,"Since the geometric average of a set of numbers is always less than the arithmetic average, Equation (5.8) overstates the futures price when calculated using geometric averages.What was the effect of using the geometric average on the Value Line Index futures price?","A. It overstated the futures price
+B. It understated the futures price
+C. It had no effect on the futures price",A,,TU,term_3010,"To determine the effect of using the geometric average on the Value Line Index futures price, we must consider the properties of averages and their impact on calculated values.
+
+1. **Understanding Geometric vs. Arithmetic Average**:
+   - The geometric average of a set of numbers tends to be less than the arithmetic average unless all the numbers are identical.
+   - This is because the geometric average is a multiplicative mean which considers compounding, while the arithmetic average is a simple additive mean.
+
+2. **Implication**:
+   - If the geometric average is always less than the arithmetic average, then when using the geometric average to calculate a futures price (or any financial metric), the calculated value will be smaller than if using the arithmetic average.
+
+3. **Application to Futures Price**:
+   - The statement indicates that Equation (5.8) uses geometric averages and as a result, it ""overstates the futures price.""
+   - This may be due to factors outside of direct computation. For example, Equation (5.8) could involve transformations or assumptions that offset the lower geometric average effect, leading to overstating rather than understating.
+   - However, considering only the direct comparison between geometric and arithmetic averages without external influences, using the geometric average in calculating a futures price will typically lead to an understatement because the average itself is smaller.
+
+4. **Conclusion**:
+   - Directly based on the nature of geometric averages, it would generally result in an understatement unless controlled or influenced by other components in the equation.
+
+Therefore, my answer is B. It understated the futures price.",B,0,0,2026-01-24 21:04:44.096881
+308,308,vali_308,mcq,"Friedman and Keynes had differing views on the predictability of the demand for money and, consequently, the velocity of money.What is one reason that Friedman deemed the demand for money as predictable?","A. Interest rates have large fluctuations affecting the demand for money.
+B. Interest rates have only small effects on the demand for money.
+C. People's expectations of interest rates change frequently.",B,,TU,term_338,,,0,0,
+311,311,vali_311,mcq,Financial managers in not-for-profit businesses often pursue diverse objectives depending on the organization's mission.Which one of the following may be considered a better approach for determining an appropriate goal for a not-for-profit business?,"A. Maximizing the value of the equity
+B. Providing goods and services at the highest possible cost to society
+C. Reducing employee wages",A,,TU,term_1400,,,0,0,
+317,317,vali_317,mcq,Hedge funds and executives can receive compensation packages that motivate them to take risks.How does granting options to an executive affect their behavior in comparison to a hedge fund manager?,"A. It encourages the executive to take risks to increase the volatility of the stock.
+B. It discourages the executive from taking risks similar to a hedge fund manager.
+C. It ensures the executive focuses on long-term company stability.",A,,TU,term_2149,,,0,0,
+334,334,vali_334,mcq,Hedge funds and executives can receive compensation packages that motivate them to take risks.Which one of the following statements correctly describes the incentive for a hedge fund manager with a typical compensation package?,"A. They have an incentive to invest only in stable, low-risk assets.
+B. They have an incentive to maximize short-term gains at the expense of long-term growth.
+C. They have an incentive to make the fund as volatile as possible.",C,,TU,term_2149,,,0,0,
+336,336,vali_336,mcq,Higher deposit insurance premiums for banks with riskier assets can influence economic behavior.Which one of the following benefits might occur from imposing higher deposit insurance premiums on banks with riskier assets?,"A. Increased moral hazard, as banks would take on more risk despite higher premiums
+B. Reduced moral hazard, as banks would avoid excessive risk to minimize premiums
+C. Reduced bank profitability due to higher administrative costs",B,,TU,term_385,,,0,0,
+341,341,vali_341,mcq,"Traders utilize different strategies such as hedging, speculation, and arbitrage when dealing with financial assets.Which one of the following best describes hedging?","A. Taking a position in a derivative to offset an existing exposure to the price of an asset
+B. Taking a position in multiple markets to lock in a profit
+C. Betting on the future movements in the price of an asset without an existing exposure",A,,TU,term_1396,,,0,0,
+364,364,vali_364,mcq,New technologies such as electronic banking facilities have impacted bank branching.Why did new technology make it harder to enforce limitations on bank branching?,"A. Electronic banking facilities are shared and not classified as branches.
+B. New technologies have increased the number of physical bank branches.
+C. Electronic banking facilities have reduced the number of services offered by banks.",A,,TU,term_1214,,,0,0,
+367,367,vali_367,mcq,A bank uses Black's model to price European bond options.Which of the following outcomes would you expect if an implied price volatility for a 5-year option on a bond maturing in 10 years is used to price a 9-year option on the same bond?,"A. The resultant price would be too high
+B. The resultant price would be unaffected
+C. The resultant price would be too low",A,,TU,term_2794,,,0,0,
+368,368,vali_368,mcq,"Live hog futures are traded by the CME Group, and brokers are involved in executing trades and managing margins.Which one of the following steps occurs after issuing instructions to sell a July hogs contract?","A. The contract is immediately sold by the broker without further steps.
+B. The broker does not request any initial margin.
+C. The broker's trading desk on the floor of the exchange receives the order.",C,,TU,term_698,,,0,0,
+370,370,vali_370,mcq,"In the structure of an Asset-Backed Security (ABS) or an ABS Collateralized Debt Obligation (CDO), different tranches have varying levels of seniority and risk.Which one of the following statements accurately describes a mezzanine tranche?","A. A tranche that ranks below the senior tranches but above the equity tranches in terms of absorbing losses
+B. A tranche that ranks above the senior tranches and has the highest priority for absorbing losses
+C. A tranche that ranks below the equity tranches and absorbs losses last",A,,TU,term_539,,,0,0,
+373,373,vali_373,mcq,Traders often contemplate creating an option on the yen-euro exchange rate using options on the dollar-euro exchange rate and the dollar-yen exchange rate.Why can't an option on the yen-euro exchange rate be created from an option on the dollar-euro exchange rate and another on the dollar-yen exchange rate?,"A. The strike price for options needs to be adjusted.
+B. The options may not both be in-the-money at the same time.
+C. There is a need for converting both cash flows to euros first.",B,,TU,term_302,,,0,0,
+382,382,vali_382,mcq,Net Present Value (NPV) is considered a superior method for evaluating cash flows from a project due to its advantages over other financial metrics.Which one of the following is a reason why NPV is considered a superior method of evaluating project cash flows?,"A. NPV relies solely on the estimated discount rate and ignores cash flow values.
+B. NPV ranks mutually exclusive projects unambiguously and can differentiate between projects of different scale and time horizon.
+C. NPV is used exclusively for short-term projects and does not apply to long-term projects.",B,,TU,term_496,,,0,0,
+383,383,vali_383,mcq,"The cost of debt for a company can be determined through various methods, depending on whether the debt is privately placed or publicly traded.What is the appropriate aftertax cost of debt for a company?","A. The historical interest rate it paid on its oldest debt
+B. The interest rate it would have to pay if it were to issue new debt today
+C. The average market interest rate for all public companies",B,,TU,term_1710,,,0,0,
+385,385,vali_385,mcq,"In a Dutch auction of 10,000 options, multiple bidders place bids for limited items, and the items are sold at the highest possible price that allows the total number of items to be sold. Bids are as follows
+(a) bids_ _$30 for 3,000
+(b) bids_ _$33 for 2,500
+(c) bids_ _$29 for 5,000
+(d) bids_ _$40 for 1,000
+(e) bids_ _$22 for 8,000
+(f) bids_ _$35 for 6,000In the Dutch auction, who gets their order completely filled at the price of $30?","A. (c), (d), and (e)
+B. (a), (b), and (c)
+C. (b), (d), and (f)",C,,TU,term_1633,,,0,0,
+387,387,vali_387,mcq,"In the world of financial derivatives, forward start options and chooser options offer different structures and benefits to investors.Which one of the following describes a chooser option?","A. An option with a strike price fixed at the time of purchase
+B. An option where the holder chooses whether it is a call or a put at a future date
+C. An option that is paid for now but starts at a future date",B,,TU,term_739;term_311,,,0,0,
+391,391,vali_391,mcq,A typical natural gas forward contract involves an agreement regarding the delivery of gas.Which one of the following characteristics is included in a typical natural gas forward contract?,"A. Delivery of gas without specifying the delivery hub or price
+B. Delivery of gas at fluctuating rates based on market demand
+C. Delivery of a specified amount of gas at a roughly uniform rate during a month",C,,TU,term_890,,,0,0,
+403,403,vali_403,mcq,"When valuing certain financial derivatives, it is important to understand whether any convexity or timing adjustments are necessary.Which one of the following scenarios requires a convexity adjustment for the valuation?","A. Valuing a spread option that pays off every quarter the excess of the five-year swap rate over the three-month LIBOR rate
+B. Valuing an option that pays off every year the excess of the one-year swap rate over the three-month Treasury bill rate
+C. Valuing a derivative that pays off every quarter the three-month LIBOR rate minus the three-month Treasury bill rate",A,,TU,term_255;term_1162,,,0,0,
+409,409,vali_409,mcq,Consider the formulas for forward contracts.What does the total credit exposure on a matched pair of forward contracts resemble?,"A. A call with strike price \(Ke^{-\tau T}\)
+B. A straddle with strike price \(Ke^{-\tau T}\)
+C. A butterfly spread with strike price \(Ke^{-\tau T}\)",B,,TU,term_2847,,,0,0,
+412,412,vali_412,mcq,A box spread is an options trading strategy involving both call and put spreads.What does the combination of all four options in a box spread equate to in terms of payoff?,"A. The payoff of \(K_{1} \times K_{2}\)
+B. The payoff of \(K_{1}+K_{2}\)
+C. The payoff of \(K_{2}-K_{1}\)",C,,TU,term_560,,,0,0,
+420,420,vali_420,mcq,Financial instruments like ABS and ABS CDO are used in asset-backed securitization.Which one of the following describes an ABS?,"A. A financial derivative created from stock options
+B. A portfolio of government bonds
+C. A set of tranches created from a portfolio of mortgages or other assets",C,,TU,term_100;term_194,,,0,0,
+422,422,vali_422,mcq,"In a Dutch auction, multiple bidders place bids for limited items, and the items are sold at the highest possible price that allows the total number of items to be sold.At what price are the 10,000 options sold in the Dutch auction?","A. $30
+B. $33
+C. $35",A,,TU,term_1633,,,0,0,
+425,425,vali_425,mcq,A chooser option gives the holder the right to choose between a European call and a European put at any time during a two-year period. The maturity dates and strike prices for the calls and puts are the same regardless of when the choice is made.Which one of the following statements is true regarding the optimal time to make the choice in a chooser option?,"A. It is never optimal to choose early.
+B. It is always optimal to choose at the beginning.
+C. The optimal choice time is at the midpoint of the period.",A,,TU,term_739,,,0,0,
+429,429,vali_429,mcq,"The exchange rate at balance point O is undervalued. To solve this, the central bank must sell domestic currency. Given the supply and demand diagram of foreign exchange market, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,B,vali_figure_21,FF,term_3014;term_2168,,,0,0,
+436,436,vali_436,mcq,Margin accounts provide a safeguard for investors against potential defaults.Which one of the following actions is required if losses in a margin account exceed a certain level?,"A. The investor must deposit a further margin.
+B. The investor will receive a penalty fee from the broker.
+C. The broker will cancel the futures contract.",A,,TU,term_733;term_1234,,,0,0,
+438,438,vali_438,mcq,"Suppose the Indian government unexpectedly announces that it will be imposing higher tariffs on foreign goods one year from now. Given the supply and demand diagram of foreign exchange market, which one of the following points will the original balance point O move to for the Indian rupec?",A. Point A\nB. Point B\nC. Point C,A,vali_figure_21,FF,term_882,,,0,0,
+451,451,vali_451,mcq,"Suppose there is an increase in the foreign interest rate. Given the supply and demand diagram of foreign exchange market, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,B,vali_figure_21,FF,term_882,,,0,0,
+454,454,vali_454,mcq,What does the attached figure illustrate about the state of unemployment in the American economy between 1965 and 1973?,"A. The unemployment rate was stable and unchanged.
+B. The economy was experiencing unemployment below the natural rate
+C. The economy was experiencing unemployment above the natural rate",B,vali_figure_21,TR,term_901,,,0,0,
+455,455,vali_455,mcq,"Friedman and Keynes had differing views on the predictability of the demand for money and, consequently, the velocity of money.Why did Keynes suggest that the velocity of money is unpredictable?","A. Changes in interest rates have only small effects on the demand for money.
+B. Interest rates have no impact on the demand for money.
+C. Interest rates have large fluctuations affecting the demand for money.",C,,TU,term_338,,,0,0,
+457,457,vali_457,mcq,Financial managers in not-for-profit businesses often pursue diverse objectives depending on the organization's mission.Which one of the following goals is often cited as appropriate for a not-for-profit business?,"A. Market expansion
+B. Profit maximization
+C. Revenue minimization",C,,TU,term_1400,,,0,0,
+461,461,vali_461,mcq,"Selling a call option involves giving someone else the right to buy an asset from you, while buying a put option means buying an option from someone else. Each has different payoffs depending on the market price.Which one of the following statements accurately describes the potential payoff when buying a put option?","A. The payoff is always zero
+B. The payoff is negative or zero
+C. The payoff is zero or positive",C,,TU,term_410;term_485,,,0,0,
+478,478,vali_478,mcq,The attractiveness of the early exercise of an American put option changes with varying financial conditions.Which one of the following scenarios makes the early exercise of an American put option more attractive?,"A. A decrease in the strike price
+B. An increase in market volatility
+C. An increase in the risk-free rate",C,,TU; SP,term_991,,,0,0,
+479,479,vali_479,mcq,"When comparing accounting net income and operating cash flow, there are specific items found in net income that are not included in operating cash flow.Why is interest expense excluded from operating cash flow?","A. It is a non-cash deduction
+B. It is a financing cost
+C. It is an operating cost",B,,TU,term_2683,,,0,0,
+496,496,vali_496,mcq,"At one time, many Japanese companies had a ""no-layoff"" policy, similar to IBM.What is one implication of a ""no-layoff"" policy for a company's degree of operating leverage?","A. Wages and salaries become a semi-variable cost
+B. Wages and salaries become a fixed cost
+C. Wages and salaries become a variable cost",B,,TU,term_1204,,,0,0,
+499,499,vali_499,mcq,"Financial derivatives such as swaps are used to manage risk in financial markets. There are different types of swaps, including total return swaps and asset swaps, each with unique characteristics.Which one of the following choices correctly identifies the difference between a total return swap and an asset swap?","A. In an asset swap, the bond's actual payments are swapped for LIBOR plus a spread, while in a total return swap, the bond's promised payments are swapped for a fixed rate.
+B. In an asset swap, the bond's fixed payments are swapped for a floating rate, while in a total return swap, the bond's payments are kept as they are.
+C. In an asset swap, the bond's promised payments are swapped for LIBOR plus a spread, while in a total return swap, the bond's actual payments are swapped for LIBOR plus a spread.",C,,TU,term_2649,,,0,0,
+500,500,vali_500,mcq,"Credit unions do not have restrictions on locating branches in other states, unlike commercial banks, savings and loans, and mutual savings banks.Which one of the following reasons explains why credit unions are typically smaller than other depository institutions?","A. Credit unions are heavily regulated and cannot expand their services.
+B. Credit unions have higher lending rates compared to other depository institutions.
+C. Credit unions only have members who share a common employer or are associated with a particular organization.",C,,TU,term_1467,,,0,0,
+508,508,vali_508,mcq,"A protective put combines a long position in a put option with a long position in the underlying shares, providing a form of investment insurance.What does a protective put consist of?","A. A short position in a put option combined with a long position in the underlying shares
+B. A long position in a call option combined with a short position in the underlying shares
+C. A long position in a put option combined with a long position in the underlying shares",C,,TU,term_695,,,0,0,
+513,513,vali_513,mcq,Credit default swaps can be settled in two different manners.Which one of the following statements describes a physical settlement in a credit default swap?,"A. The buyer of protection holds bonds until maturity.
+B. The buyer of protection receives a calculated payoff based on the value of bonds.
+C. The buyer of protection sells bonds issued by the reference entity for their face value.",C,,TU,term_1536,,,0,0,
+515,515,vali_515,mcq,"A new administration, believed to pursue inflationary policy, has won an election.Which one of the following models predicts no change in inflation or output after an election of a new administration believed to pursue inflationary policy?","A. New classical model
+B. Traditional model
+C. New Keynesian model",B,,TU,term_1924,,,0,0,
+546,546,vali_546,mcq,"The Federal Reserve (Fed) lends five banks an additional total of $100 million, and depositors withdraw $50 million to hold as currency.Which one of the following changes correctly describes what happens to reserves after the Fed lends an additional $100 million to five banks and depositors withdraw $50 million as currency?","A. Reserves increase by $50 million
+B. Reserves decrease by $50 million
+C. Reserves remain unchanged",A,,TU; FF,term_2342,,,0,0,
+552,552,vali_552,mcq,A Japanese company is considering strategies to hedge its foreign exchange risk due to exporting electronic equipment to the United States.Which one of the following instruments can the company use to lock in the exchange rate for its U.S. dollar cash flows?,"A. Forward and futures contracts
+B. Equity shares
+C. Corporate bonds",A,,TU,term_2235;term_2740,,,0,0,
+553,553,vali_553,mcq,CAT bonds (catastrophe bonds) are financial instruments used by insurance companies to manage catastrophic risk such as hurricanes or earthquakes.Which one of the following statements explains the primary function of CAT bonds for insurance companies?,"A. They provide a lower rate of interest than government bonds.
+B. They help the insurance company manage catastrophic risk by transferring the risk to bondholders.
+C. They guarantee that the insurance company will always make a profit.",B,,TU,term_748,,,0,0,
+560,560,vali_560,mcq,"Selling a call option involves giving someone else the right to buy an asset from you, while buying a put option means buying an option from someone else. Each has different payoffs depending on the market price.Which one of the following statements accurately describes the payoff when selling a call option?","A. The payoff is always positive
+B. The payoff is negative or zero
+C. The payoff is positive or zero",B,,TU,term_410;term_485,,,0,0,
+565,565,vali_565,mcq,"A new administration, believed to pursue inflationary policy, has won an election.Which one of the following models predicts the largest increase in inflation and fall in output in response to an election of a new administration believed to pursue inflationary policy?","A. New Keynesian model
+B. Traditional model
+C. New classical model",C,,TU,term_1924,,,0,0,
+589,589,vali_589,mcq,"In finance, the put-call parity relationship is a fundamental principle involving European currency options.Which of the following portfolios is considered in proving the put-call parity relationship for European currency options?","A. Portfolio A: one call option plus one discount bond worth \(K\) at time \(T\)
+B. Portfolio A: one call option plus \(S\) in the current currency
+C. Portfolio A: one put option plus one discount bond worth \(K\) at time \(T\)",A,,TU,term_302,,,0,0,
+598,598,vali_598,mcq,"The health of financial institutions can significantly impact economic activity. When these institutions face deteriorations in their balance sheets and failures, the effects ripple through the economy.Which one of the following consequences can occur from simultaneous failures of financial institutions?","A. Loss of information production in financial markets and a decrease in bank lending.
+B. No change in information production or bank lending.
+C. Increase in information production in financial markets and increased bank lending.",A,,TU,term_2095,,,0,0,
+599,599,vali_599,mcq,Margin accounts provide a safeguard for investors against potential defaults.Which one of the following statements accurately describes how a margin account functions?,"A. It allows the investor to borrow money from the broker without any initial deposit.
+B. It acts as a guarantee that the investor can cover any losses on the futures contract.
+C. It ensures the broker guarantees profits on the futures contract.",B,,TU,term_733;term_1234,,,0,0,
+605,605,vali_605,mcq,The value of stock option grants can be affected by how they are revalued over time.Which one of the following effects would occur if a stock option grant had to be revalued at the end of each quarter?,"A. The initial stock price would permanently define the option’s value.
+B. The value of the option on the grant date would become less important.
+C. The total cost of the options would be tied exclusively to the grant date price.",B,,TU,term_1181,,,0,0,
+606,606,vali_606,mcq,"According to the attached figure, what trend is observed with the volume of deposits at failed commercial banks during the Great Depression from 1929 to 1933?","A. Decrease in volume of deposits at failed commercial banks
+B. Stable volume of deposits at failed commercial banks
+C. Increase in volume of deposits at failed commercial banks",C,vali_figure_21,TR,term_2407,,,0,0,
+610,610,vali_610,mcq,"A corn farmer is concerned about the risk of his crop being wiped out by weather, rather than the price of corn itself.What should a corn farmer consider when deciding to hedge the price risk of corn?","A. The consistency of high corn prices year-round
+B. The potential for receiving government subsidies
+C. The uncertainty of weather affecting the volume of corn harvested",C,,TU,term_628,,,0,0,
+611,611,vali_611,mcq,The inflation rate in the United States varied significantly between the 1950s and the 1970s.When would you have been more willing to hold money due to lower inflation rates in the United States?,"A. 1950s
+B. 1990s
+C. 1970s",A,,TU,term_368,,,0,0,
+620,620,vali_620,mcq,"During the 1973-1975 recession, the value of common stocks in real terms fell by nearly 50%.Which one of the following mechanisms explains how the decline in stock prices could have contributed to reduced aggregate demand during the 1973-1975 recession?","A. The reduction in stock prices increased foreign investment.
+B. The decrease in stock prices led to increased government subsidies.
+C. The drop in stock prices lowered Tobin's q and reduced investment spending.",C,,TU,term_889;term_2525;term_2413,,,0,0,
+623,623,vali_623,mcq,A company plans to borrow 88 million for three months starting in December and is exploring how to lock in an interest rate using the Eurodollar futures contract. The initial quoted rate is 98.40.Which position should the company take in the Eurodollar futures contracts to hedge against interest rate changes?,"A. Sell (short) 10 contracts
+B. Buy (long) 8 contracts
+C. Sell (short) 8 contracts",C,,TU,term_2568;term_2201,,,0,0,
+626,626,vali_626,mcq,The attractiveness of the early exercise of an American put option changes with varying financial conditions.Which one of the following scenarios makes early exercise of an American put option more attractive?,"A. A decrease in the risk-free rate
+B. An increase in the value of the insurance element
+C. A decrease in market volatility",C,,TU; SP,term_991,,,0,0,
+629,629,vali_629,mcq,Spinning can impact the efficiency of financial markets.Which one of the following outcomes is a result of spinning in financial markets?,"A. It influences executives to avoid using the lowest-cost investment bank
+B. It helps executives to optimize their investment strategies
+C. It decreases the cost of capital for companies",A,,TU,term_2753,,,0,0,
+634,634,vali_634,mcq,"The exchange rate at balance point O is overvalued. To solve this, the central bank must purchase domestic currency. Given the supply and demand diagram of foreign exchange market, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,A,vali_figure_21,FF,term_882,,,0,0,
+649,649,vali_649,mcq,The yield curve represents the relationship between interest rates and the maturity of debt.Which one of the following changes occurs when expectations of future short-term interest rates suddenly fall?,"A. The slope of the yield curve would remain unchanged
+B. The slope of the yield curve would rise
+C. The slope of the yield curve would fall",C,,TU; FF,term_1158,,,0,0,
+652,652,vali_652,mcq,Shaded areas in the attached figure indicate periods of recession. What trend does the interest rate on three-month U.S. Treasury bills show in the shaded areas?,"A. The interest rate tends to rise
+B. The interest rate tends to fall
+C. The interest rate remains stable",B,vali_figure_21,TR,term_2109,,,0,0,
+667,667,vali_667,mcq,Net Present Value (NPV) is considered a superior method for evaluating cash flows from a project due to its advantages over other financial metrics.Which one of the following descriptions correctly explains what NPV measures?,"A. NPV calculates the total project cost without accounting for future cash flows.
+B. NPV estimates the annual return rate based on initial investment alone.
+C. NPV measures the net increase or decrease in firm wealth after considering the time value of money.",C,,TU,term_496,,,0,0,
+673,673,vali_673,mcq,Early exercise of an American call option on a non-dividend-paying stock may not be optimal due to certain financial reasons.Which one of the following reasons explains why delaying the exercise of an American call option on a non-dividend-paying stock even when interest rates are zero is not optimal?,"A. Exercising early reduces exposure to market volatility.
+B. Delaying exercise guarantees a fixed stock price at expiration.
+C. Delaying exercise provides insurance against the stock price falling below the strike price by the expiration date.",C,,TU,term_533,,,0,0,
+677,677,vali_677,mcq,"A decline in housing prices played a critical role in triggering the subprime financial crisis, which began in 2007.Which one of the following events was triggered by the decline in housing prices starting in 2007?","A. Subprime borrowers found their mortgages underwater and walked away from their homes
+B. Homeowners increased their borrowing from financial institutions
+C. The housing market boomed with increased property values",A,,TU,term_999,,,0,0,
+680,680,vali_680,mcq,"In the corn futures market, different delivery months are available for trading contracts.Which one of the following corn futures contracts should be used for hedging when the expiration of the hedge is in January?","A. March
+B. December
+C. July",A,,TU,term_202,,,0,0,
+689,689,vali_689,mcq,"In finance, the put-call parity relationship is a fundamental principle involving European currency options.Which one of the following represents the put-call parity relationship for European currency options?","A. \(c + Ke^{-rT} = p + Se^{-r_{/}T}\)
+B. \(c + S = p + Ke^{-r_{/}T}\)
+C. \(c = p + K - Se^{-rT}\)",A,,TU,term_302,,,0,0,
+691,691,vali_691,mcq,Soft rationing and hard rationing have different implications for a firm’s capital.Which one of the following describes the implication of a firm experiencing hard rationing?,"A. The firm has abundant capital but is unable to allocate it efficiently.
+B. The firm is unable to raise capital for a project under any circumstances due to financial distress.
+C. The firm is ignoring positive NPV projects due to strategic misalignment.",B,,TU,term_810;term_2829,,,0,0,
+692,692,vali_692,mcq,"The new chairman of the Federal Reserve Board has announced a plan to reduce inflation and lower unemployment through monetary growth adjustments.According to the new classical model, what is required for the Fed chairman's plan to lower inflation and unemployment to succeed?","A. The public must increase spending
+B. The public must disregard the Fed's interest rates
+C. The public must believe his announcement",C,,TU,term_1343,,,0,0,
+696,696,vali_696,mcq,Financial contracts involve various types of risks.Which one of the following descriptions best explains credit risk in a financial contract?,"A. Risk that arises from movements in market variables such as interest rates
+B. Risk that arises from the possibility of a default by the counterparty
+C. Risk that is completely independent of market variables",B,,TU,term_1103,,,0,0,
+697,697,vali_697,mcq,"When calculating the Weighted Average Cost of Capital (WACC), decision-makers need to choose between using book values or market values for debt and equity.Which one of the following reasons justifies choosing book values for debt over equity when calculating the WACC?","A. Book values for debt are more volatile than equity book values
+B. Book values for debt are typically higher than equity book values
+C. Book values for debt are likely to be much closer to market values than are equity book values",C,,TU,term_2657,,,0,0,
+699,699,vali_699,mcq,The manager of the First National Bank is making decisions about the appropriate amount of bank capital.Which one of the following actions should the First National Bank manager take to lower the amount of bank capital relative to assets and increase the equity multiplier?,"A. Issue common stock to raise capital
+B. Pay out higher dividends to stockholders
+C. Reduce the number of loans the bank makes",B,,TU,term_2419,,,0,0,
+704,704,vali_704,mcq,"There are different financial instruments available for traders, such as forward contracts and call options.Which of the following describes the difference between entering into a long forward contract when the forward price is $50 and taking a long position in a call option with a strike price of $50?","A. A long forward contract gives the trader the choice to buy the asset for $50, while a call option obligates the trader to buy the asset for $50.
+B. Both a long forward contract and a call option give the trader the choice to buy the asset for $50.
+C. A long forward contract obligates the trader to buy the asset for $50, while a call option gives the trader the choice to buy the asset for $50.",C,,TU,term_2599,,,0,0,
+714,714,vali_714,mcq,"Suppose the income is rising. Given the supply and demand diagram of money market, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,A,vali_figure_21,FF,term_2109,,,0,0,
+715,715,vali_715,mcq,Economic classifications often group financial metrics into policy instruments or intermediate targets based on their relationship to the Federal Reserve's tools and their impact on economic activity.Which one of the following financial metrics is considered an intermediate target as it is not directly affected by the tools of the Fed but is linked to economic activity?,"A. The federal funds rate
+B. The ten-year Treasury bond rate
+C. The monetary base",B,,TU,term_1008,,,0,0,
+718,718,vali_718,mcq,Financial contracts involve various types of risks.Which one of the following descriptions best explains market risk in a financial contract?,"A. Risk that arises from movements in market variables such as interest rates and exchange rates
+B. Risk that arises solely from the company's internal policies
+C. Risk that only affects the company's operational procedures",A,,TU,term_1103,,,0,0,
+724,724,vali_724,mcq,"Comparing the attached two figures, what could we find about the relationship between the degree of underpricing and the number of new offerings?","A. Increases in the number of new offerings tend to follow periods of significant underpricing.
+B. There is no cycle in the degree of underpricing and the number of IPOs.
+C. Decreases in the number of new offerings tend to follow periods of significant underpricing.",A,vali_figure_21,TR,term_2063,,,0,0,
+727,727,vali_727,mcq,"During the 1973-1975 recession, the value of common stocks in real terms fell by nearly 50%.Which one of the following outcomes could have resulted from the decline in financial wealth due to falling stock prices during the 1973-1975 recession?","A. No impact on consumption patterns.
+B. An increase in consumption as consumers felt richer.
+C. A decrease in consumption as consumers' lifetime resources were reduced.",C,,TU,term_889;term_2525;term_2413,,,0,0,
+744,744,vali_744,mcq,"In February 2008, the U.S. Congress passed the Economic Stimulus Act of 2008 in order to counter the contractionary effects on the economy from the subprime financial crisis. The most important feature of the legislation was the issuance of over $100 billion of rebate checks to low and middle-income taxpayers, although the bill also included tax incentives for businesses to invest and help for homeowners who were facing foreclosure. Given the diagram of ISLM model, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,A,vali_figure_21,FF,term_1555,,,0,0,
+746,746,vali_746,mcq,"If the market considers that a bank has become less creditworthy and is more likely to default, changes will occur in its debit valuation adjustment (DVA) and reported income.Which one of the following happens to a bank’s DVA and reported income if the market increases its default probability?","A. DVA increases and reported income increases
+B. DVA increases and reported income decreases
+C. DVA decreases and reported income increases",A,,TU,term_3017,,,0,0,
+750,750,vali_750,mcq,"Traders utilize different strategies such as hedging, speculation, and arbitrage when dealing with financial assets.Which one of the following best describes arbitrage?","A. Betting on the future movements in the price of an asset without an existing exposure
+B. Taking a position in a derivative to offset an existing exposure to the price of an asset
+C. Taking a position in multiple markets to lock in a profit",C,,TU,term_1396,,,0,0,
+754,754,vali_754,mcq,Economic classifications often group financial metrics into policy instruments or intermediate targets based on their relationship to the Federal Reserve's tools and their impact on economic activity.Which one of the following financial metrics is an intermediate target and has some direct effect on economic activity but is not directly affected by the Fed's tools?,"A. The federal funds rate
+B. M2
+C. The monetary base",B,,TU,term_1008,,,0,0,
+760,760,vali_760,mcq,"Net Present Value (NPV) is considered a superior method for evaluating cash flows from a project due to its advantages over other financial metrics.What does an NPV of $2,500 represent for a firm's shareholders regarding a project?","A. The firm's annual revenues will increase by $2,500 if the project is rejected.
+B. The firm's net income will decrease by $2,500 regardless of the project outcome.
+C. The firm's total shareholder wealth will increase by $2,500 if the project is accepted.",C,,TU; TR,term_496,,,0,0,
+772,772,vali_772,mcq,"Open interest represents the number of outstanding contracts in a futures market. Many traders tend to close their positions before the delivery month, causing a decline in open interest.Which one of the following describes the impact of a particular day's trading on open interest, given 2,000 trades where 1,400 buyers were closing out positions, 600 buyers were entering new positions, 1,200 sellers were closing out positions, and 800 sellers were entering new positions?","A. Open interest increased by 1,000.
+B. Open interest remained unchanged.
+C. Open interest decreased by 600.",C,,TU,term_2367,,,0,0,
+777,777,vali_777,mcq,"When comparing accounting net income and operating cash flow, there are specific items found in net income that are not included in operating cash flow.Which one of the following items is typically found in net income but not in operating cash flow?","A. Depreciation
+B. Revenue from sales
+C. Cost of goods sold",A,,TU,term_2683,,,0,0,
+810,810,vali_810,mcq,A Japanese company is considering strategies to hedge its foreign exchange risk due to exporting electronic equipment to the United States.Which one of the following actions would be part of designing a foreign exchange hedging strategy for a Japanese company exporting to the United States?,"A. Entering swap agreements to vary the exchange rate unpredictably
+B. Avoiding analysis of exchange rate impacts on profitability
+C. Estimating future cash flows in Japanese yen and U.S. dollars",C,,TU,term_2235;term_2740,,,0,0,
+814,814,vali_814,mcq,A box spread is an options trading strategy involving both call and put spreads.Which one of the following describes how a box spread is structured in terms of options?,"A. A long call with strike \(K_{1}\), a long put with strike \(K_{1}\), a short call with strike \(K_{2}\), and a short put with strike \(K_{2}\)
+B. A short call with strike \(K_{1}\), a short put with strike \(K_{2}\), a long call with strike \(K_{2}\), and a long put with strike \(K_{1}\)
+C. A long call with strike \(K_{1}\), a short call with strike \(K_{2}\), a long put with strike \(K_{2}\), and a short put with strike \(K_{1}\)",C,,TU,term_560,,,0,0,
+828,828,vali_828,mcq,The Black-Scholes-Merton price of an out-of-the-money call option with an exercise price of $40 is $4. A trader who has written this option plans to use a stop-loss strategy.Which one of the following strategies will cost the trader 0.10 each time the stock is bought or sold?,"A. Buy at $40.10 and sell at $39.90
+B. Buy at $41.00 and sell at $39.00
+C. Buy at $39.50 and sell at $40.50",A,,TU,term_1730,,,0,0,
+838,838,vali_838,mcq,Opening up to capital flows from abroad can have significant impacts on the financial stability of a country.Which one of the following is a potential outcome of opening up to capital flows from abroad?,"A. Reducing the risk of financial instability
+B. Fueling a credit boom and excessive risk-taking
+C. Guaranteeing a sustained positive economic growth",B,,TU,term_1851,,,0,0,
+840,840,vali_840,mcq,"The price of a stock is $40. The price of a one-year European put option on the stock with a strike price of $30 is quoted as $7 and the price of a one-year European call option on the stock with a strike price of $50 is quoted as $5. Suppose that an investor buys 100 shares, shorts 100 call options, and buys 100 put options. Which line in the attached figure best describes the relationship between the option's profit and the stock price?",A. Line A\n B. Line B\n C. Line C,B,vali_figure_840,FF,term_1480;term_15;term_1953,,,0,0,
+843,843,vali_843,mcq,"Suppose that the public suddenly expects a large increase in stock prices. Given the supply and demand diagram of bond market, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,B,vali_figure_21,FF,term_56,,,0,0,
+844,844,vali_844,mcq,The manager of the First National Bank is making decisions about the appropriate amount of bank capital.Which one of the following actions should the Low Capital Bank manager take to increase the amount of capital relative to assets?,"A. Buy back the bank's stock
+B. Reduce the bank's assets by making fewer loans
+C. Pay higher dividends to reduce retained earnings",B,,TU,term_2419,,,0,0,
+853,853,vali_853,mcq,Yield curves reflect the relationship between interest rates and the maturity of debt securities.How would flat yield curves affect the willingness to accept the expectations hypothesis?,"A. There would be no change in willingness
+B. We would be more willing
+C. We would be less willing",B,,TU,term_1158,,,0,0,
+858,858,vali_858,mcq,The S&L crisis highlighted the principal-agent problem in the financial system.Which one of the following actions by politicians and regulators contributed to the S&L crisis?,"A. Increasing shareholder returns
+B. Relaxing capital standards
+C. Implementing strict lending policies",B,,TU,term_2577,,,0,0,
+860,860,vali_860,mcq,Various corporate actions can have different impacts on a company's cash balance.What is the impact on cash when payments for previous sales are collected?,"A. No change
+B. Decrease
+C. Increase",C,,TU,term_1560,,,0,0,
+863,863,vali_863,mcq,Yield curves reflect the relationship between interest rates and the maturity of debt securities.What would flat yield curves suggest about the risk premium on long-term relative to short-term bonds?,"A. The risk premium would be negative
+B. The risk premium would be positive
+C. The risk premium would be zero",C,,TU,term_1158,,,0,0,
+865,865,vali_865,mcq,Financial instruments like ABS and ABS CDO are used in asset-backed securitization.Which one of the following describes an ABS CDO?,"A. An ABS created from particular tranches of different ABSs
+B. A portfolio of corporate stocks
+C. A mutual fund investing in real estate",A,,TU,term_100;term_194,,,0,0,
+869,869,vali_869,mcq,Sometimes an individual stock price declines when good news is announced.Which one of the following choices explains why a stock price might decline after good news is announced?,"A. The stock has reached its maximum price
+B. The announced news was not as good as expected
+C. The company reduced its market presence",B,,TU; FF,term_1229,,,0,0,
+871,871,vali_871,mcq,"When first issued, a stock provides funds for a company.Which one of the following statements is true about an exchange-traded stock option?","A. It is sold by the company to investors.
+B. It involves the company in every transaction.
+C. It does not provide funds for the company.",C,,TU,term_886,,,0,0,
+872,872,vali_872,mcq,The FDICIA legislation introduced measures to limit the too-big-to-fail policy.Which one of the following actions by depositors might occur due to the limitations imposed by the FDICIA legislation?,"A. Depositors will ignore the financial health of big banks due to full insurance guarantees.
+B. Depositors have a greater incentive to monitor big banks and withdraw their money if the bank takes on too much risk.
+C. Depositors are likely to invest more money in uninsured deposit accounts.",B,,TU,term_159,,,0,0,
+878,878,vali_878,mcq,The sustainable growth formula has assumptions related to the company's financial policy that impact its growth rate.Which one of the following actions allows a company to grow at a higher rate than its sustainable growth rate?,"A. Raising outside equity
+B. Decreasing its debt-equity ratio
+C. Reducing its profit margin",A,,TU,term_1917,,,0,0,
+885,885,vali_885,mcq,The Black-Scholes-Merton price of an out-of-the-money call option with an exercise price of $40 is $4. A trader who has written this option plans to use a stop-loss strategy.Which one of the following statements estimates the expected number of times the stock will be bought when using the specified stop-loss strategy?,"A. Approximately 10 times
+B. Approximately 20 times
+C. Approximately 40 times",B,,TU,term_1730,,,0,0,
+888,888,vali_888,mcq,"Suppose the demand for reserves has a large unexpected decrease. Given the supply and demand diagram of reserve market, which one of the following points will the original balance point O move to?",A. Point A\nB. Point B\nC. Point C,B,vali_figure_888,FF,term_621,,,0,0,
+895,895,vali_895,mcq,A swap specifies that a fixed rate is exchanged for twice the LIBOR rate.Which one of the following methods can be used to value the swap?,"A. Assume forward rates are realized
+B. Assume historical fixed rates are realized
+C. Assume that only future fixed rates are realized",A,,TU,term_2501,,,0,0,
+898,898,vali_898,mcq,Soft rationing and hard rationing have different implications for a firm’s capital.Which one of the following describes the implication of a firm experiencing soft rationing?,"A. The firm is unable to raise capital due to overall financial distress.
+B. The firm is actively raising capital through external funding sources.
+C. The firm is passing up positive NPV projects due to division or project-level capital constraints.",C,,TU,term_810;term_2829,,,0,0,
+902,902,vali_902,mcq,A Eurodollar futures quote indicates the implied interest rate for a future period.What is the LIBOR forward rate for the 60- to 150-day period if a Eurodollar futures quote is 88 for a contract maturing in 60 days?,"A. 8% per annum with monthly compounding
+B. 12% per annum with quarterly compounding
+C. 10% per annum with daily compounding",B,,TU,term_2568,,,0,0,
+907,907,vali_907,mcq,"Given the attached figure, what we can tell about the relationship between nominal interest rate and estimated real interest rate?","A. They both reached the lowest values around 1980.
+B. Nominal interest rates were sometimes negative while the estimated real interest rates were always positive
+C. Nominal interest rate is a misleading indicator of real interest rate.",C,vali_figure_21,TR,term_1012,,,0,0,
+916,916,vali_916,mcq,A failure of a major financial institution can dramatically increase uncertainty in financial markets.How does the failure of a major financial institution affect lenders' ability to screen credit risks?,"A. Lenders become more willing to extend credit
+B. Lenders find it easier to identify reliable borrowers
+C. Lenders have difficulty distinguishing good from bad credit risks",C,,TU,term_2331,,,0,0,
+925,925,vali_925,mcq,"The lemons problem refers to a market situation where there is asymmetric information between buyers and sellers, leading to the market being flooded with lower-quality products.Which one of the following trading environments has a less severe lemons problem?","A. Over-the-counter market
+B. New York Stock Exchange
+C. Private equity market",B,,TU,term_2013,,,0,0,
+930,930,vali_930,mcq,"Securitization has allowed other financial institutions to originate loans, impacting the traditional loan business of banks.Which one of the following developments has taken away some of the banks' loan business?","A. Securitization enabling other financial institutions to originate loans
+B. Banks focusing on increasing savings accounts
+C. Government offering direct loans to corporations",A,,TU,term_935,,,0,0,
+936,936,vali_936,mcq,"There are two $1,000 bonds available. The first is a twenty-year bond selling for $800 with a current yield of 15%, and the second is a one-year bond selling for $800 with a current yield of 5%.Which one of the following bonds has a higher yield to maturity?","A. The one-year bond
+B. Both bonds have the same yield to maturity
+C. The twenty-year bond",A,,TU,term_1073,,,0,0,
+940,940,vali_940,mcq,"During the 1973-1975 recession, the value of common stocks in real terms fell by nearly 50%.Which one of the following effects might have occurred as the public's probability of financial distress increased due to the decline in stock prices during the 1973-1975 recession?","A. The public cut back on purchases of consumer durables and housing.
+B. The public continued with their purchasing patterns unaffected.
+C. The public increased their investment in high-risk assets.",A,,TU,term_889;term_2525;term_2413,,,0,0,
+948,948,vali_948,mcq,"The price of a stock is $40. The price of a one-year European put option on the stock with a strike price of $30 is quoted as $7 and the price of a one-year European call option on the stock with a strike price of $50 is quoted as $5. Suppose the investor buys 100 shares, shorts 200 call options, and buys 200 put options. Which line in the attached figure best describes the relationship between the option's profit and the stock price?",A. Line A\n B. Line B\n C. Line C,C,vali_figure_840,FF,term_1480;term_15;term_1953,,,0,0,
+950,950,vali_950,mcq,Earnings announcements by companies frequently result in share price revisions.Which one of the following reasons explains why earnings announcements are relevant to market participants?,"A. Earnings contain information about recent sales and costs, useful for future growth projections.
+B. Earnings provide detailed predictions for future performance.
+C. Earnings exclusively reflect the cash flow of a company.",A,,TU,term_1611,,,0,0,
+952,952,vali_952,mcq,"In Keynes' analysis of the speculative demand for money, individuals' perceptions of interest rate levels influence their demand for money.Which one of the following outcomes is expected if people decide that the normal level of the interest rate has declined?","A. The demand for money will increase.
+B. The demand for money will decrease.
+C. The demand for bonds will decrease.",B,,TU; FF,term_1028,,,0,0,
+954,954,vali_954,mcq,What trend can be observed regarding the commercial banks' provision of funds to nonfinancial borrowers as shown in the attached figure?,"A. A decline from about 40% in 1974 to below 29% in 2008
+B. A decline from about 20% in 1974 to below 7% in 2008
+C. An increase from about 20% in 1974 to more than 29% in 2008",A,vali_figure_21,TR,term_2499,,,0,0,
+960,960,vali_960,mcq,The FDICIA legislation introduced measures to limit the too-big-to-fail policy.Which one of the following changes to the FDICIA legislation likely increases the safety of the banking system?,"A. The FDIC must increase deposit insurance limits for large banks.
+B. The FDIC must close banks by the least costly method.
+C. The FDIC must ensure all depositors are fully insured.",B,,TU,term_159,,,0,0,
+962,962,vali_962,mcq,Balance-of-payments deficits can have varying effects on a country's international reserves depending on the country's involvement in the foreign exchange market.What is the effect on international reserves when the Netherlands has a balance-of-payments deficit?,"A. The Netherlands' reserves automatically increase due to market adjustments
+B. The Netherlands must intervene by buying euros, reducing its and Euroland's reserves
+C. Other countries ensure the Netherlands' reserves remain unchanged",B,,TU,term_1082,,,0,0,
+964,964,vali_964,mcq,"A major college textbook publisher is debating whether to produce a shorter, lower-priced version of an existing finance textbook.Which one of the following considerations is important for a publisher when examining potential competition for a new book?","A. Whether the new book will be available in an online format
+B. Whether the new book will be printed on recycled paper
+C. Whether other publishers will produce a similar product",C,,TU,term_1080,,,0,0,
+968,968,vali_968,mcq,Economic classifications often group financial metrics into policy instruments or intermediate targets based on their relationship to the Federal Reserve's tools and their impact on economic activity.Which one of the following financial metrics can be classified as an operating target because it can be directly influenced by the Fed's tools?,"A. The monetary base
+B. M2
+C. The ten-year Treasury bond rate",A,,TU,term_1008,,,0,0,
+977,977,vali_977,mcq,Credit default swaps can be settled in two different manners.Which one of the following statements describes a cash settlement in a credit default swap?,"A. The buyer of protection directly receives bonds from the issuer.
+B. Bonds with a total face value equal to the notional principal are sold.
+C. A calculation agent estimates the value of the cheapest-to-deliver bonds.",C,,TU,term_1536,,,0,0,
+978,978,vali_978,mcq,Options on bond futures are more actively traded than options on bonds.Which one of the following reasons explains why options on bond futures are more actively traded than options on bonds?,"A. A bond has a higher price than a bond futures contract.
+B. Bond futures are risk-free.
+C. A bond futures contract is more liquid than a bond.",C,,TU,term_296,,,0,0,
+990,990,vali_990,mcq,"The way prices are quoted can vary between the foreign exchange futures market, the foreign exchange spot market, and the foreign exchange forward market.In the foreign exchange market, which one of the following accurately describes how prices are quoted for most major currencies other than the British pound, euro, Australian dollar, and New Zealand dollar?","A. As the number of units of foreign currency per US dollar
+B. As the number of US dollars per unit of foreign currency
+C. As the number of units of foreign currency per British pound",A,,TU,term_2160,,,0,0,
+998,998,vali_998,mcq,The company's financial statements provide details on how they value their executive stock options.Which model did the company use to value their executive stock options granted this year?,"A. Dividend Discount Model (DDM)
+B. Black-Scholes-Merton model
+C. Capital Asset Pricing Model (CAPM)",B,,TU,term_2539,,,0,0,

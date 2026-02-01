@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: ubuntu:22.04
+From: m.daocloud.io/docker.io/library/ubuntu:22.04
 
 %post
     chmod 1777 /tmp

@@ -19,13 +19,16 @@ GEMINI_API_KEY = 'YOUR_API_KEY'
 DEEPSEEK_R1_URL = "http://10.17.3.65:1025/v1/chat/completions"
 
 O1_API_KEY_LIST = [
-    "sk-oJTcF42OtAkjkA2MCFVXjVLGJLghrCPJ8a9XIJ1JE0NoYVmb",
-    'YOUR_API_KEY'
+    "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ]
+
+MY_MODEL_URL = 'http://123.129.219.111:3000/v1'
+MY_MODEL_API_KEY = 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+MY_MODEL_NAME = 'deepseek-r1'
 
 DEFAULT_SYSTEM_PROMPT = "You are a professional doctor"
 DATA_PATH = '../../data/MedRBench/diagnosis_957_cases_with_rare_disease_491.json'
-PROMPT_TEMPLATE_PATH = './oracle_diagnose.txt'
+PROMPT_TEMPLATE_PATH = './instructions/oracle_diagnose.txt'
 
 # =====================
 # MODEL API INTERFACES
@@ -149,6 +152,41 @@ def query_o1_model(input_text, system_prompt=DEFAULT_SYSTEM_PROMPT):
                 print(f"Error querying O1 model: {e}")
                 return "Error."
             time.sleep(5)
+
+def query_my_model(input_text, system_prompt=DEFAULT_SYSTEM_PROMPT):
+    """通用模型调用接口，支持思维链解析"""
+    client = OpenAI(
+        base_url=MY_MODEL_URL,
+        api_key=MY_MODEL_API_KEY
+    )
+    
+    try:
+        response = client.chat.completions.create(
+            model=MY_MODEL_NAME,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": input_text}
+            ],
+            temperature=0.1,
+            max_tokens=4096
+        )
+        content = response.choices[0].message.content
+        
+        # 针对思维链模型的解析逻辑
+        reasoning = ""
+        if "</think>" in content:
+            parts = content.split("</think>")
+            reasoning = parts[0].replace("<think>", "").strip()
+            answer = parts[1].strip()
+        else:
+            answer = content
+            
+        return answer, reasoning
+    except Exception as e:
+        print(f"API Error: {e}")
+        if "rate limit" in str(e).lower():
+            time.sleep(30)
+        return None, None
 
 def query_gemini_model(input_text, system_prompt=DEFAULT_SYSTEM_PROMPT):
     """Query the Gemini model and handle rate limits"""
@@ -313,6 +351,32 @@ def process_gemini_data(data_id, data, prompt_template):
     except Exception as e:
         print(f"Error processing Gemini data {data_id}: {e}")
         return data_id, None
+    
+def process_my_model_data(data_id, data_item, prompt_template):
+    """处理单个案例的推理"""
+    try:
+        result = {}
+        # 对应你提供的 JSON 数据层级: data['generate_case']['case_summary']
+        patient_case = data_item.get('generate_case', {}).get('case_summary', "")
+        
+        if not patient_case:
+            return data_id, None
+            
+        prompt = prompt_template.format(case=patient_case)
+        result['input'] = prompt
+        
+        answer, reasoning = query_my_model(prompt)
+        
+        if answer is not None:
+            result['out_answer'] = answer
+            result['out_reasoning'] = reasoning
+            return data_id, result
+        else:
+            return data_id, None
+            
+    except Exception as e:
+        print(f"Error processing data {data_id}: {e}")
+        return data_id, None
 
 # =====================
 # MAIN INFERENCE RUNNERS
@@ -341,77 +405,49 @@ def run_inference_with_model(
                 data[data_id][model_name.lower()] = result
     save_results(data, output_filename)
 
-def inference_qwq():
-    """Run inference with QwQ model"""
-    run_inference_with_model(
-        process_qwq_data,
-        "qwq",
-        "oracle_diagnosis_qwq.json",
-        max_workers=8
-    )
 
-def inference_deepseek_r1():
-    """Run inference with DeepSeek-R1 model"""
-    run_inference_with_model(
-        process_deepseek_r1_data,
-        "deepseekr1",
-        "oracle_diagnosis_deepseekr1.json",
-        max_workers=8
-    )
-
-def inference_o1():
-    """Run inference with O1/O3-mini model"""
-    run_inference_with_model(
-        process_o1_data,
-        "o3-mini",
-        "oracle_diagnosis_o3-mini.json",
-        max_workers=8
-    )
-
-def inference_gemini():
-    """Run inference with Gemini model"""
-    run_inference_with_model(
-        process_gemini_data,
-        "gemini2-ft",
-        "oracle_diagnosis_gemini.json",
-        max_workers=8
-    )
-
-def inference_baichuan():
-    """Run inference with Baichuan model directly (not using concurrency)"""
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-    import torch
+def run_oracle_inference(max_workers=4):
+    """主运行函数"""
+    print(f"Running Oracle Diagnosis with {MY_MODEL_NAME}")
     
-    print("Running inference with Baichuan model")
-    prompt_template = load_instruction(PROMPT_TEMPLATE_PATH)
-    data = load_data(DATA_PATH)
+    # 加载模板和数据
+    with open(PROMPT_TEMPLATE_PATH, 'r', encoding='utf-8') as f:
+        prompt_template = f.read()
     
-    model_name = "baichuan-inc/Baichuan-M1-14B-Instruct"
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        device_map='auto',
-        attn_implementation='sdpa',
-        trust_remote_code=True,
-        torch_dtype=torch.bfloat16
-    )
+    with open(DATA_PATH, 'r', encoding='utf-8') as f:
+        data = json.load(f)
     
+    # 这里可以限制测试数量，例如只测前5个：list(data.items())[:5]
+    items = list(data.items())[:2]
     
-    for data_id in tqdm(data.keys(), desc="Processing with Baichuan"):
-        patient_case = data[data_id]['generate_case']['case_summary']
-        prompt = prompt_template.format(case=patient_case)
+    results_map = {}
+    
+    # 使用线程池进行并发请求
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_id = {
+            executor.submit(process_my_model_data, d_id, d_item, prompt_template): d_id 
+            for d_id, d_item in items
+        }
         
-        response = query_baichuan_model(prompt, model, tokenizer)
-        if response:
-            data[data_id]['baichuan'] = response
+        for future in tqdm(concurrent.futures.as_completed(future_to_id), total=len(items), desc="Inference"):
+            data_id, result = future.result()
+            if result:
+                # 将结果存入原始数据的对应 ID 下
+                data[data_id][f'result'] = result
+
+    # 保存结果
+    output_file = f"oracle_diagnosis.json"
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
     
-    save_results(data, "oracle_diagnosis_baichuan.json")
+    print(f"Successfully saved results to {output_file}")
 
 if __name__ == "__main__":
-    # Run inference with all models
-    inference_qwq()
-    inference_deepseek_r1()
-    inference_o1()
-    inference_gemini()
-    # Only run this if you have the Baichuan model and CUDA support
-    inference_baichuan()
+    # # Run inference with all models
+    # inference_qwq()
+    # inference_deepseek_r1()
+    # inference_o1()
+    # inference_gemini()
+    # # Only run this if you have the Baichuan model and CUDA support
+    # inference_baichuan()
+    run_oracle_inference(max_workers=4)

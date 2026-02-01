@@ -1,9 +1,9 @@
-from web_search import BingSearchTool
-from utils import workflow, workflow_multi_turn, load_instruction, safe_json_parse
+from .web_search import BingSearchTool
+from .utils import workflow, workflow_multi_turn, load_instruction, safe_json_parse
 
 # -------------- Evaluate one step efficiency -------------- # 
 
-def evaluate_efficiency(current_reasoning_step, previous_reasoning_steps, case_summary, result, evaluation_model = 'gpt-4o-2024-11-20'):
+def evaluate_efficiency(current_reasoning_step, previous_reasoning_steps, case_summary, result, evaluation_model = 'gpt-4o'):
     """Evaluate the efficiency of a single reasoning step.
     
     Args:
@@ -15,7 +15,7 @@ def evaluate_efficiency(current_reasoning_step, previous_reasoning_steps, case_s
     Returns:
         Efficiency category: 'Citation', 'Repetition', 'Reasoning', or 'Redundancy'
     """
-    prompt_template = load_instruction('./instructions/reasoning_efficiency.txt')
+    prompt_template = load_instruction('./metrics/instructions/reasoning_efficiency.txt')
     input_text = prompt_template.format(
         current_step=current_reasoning_step,
         previous_steps=previous_reasoning_steps,
@@ -24,7 +24,7 @@ def evaluate_efficiency(current_reasoning_step, previous_reasoning_steps, case_s
     )
     system_prompt = 'You are a reliable assistant for the analysis of thought processes.'
     response = workflow(model_name=evaluation_model, instruction=system_prompt, input_text=input_text)
-
+    print(f'Efficiency evaluation response: {response}')
     if 'Citation' in response or 'citation' in response:
         return 'Citation'
     elif 'Repetition' in response or 'repetition' in response:
@@ -38,43 +38,24 @@ def evaluate_efficiency(current_reasoning_step, previous_reasoning_steps, case_s
 
 
 # -------------- Evaluate one step factulity -------------- # 
-def evaluate_factuality(case_info, reasoning_step, evaluation_model='gpt-4o-2024-11-20', is_treatment=False):
-    """Evaluate the factual correctness of a reasoning step.
-    
-    Args:
-        case_info: Case information summary
-        reasoning_step: The reasoning step to evaluate
-        
-    Returns:
-        Tuple of (is_correct: bool, judgment_path: list) where judgment_path
-        contains the search and evaluation steps taken
-    """
+def evaluate_factuality(case_info, reasoning_step, evaluation_model='gpt-4o', is_treatment=False):
     message_history = []
     judgment_path = []
-    
     # Extract keywords for search
     if is_treatment:
-        keywords_prompt_template = load_instruction('./instructions/treatment_plan_extract_keywords.txt')
+        keywords_prompt_template = load_instruction('./metrics/instructions/treatment_plan_extract_keywords.txt')
     else:
-        keywords_prompt_template = load_instruction('./instructions/extract_keywords.txt')
-    input_text = keywords_prompt_template.format(case=case_info, reasoning_step=reasoning_step)
+        keywords_prompt_template = load_instruction('./metrics/instructions/extract_keywords.txt')
+    print(f"Using keywords prompt template: {keywords_prompt_template}")
+    input_text = keywords_prompt_template.format(info=case_info, reasoning_step=reasoning_step)
     system_prompt = 'You are a professional evaluator of medical knowledge.'
     keywords = workflow(model_name=evaluation_model, instruction=system_prompt, input_text=input_text)
     
-    # Perform web search
-    search_results = BingSearchTool(keywords, search_num=3)
-    judgment_path.append({
-        "judgment": "Search",
-        "keywords_to_search": keywords,
-        'info': search_results
-    })
-
     # Evaluate factual correctness
-    factuality_prompt_template = load_instruction('./instructions/reasoning_factuality.txt')
+    factuality_prompt_template = load_instruction('./metrics/instructions/reasoning_factuality.txt')
     input_text = factuality_prompt_template.format(
         case=case_info, 
         reasoning_step=reasoning_step, 
-        info=search_results
     )
     message_history.append({"role": "system", "content": system_prompt})
     
@@ -88,32 +69,9 @@ def evaluate_factuality(case_info, reasoning_step, evaluation_model='gpt-4o-2024
 
     judgment = judgment.replace('```json', '').replace('```', '').strip()
     judgment = safe_json_parse(judgment)
+    print(f'Initial judgment: {judgment}')
     
-    search_count = 0
-    max_searches = 3
     
-    # Iterative search if needed
-    while judgment['judgment'] == 'Search' and search_count <= max_searches:
-        search_keywords = judgment['keywords_to_search']
-        search_results = BingSearchTool(search_keywords, search_num=3)
-        judgment_path.append({
-            "judgment": judgment["judgment"],
-            "keywords_to_search": judgment["keywords_to_search"],
-            'info': search_results
-        })
-        
-        input_text = 'After searching, the following supplementary Known Correct Information has been obtained, please make a judgment again. \n[Known Correct Information]\n' + search_results
-        judgment = workflow_multi_turn(
-            model_name=evaluation_model, 
-            input_text=input_text, 
-            history_messages=message_history
-        )
-        message_history.append({"role": "user", "content": input_text})
-        message_history.append({"role": "assistant", "content": judgment})
-        
-        judgment = judgment.replace('```json', '').replace('```', '').strip()
-        judgment = safe_json_parse(judgment)
-        search_count += 1
 
     judgment_path.append({
         "judgment": judgment["judgment"],
@@ -124,7 +82,7 @@ def evaluate_factuality(case_info, reasoning_step, evaluation_model='gpt-4o-2024
     return is_correct, judgment_path
 
 # -------------- Evaluate Recall -------------- # 
-def split_ground_truth_reasoning(gt_reasoning, evaluation_model = 'gpt-4o-2024-11-20'):
+def split_ground_truth_reasoning(gt_reasoning, evaluation_model = 'gpt-4o'):
     """Split ground truth reasoning into individual steps.
     
     Args:
@@ -133,14 +91,14 @@ def split_ground_truth_reasoning(gt_reasoning, evaluation_model = 'gpt-4o-2024-1
     Returns:
         Formatted string with separated reasoning steps
     """
-    prompt_template = load_instruction('./instructions/reasoning_split_gt_steps.txt')
+    prompt_template = load_instruction('./metrics/instructions/reasoning_split_gt_steps.txt')
     input_text = prompt_template.format(gt_reasoning=gt_reasoning)
     system_prompt = 'You are a reliable thought process organizer.'
     output = workflow(model_name=evaluation_model, instruction=system_prompt, input_text=input_text)
     return output
 
 
-def check_step_hit(ground_truth_step, output_reasoning, evaluation_model = 'gpt-4o-2024-11-20'):
+def check_step_hit(ground_truth_step, output_reasoning, evaluation_model = 'gpt-4o'):
     """Check if a ground truth reasoning step is covered in the output reasoning.
     
     Args:
@@ -150,7 +108,7 @@ def check_step_hit(ground_truth_step, output_reasoning, evaluation_model = 'gpt-
     Returns:
         Boolean indicating whether the step is covered in the output
     """
-    prompt_template = load_instruction('./instructions/reasoning_check_hit.txt')
+    prompt_template = load_instruction('./metrics/instructions/reasoning_check_hit.txt')
     input_text = prompt_template.format(a_reasoning_step=ground_truth_step, out_reasoning=output_reasoning)
     system_prompt = 'You are a reliable thought process evaluator.'
     output = workflow(model_name=evaluation_model, instruction=system_prompt, input_text=input_text)
@@ -184,7 +142,7 @@ def calculate_efficiency_factuality(evaluated_steps):
     
     return efficiency_score, factuality_score
 
-def eval_reasoning_efficiency_factuality(case_info, pred_reasoning_steps_list, gt_answer, is_treatment, evaluation_model = 'gpt-4o-2024-11-20'):
+def eval_reasoning_efficiency_factuality(case_info, pred_reasoning_steps_list, gt_answer, is_treatment, evaluation_model = 'gpt-4o'):
     """Evaluate efficiency and factuality of reasoning steps.
     
     Args:
@@ -205,8 +163,10 @@ def eval_reasoning_efficiency_factuality(case_info, pred_reasoning_steps_list, g
             previous_steps = '\n'.join(pred_reasoning_steps_list[:i])
         else:
             previous_steps = ''
-            
+        
+        print(f'Evaluating step {i + 1}/{len(pred_reasoning_steps_list)}')
         # Evaluate efficiency
+        print('Starting efficiency evaluation1111')
         efficiency_category = evaluate_efficiency(
             current_reasoning_step=reasoning_step, 
             previous_reasoning_steps=previous_steps, 
@@ -214,9 +174,10 @@ def eval_reasoning_efficiency_factuality(case_info, pred_reasoning_steps_list, g
             result=gt_answer,
             evaluation_model=evaluation_model
         )
-        
+        print(f'Efficiency category: {efficiency_category}')
         # Evaluate factuality only for reasoning steps
         if efficiency_category == 'Reasoning':
+            print('Starting factuality evaluation2222')
             is_factual, judgment_path = evaluate_factuality(
                 case_info=case_info, 
                 reasoning_step=reasoning_step,
@@ -226,7 +187,7 @@ def eval_reasoning_efficiency_factuality(case_info, pred_reasoning_steps_list, g
         else:
             is_factual = None
             judgment_path = []
-            
+        print(f'Factuality: {is_factual}, Judgment Path: {judgment_path}')  
         # Add evaluation results for this step
         evaluated_steps.append({
             'step': reasoning_step,
@@ -234,10 +195,12 @@ def eval_reasoning_efficiency_factuality(case_info, pred_reasoning_steps_list, g
             'factulity': is_factual,
             'judgment_path': judgment_path
         })
-    
+        print(f'Evaluated step: {evaluated_steps[-1]}')
     # Calculate overall efficiency and factuality scores
     efficiency_score, factuality_score = calculate_efficiency_factuality(evaluated_steps)
     
+    print(f'Final Efficiency Score: {efficiency_score}, Factuality Score: {factuality_score}')
+    print(f'Evaluated Steps: {evaluated_steps}')
     return {
         'efficiency_score': efficiency_score,
         'factuality_score': factuality_score,
@@ -265,7 +228,7 @@ def calculate_recall(ground_truth_steps):
     return hit_count / total_step_count if total_step_count > 0 else 0
 
 
-def eval_reasoning_completeness(gt_reasoning, pred_reasoning_steps_string, evaluation_model = 'gpt-4o-2024-11-20'):
+def eval_reasoning_completeness(gt_reasoning, pred_reasoning_steps_string, evaluation_model = 'gpt-4o'):
     """Evaluate completeness of model reasoning against ground truth reasoning.
     
     Args:

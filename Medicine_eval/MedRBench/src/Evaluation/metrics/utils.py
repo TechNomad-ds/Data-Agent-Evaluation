@@ -8,13 +8,13 @@ GPT_KEY_FILE = 'gpt_key.txt'
 
 def workflow(model_name, instruction, input_text):
     """Execute a single API call to evaluate content"""
-    with open(GPT_KEY_FILE, 'r') as f:
-        api_keys = f.readlines()
-    selected_key = random.choice(api_keys).strip()
+    # with open(GPT_KEY_FILE, 'r') as f:
+    #     api_keys = f.readlines()
+    # selected_key = random.choice(api_keys).strip()
     
     client = OpenAI(
         base_url="http://123.129.219.111:3000/v1",
-        api_key=selected_key
+        api_key="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     )
 
     completion = client.chat.completions.create(
@@ -27,13 +27,10 @@ def workflow(model_name, instruction, input_text):
     return completion.choices[0].message.content
 
 def workflow_multi_turn(model_name, input_text, history_messages):
-    with open(GPT_KEY_FILE, 'r') as f:
-        api_keys = f.readlines()
-    selected_key = random.choice(api_keys).strip()
     
     client = OpenAI(
-        base_url="https://api.gpts.vin/v1",
-        api_key=selected_key
+        base_url="http://123.129.219.111:3000/v1",
+        api_key="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     )
     history_messages.append({"role": "user", "content": input_text})
     completion = client.chat.completions.create(

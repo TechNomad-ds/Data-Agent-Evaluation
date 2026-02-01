@@ -10,25 +10,20 @@ from PIL import Image
 
 class build_model:
     def __init__(self, model_name: str,):
-        self.project_path = os.environ["PROJECT_PATH"]
-        if 'gpt' in model_name or 'o1' in model_name:
-            self.client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"),)
-        elif 'claude' in model_name:
-            self.client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
-        elif 'gemini' in model_name:
-            genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-            self.client = genai.GenerativeModel(model_name=model_name)
-        elif 'deepseek' in model_name:
-            self.client = OpenAI(api_key=os.environ.get("DEEPSEEK_API_TOKEN"), base_url="https://api.deepseek.com")
-        elif 'Llama' in model_name and 'Vision' in model_name:
-            model_path = f"{self.project_path}/model_ckpt/{model_name}"
-            self.processor = AutoProcessor.from_pretrained(model_path)
-            self.model = MllamaForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.bfloat16, device_map="auto",)
-        elif 'Llama' in model_name or 'Mixtral' in model_name:
-            model_path = f"{self.project_path}/model_ckpt/{model_name}"
-            self.tokenizer = AutoTokenizer.from_pretrained(model_path)
-            self.model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16, device_map="auto")
-            self.terminators = [self.tokenizer.eos_token_id, self.tokenizer.convert_tokens_to_ids("<|eot_id|>")]
+
+        MY_API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        MY_BASE_URL = "http://123.129.219.111:3000/v1" # 例如 https://api.openai.com/v1
+        # --- 硬编码配置结束 ---
+
+        self.project_path = os.environ.get("PROJECT_PATH", ".")
+        
+        # 统一判断：只要不是本地路径加载的模型，都走 OpenAI 格式的客户端调用
+        self.client = OpenAI(
+            api_key=MY_API_KEY,
+            base_url=MY_BASE_URL
+        )
+            
+        
 
     # Function to encode the image
     def encode_image(self, image_path):
@@ -175,4 +170,14 @@ class build_model:
             output_ids = outputs[0][input_ids.shape[-1]:]
             reply = self.tokenizer.decode(output_ids, skip_special_tokens=True)
             num_token = len(output_ids)
+            return reply, num_token
+        else:
+            print(f"Using default OpenAI-compatible interface for {model_name}")
+            completion = self.client.chat.completions.create(
+                model=model_name,
+                messages=messages,
+                max_tokens=max_token_,
+            )
+            reply = completion.choices[0].message.content
+            num_token = f"{completion.usage.completion_tokens};{completion.usage.prompt_tokens}"
             return reply, num_token

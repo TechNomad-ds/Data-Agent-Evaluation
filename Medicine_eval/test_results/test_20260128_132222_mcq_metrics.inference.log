@@ -1,0 +1,10 @@
+STDOUT:
+ 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5/5  [ 0:01:36 < 0:00:00 , 76,503 it/s ]
+
+
+STDERR:
+/mnt/DataFlow/djz/pdf2qa/Data-Agent-Evaluation/Medicine_eval/DiagnosisArena/code/inference_mcq.temp.py:97: TqdmExperimentalWarning: rich is experimental/alpha
+  list(tqdm(executor.map(llm_folk, rest_datas), total=len(rest_datas)))
+
+
+返回码: 0

@@ -27,8 +27,6 @@ Below is the patient information, known correct information, and the text descri
 [Patient Case Summary]
 {case}
 
-[Known Correct Information]
-{info}
 
 [Text Description to be Judged]
 {reasoning_step}

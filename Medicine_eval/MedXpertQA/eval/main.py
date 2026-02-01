@@ -340,8 +340,8 @@ def general_inference(args, task, llm_agent, prompt_templates):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default='gpt-4o-mini', type=str)
-    parser.add_argument("--dataset", default='medxpertqa', type=str)
-    parser.add_argument("--task", default="mm", type=str)
+    parser.add_argument("--dataset", default='medxpertqa_sampled', type=str)
+    parser.add_argument("--task", default="text", type=str)
     parser.add_argument("--output-dir", default='dev', type=str)
     parser.add_argument("--method", default='zero_shot', type=str)
     parser.add_argument("--prompting-type", default='cot', type=str)

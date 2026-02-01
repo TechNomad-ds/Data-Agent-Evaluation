@@ -17,8 +17,8 @@ class OpenRouterClient(BaseLLMClient):
     def __init__(self, api_key: str, model_id: str):
         super().__init__(api_key, model_id)
         self.client = OpenAI(
-            base_url="https://openrouter.ai/api/v1",
-            api_key=api_key
+            base_url="http://123.129.219.111:3000/v1",
+            api_key= "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         )
         
         self.extra_headers = {

@@ -16,6 +16,7 @@ async def single_chat(client, **kwargs):
         try:
             r = await client.post(**kwargs, timeout=20)
             json_response = r.json()
+            print(f"DEBUG API Response: {json_response}")
             s = json_response['choices'][0]["message"]['content']
             time.sleep(backoff_time)
             return s
@@ -64,7 +65,7 @@ class ChatLM(BaseLM):
         self.model = model
         self.truncate = truncate
         # Read from environment variable OPENAI_API_SECRET_KEY
-        api_key = os.environ["OPENAI_API_SECRET_KEY"]
+        api_key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         self.tokenizer = transformers.GPT2TokenizerFast.from_pretrained("gpt2")
         self.headers = {
             "Content-Type": "application/json",
@@ -136,7 +137,7 @@ class ChatLM(BaseLM):
                 inps.append(context[0])
 
             responses = asyncio.run(oa_completion(
-                url="https://api.openai.com/v1/chat/completions",
+                url="http://123.129.219.111:3000/v1/chat/completions",
                 headers=self.headers,
                 model=self.model,
                 messages=[{"role": "user", "content": inp} for inp in inps],

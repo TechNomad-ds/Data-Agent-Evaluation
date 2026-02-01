@@ -39,7 +39,7 @@ MODEL_PRICING = {
         "prompt_tokens_cost_per_million": 5.00,
         "completion_tokens_cost_per_million": 25.00,
     },
-    "openai/gpt-4o": {
+    "gpt-4o": {
         "prompt_tokens_cost_per_million": 2.50,
         "completion_tokens_cost_per_million": 10.00,
     },

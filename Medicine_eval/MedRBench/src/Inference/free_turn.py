@@ -29,13 +29,13 @@ from openai import OpenAI
 
 # 1. 填入你的被测模型信息
 MY_MODEL_URL = 'http://123.129.219.111:3000/v1'  # 例如 'https://api.example.com/v1/'
-MY_MODEL_API_KEY = 'sk-OqIPE7A0rEMX8Rwt5NFrxB5TKAruSRGQVw7dUPRh78QpwGUi'
+MY_MODEL_API_KEY = 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 MY_MODEL_NAME = 'deepseek-r1' # 例如 'deepseek-r1'
 
 # 2. 这里的 O1_API_KEY_LIST 实际上是给“患者代理(GPT-4o)”使用的
 # 如果你的 Key 也支持 GPT-4o 或其他模型扮演患者，请确保这里有可用的 Key
 O1_API_KEY_LIST = [
-    "sk-OqIPE7A0rEMX8Rwt5NFrxB5TKAruSRGQVw7dUPRh78QpwGUi", # 确保这个 Key 能调用脚本中指定的 gpt-4o-2024-11-20
+    "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", # 确保这个 Key 能调用脚本中指定的 gpt-4o-2024-11-20
 ]
 
 
@@ -94,11 +94,11 @@ def gpt4o_workflow(input_text, system_prompt=DEFAULT_SYSTEM_PROMPT):
     while curr_retry < max_retry:
         try:
             client = OpenAI(
-                base_url="https://api.gpts.vin/v1",
+                base_url="http://123.129.219.111:3000/v1",
                 api_key=random.choice(O1_API_KEY_LIST)
             )
             completion = client.chat.completions.create(
-                model="gpt-4o-2024-11-20",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": input_text}
@@ -173,98 +173,6 @@ def o1_workflow(messages):
                 return None, None
             time.sleep(5)
 
-def gemini_workflow(messages):
-    """Query Gemini model"""
-    client = OpenAI(
-        base_url=GEMINI_URL,
-        api_key=GEMINI_API_KEY
-    )
-    
-    while True:
-        try:
-            response = client.chat.completions.create(
-                model="gemini-2.0-flash-thinking-exp-01-21",
-                messages=messages, 
-                stream=False, 
-                max_tokens=8192
-            )
-            content = response.choices[0].message.content.replace('```', '').strip()
-            # In level3, Gemini doesn't provide separate reasoning
-            return content, ""
-            
-        except Exception as e:
-            error_message = str(e)
-            print(f"Error: {e}")
-            if '429' in error_message:
-                print(f"Rate limit exceeded. Waiting for 30 seconds...")
-                time.sleep(30)
-                print('Retrying...')
-            else:
-                return None, None
-
-def deepseek_r1_workflow(messages):
-    """Query DeepSeek-R1 model via direct HTTP request"""
-    headers = {"Content-Type": "application/json"}
-    data = {
-        "model": "DeepSeek-R1",
-        "messages": messages,
-        "temperature": 0.6,
-        "stream": False,
-        "max_tokens": 12800,
-    }
-    
-    max_retry = 3
-    curr_retry = 0
-    
-    while curr_retry < max_retry:
-        try:
-            response = requests.post(DEEPSEEK_R1_URL, json=data, headers=headers)
-            result = response.json()
-            content = result["choices"][0]["message"]["content"]
-            
-            # Parse reasoning (in <think> tags) and answer
-            if "</think>" in content:
-                reasoning = content.split('</think>')[0].replace('<think>', '').strip()
-                answer = content.split('</think>')[1].strip()
-                return answer, reasoning
-            else:
-                return content, ""
-            
-        except Exception as e:
-            curr_retry += 1
-            print(f"Error: {e}, retrying... {curr_retry}/{max_retry}")
-            time.sleep(2)
-    
-    return None, None
-
-def baichuan_workflow(messages, model, tokenizer):
-    """Query Baichuan model using HuggingFace transformers"""
-    try:
-        import torch
-        
-        text = tokenizer.apply_chat_template(
-            messages,
-            tokenize=False,
-            add_generation_prompt=True
-        )
-        model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
-        
-        # Generate text
-        generated_ids = model.generate(
-            **model_inputs,
-            max_new_tokens=2048
-        )
-        generated_ids = [
-            output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
-        ]
-        
-        # Decode the generated text
-        response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
-        # In level3, Baichuan doesn't provide separate reasoning
-        return response.replace('```', '').strip(), ""
-    except Exception as e:
-        print(f"Error in Baichuan inference: {e}")
-        return None, None
 
 def my_model_workflow(messages):
     """适用于 free_turn.py，支持多轮对话上下文"""
@@ -325,30 +233,13 @@ def process_instance(key, json_data, gpt_prompt, initial_template, process_templ
         Additional model-specific parameters
     """
     # Define output path based on model name
-    output_dir = f'level3/{model_name.lower()}'
+    output_dir = f'free_turn_{model_name.lower()}'
     output_file = f'{output_dir}/log_{key}.json'
     
     # Skip if already processed
     if os.path.exists(output_file):
         return
     
-    # Configure model-specific function
-    # if model_name == "qwq":
-    #     model_workflow = qwq_workflow
-    # elif model_name == "o1":
-    #     model_workflow = o1_workflow 
-    # elif model_name == "gemini":
-    #     model_workflow = gemini_workflow
-    # elif model_name == "deepseekr1":
-    #     model_workflow = deepseek_r1_workflow
-    # elif model_name == "baichuan":
-    #     if 'model' not in kwargs or 'tokenizer' not in kwargs:
-    #         print(f"Error: Baichuan requires model and tokenizer objects")
-    #         return
-    #     model_workflow = lambda msgs: baichuan_workflow(msgs, kwargs['model'], kwargs['tokenizer'])
-    # else:
-    #     print(f"Error: Unknown model type '{model_name}'")
-    #     return
     model_workflow = my_model_workflow
     
     try:
@@ -449,14 +340,31 @@ def process_instance(key, json_data, gpt_prompt, initial_template, process_templ
                 'role': msg['role'],
                 'content': msg['content'],
             })
+        gen_case = one_instance.get('generate_case', {})
         
+        ground_truth = gen_case.get('final_diagnosis') or one_instance.get('final_diagnosis', "Unknown")
+        
+        # 处理 level2 的嵌套
+        level2_data = one_instance.get('level2', {})
+        if isinstance(level2_data, dict):
+            ancillary_res = level2_data.get('ancillary_test', "")
+        else:
+            ancillary_res = ""
+
         # Prepare output data
         log_data = {
-            'deepseek_messages': output_messages,  # Kept name for compatibility
-            'ground_truth': one_instance['final_diagnosis'],
-            'ancillary_test_results': one_instance['level2']['ancillary_test'],
+            'deepseek_messages': output_messages, 
+            'ground_truth': ground_truth,
+            'ancillary_test_results': ancillary_res,
             'turns': turn_idx,
         }
+        # Prepare output data
+        # log_data = {
+        #     'deepseek_messages': output_messages,  # Kept name for compatibility
+        #     'ground_truth': one_instance['final_diagnosis'],
+        #     'ancillary_test_results': one_instance['level2']['ancillary_test'],
+        #     'turns': turn_idx,
+        # }
         
         # Save results
         with open(output_file, 'w', encoding='utf-8') as fp:
@@ -522,7 +430,7 @@ def run_inference(model_name, max_workers=8, **kwargs):
     # Load case data
     with open(DATA_PATH, 'r', encoding='utf-8') as fp:
         json_data = json.load(fp)
-    keys = list(json_data.keys())
+    keys = list(json_data.keys())[:2]
     print(f"Processing {len(keys)} cases with {model_name}")
     
     # Create output directory
@@ -571,36 +479,6 @@ def run_inference(model_name, max_workers=8, **kwargs):
         # Show progress with tqdm
         list(tqdm.tqdm(results, total=len(keys), desc=f"Processing with {model_name}"))
 
-def inference_deepseek_r1():
-    """Run multi-turn inference with DeepSeek-R1 model"""
-    run_inference("r1", max_workers=8)
-
-def inference_qwq():
-    """Run multi-turn inference with QwQ model"""
-    run_inference("qwq", max_workers=8)
-
-def inference_o1():
-    """Run multi-turn inference with o3-mini model"""
-    run_inference("o1", max_workers=8)
-
-def inference_gemini():
-    """Run multi-turn inference with Gemini model"""
-    run_inference("gemini", max_workers=8)
-
-def inference_baichuan():
-    """Run multi-turn inference with Baichuan model"""
-    run_inference(
-        "baichuan", 
-        max_workers=0,  # Baichuan uses sequential processing
-        model_path="Baichuan-M1-14B-Instruct"
-    )
 
 if __name__ == '__main__':
-    # # Run inference with desired models
-    # inference_deepseek_r1()
-    # inference_qwq()
-    # inference_o1()
-    # inference_gemini()
-    # # Only run this if you have the Baichuan model and GPU support
-    # inference_baichuan()
     run_inference("my_test_model", max_workers=4)

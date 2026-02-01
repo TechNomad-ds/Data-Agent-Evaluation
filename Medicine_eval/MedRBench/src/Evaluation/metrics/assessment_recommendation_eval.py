@@ -9,8 +9,8 @@ def parse_info_requirements(info_required_text):
     Returns:
         List of dictionaries containing structured information requirements
     """
-    split_prompt = load_instruction('./instructions/parse_info_requirements.txt').format(info_required=info_required_text)
-    formatted_info = workflow(input_text=split_prompt, Instruction='You are a medical text organizer.')
+    split_prompt = load_instruction('./metrics/instructions/parse_info_requirements.txt').format(info_required=info_required_text)
+    formatted_info = workflow(input_text=split_prompt, instruction='You are a medical text organizer.',model_name="gpt-4o")
     
     formatted_info = formatted_info.replace('```json', '').replace('```', '').strip()
     structured_info = safe_json_parse(formatted_info)
@@ -47,7 +47,7 @@ def is_requirement_matched(requirement, reference_text):
         requirement['info_required']
     )
     
-    prompt = load_instruction('./instructions/is_requirement_matched.txt').format(
+    prompt = load_instruction('./metrics/instructions/is_requirement_matched.txt').format(
         a_info_step=requirement_description, 
         gt_info=reference_text
     )

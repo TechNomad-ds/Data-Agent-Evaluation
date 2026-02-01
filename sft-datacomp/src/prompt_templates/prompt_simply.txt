@@ -1,0 +1,50 @@
+## Setup
+- source_data_path = {/mnt/DataFlow/djz/Biology/Agriculture/Lecture_Note_on_Agriculture_testoutput/Lecture_Note_on_Agriculture/auto/Lecture_Note_on_Agriculture.md}
+- output_path = {/mnt/DataFlow/djz/Biology/Agriculture/Lecture_Note_on_Agriculture_testoutput/Lecture_Note_on_Agriculture/auto/Lecture_Note_on_Agriculture_codex_qa.json}
+
+## Task Objective
+
+You will be responsible for creating high-quality instruction-response training data.
+
+
+
+**Output Path** = {output_path}
+
+**Task Objective**:
+
+* Source Data Path = {source_data_path}
+* Read and understand the content of the markdown file.
+* Construct high-quality instruction-response pairs from the markdown content.
+* Save the generated data in JSONL format to: {output_path}
+
+Each line of the JSONL file should include the following fields:
+
+* `"instruction"` (training data question): string type
+* `"response"` (training data answer): string type
+
+## Basic Rules
+
+* Only the content in the markdown file can be used as the factual basis.
+* If a detail is not found in the markdown file, do not include it as a fact.
+
+## Restrictions (Important)
+
+1. **No Internet Access:**
+
+   * Internet browsing is prohibited.
+   * External documents, websites, or knowledge bases cannot be used.
+   * Model API calls are allowed, but the generated content must be based solely on the markdown file.
+
+2. **Working Directory Rules:**
+
+   * Operations are only permitted within the current working directory and its subdirectories.
+   * Only markdown files from the following path may be read:
+     {source_data_path}
+   * Outputs can only be written to the following path:
+     {output_path}
+
+## Output Requirements
+
+* Extract content from the source file multiple times to generate high-quality instruction-response data.
+
+Please note: All actions will be performed without user interaction. Ensure that the final JSONL file is written once all processes are completed.

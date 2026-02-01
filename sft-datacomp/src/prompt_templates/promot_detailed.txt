@@ -1,0 +1,45 @@
+## Setup
+- source_data_path = {/mnt/DataFlow/djz/Biology/Agriculture/Training_Manual_for_Organic_Agriculture_testoutput/Training_Manual_for_Organic_Agriculture/auto/Training_Manual_for_Organic_Agriculture.md}
+- output_path = {/mnt/DataFlow/djz/Biology/Agriculture/Training_Manual_for_Organic_Agriculture_testoutput/Training_Manual_for_Organic_Agriculture/auto/Training_Manual_for_Organic_Agriculture.jsonl}
+
+## Objective
+Construct a high-quality instruction-response dataset from: {source_data_path}. 
+Output to: {output_path}.
+
+## 核心规则 (Grounding & Constraints)
+1. **Strict Grounding**: ONLY use content from the source file. No external knowledge.
+2. **No Internet/Training**: Do NOT browse the web or perform model training.
+3. **Autonomous Flow**: Operate 100% autonomously. Do not wait for confirmation.
+
+## 关键执行：流式写入 (Anti-Crash Strategy)
+- **Immediate Write**: Do NOT buffer all results in memory. 
+- **The Rule**: For every 20-30 pairs generated, you MUST immediately append them to `{output_path}/train.jsonl`.
+- **Progress Log**: Print a message like "Saved pairs 1-30 to disk" after each write.
+
+## Quality & Diversity (Original Requirements)
+- **Target**: 300+ high-signal pairs (or maximum possible).
+- **Categories**: Mix of Precise Q/A, Summaries, Glossary extraction, Key-points, Table-to-text, and Multi-step reasoning based on text.
+- **Diversity**: Vary instruction styles ("Summarize...", "Explain...", "Extract..."). No near-duplicates.
+
+## Execution
+1. Read {source_data_path}.
+2. Break into chunks.
+3. Generate and APPEND pairs incrementally until the file is 100% processed.
+
+STRICT ADHERENCE REQUIRED:
+
+NO PARTIAL COMPLETION: Your session is NOT allowed to terminate until the target of at least 300 high-quality QA pairs (or the maximum possible from the text) has been physically written to {output_path}/train.jsonl.
+
+TERMINATION CRITERIA: Before your final message, you MUST:
+
+Run a wc -l command to verify the line count of the output file.
+
+If the count is significantly lower than expected, you MUST resume generation from where you left off.
+
+HANDLING TOKEN LIMITS: If you sense you are running out of context window or output tokens, you MUST save the current progress immediately, log the last processed section, and use your remaining tokens to initiate the next batch of processing.
+
+RESILIENCE: Errors like "No task found with ID" are internal issues you must bypass by performing the generation directly in the main process. Do not use these errors as a reason to stop.
+
+FINAL PROOF: Your very last action must be a ls -lh and tail of the final JSONL file to prove the data exists on disk.
+
+DO NOT say "I will now generate" without actually executing the write commands. ACTION is the only proof of completion.

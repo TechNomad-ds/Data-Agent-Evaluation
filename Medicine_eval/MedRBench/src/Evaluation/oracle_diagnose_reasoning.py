@@ -5,6 +5,9 @@ import argparse
 import multiprocessing
 from multiprocessing import Manager
 
+os.environ['OPENAI_API_KEY'] = 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+os.environ['OPENAI_BASE_URL'] = 'http://123.129.219.111:3000/v1'
+
 from utils import split_reasoning
 from metrics.reasoning_eval import (
     eval_reasoning_efficiency_factuality,
@@ -29,7 +32,7 @@ def evaluate_case(data, save_root, model_name):
     """Evaluate reasoning quality for a specific model's output on a single case."""
     logger.info(f'Evaluating case {data["id"]} for model {model_name}')
     error_log_file = f'{model_name}_error.log'
-    
+    print(f'Evaluating case ID: {data}')
     try:
         case_info = data['generate_case']['case_summary']
         gt_answer = data['generate_case']['final_diagnosis']
@@ -37,9 +40,11 @@ def evaluate_case(data, save_root, model_name):
                
         # Extract reasoning steps based on model type
         if model_name == 'deepseek-r1-thinkingprocess':
-            reasoning_steps = split_reasoning(data['results']['thinking_process'])
+            raw_text = data['result'].get('thinking_process', data['result'].get('out_answer', ""))
+            reasoning_steps = split_reasoning(raw_text)
         else:
-            reasoning_steps = split_reasoning(data['results']['content'])
+            raw_text = data['result'].get('out_answer', "") 
+            reasoning_steps = split_reasoning(raw_text)
             
         # Combine all steps for recall evaluation
         combined_reasoning = '\n'.join(reasoning_steps)
@@ -127,11 +132,17 @@ def main(model_name, patient_case_filepath, model_output_filepath, output_direct
     completed_case_ids = [name.split('.')[0] for name in completed_cases]
     
     for case_id in patient_cases.keys():
-        if case_id not in completed_case_ids and case_id in model_outputs and model_name in model_outputs[case_id]:
-            case_data = patient_cases[case_id].copy()  # Create a copy to avoid modifying the original
+        # 跳过已完成的
+        if case_id in completed_case_ids:
+            continue
+        
+        # 关键修改：检查是否存在 'result' 键
+        if case_id in model_outputs and 'result' in model_outputs[case_id]:
+            case_data = patient_cases[case_id].copy()
             case_data['id'] = case_id
-            case_data['results'] = model_outputs[case_id][model_name]
-            cases_to_evaluate.append(case_data)    
+            # 统一提取推理结果到 case_data 中
+            case_data['result'] = model_outputs[case_id]['result']
+            cases_to_evaluate.append(case_data)
     
     logger.info(f'Total cases to evaluate: {len(cases_to_evaluate)}')
 
@@ -166,18 +177,16 @@ def main(model_name, patient_case_filepath, model_output_filepath, output_direct
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Evaluate model reasoning on treatment planning tasks')
-    parser.add_argument('--model', type=str, required=True, 
-                      choices=['qwq', 'o3-mini', 'gemini2-ft', 'deepseek-r1', 'baichuan-m1', 'deepseek-r1-thinkingprocess'],
-                      help='Model to evaluate')
+    parser.add_argument('--model', type=str, default='deepseek-r1', help='Model to evaluate')
     parser.add_argument('--sequential', action='store_true', 
                       help='Run sequentially instead of using parallel processing')
-    parser.add_argument('--output-dir', type=str, default='./reasoning_results',
+    parser.add_argument('--output-dir', type=str, default='../../data/EvalResults/reasoning_results_diagnose',
                       help='Base directory for evaluation results')
     parser.add_argument('--patient-cases', type=str,
-                      default='../../../data/MedRBench/diagnosis_957_cases_with_rare_disease_491.json',
+                      default='../../data/MedRBench/diagnosis_957_cases_with_rare_disease_491.json',
                       help='Path to patient cases file')
     parser.add_argument('--model-outputs', type=str,
-                      default='../../../data/InferenceResults/oracle_diagnosis.json',
+                      default='../../data/InferenceResults/oracle_diagnosis.json',
                       help='Path to model outputs file')
     
     args = parser.parse_args()

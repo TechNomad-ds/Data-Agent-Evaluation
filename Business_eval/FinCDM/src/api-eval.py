@@ -5,6 +5,7 @@ import time
 from typing import List, Dict, Any
 import logging
 from openai import OpenAI
+from pathlib import Path
 
 # Setup logging
 logging.basicConfig(level=logging.INFO,
@@ -13,8 +14,8 @@ logger = logging.getLogger(__name__)
 
 # API configuration
 client = OpenAI(
-    api_key="your-api-key-here",  # Replace with your actual API key
-    base_url="your-api-base-url-here",  # Replace with your API base URL
+    api_key="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",  # Replace with your actual API key
+    base_url="http://123.129.219.111:3000/v1",  # Replace with your API base URL
 )
 
 # Regex filter class
@@ -210,9 +211,13 @@ def evaluate_models(json_file_path: str, num_trials: int, models: List[str]):
 
 # Execute evaluation
 if __name__ == "__main__":
-    json_file_path = 'path/to/your/test.json'  # Replace with your JSON file path
-    num_trials = 10
+    data_path = Path(__file__).resolve().parent.parent / "data" / "FinCDM-FinEval-KQA.json"
+
+    # 转换成字符串格式（如果你的后续函数只接受字符串）
+    data_path_str = str(data_path)
+    json_file_path = data_path_str  # Use the resolved path as the JSON file path
+    num_trials = 5
     # Replace with your model list
-    models = ['model-name-1', 'model-name-2', 'model-name-3']
+    models = ['gpt-4o']
 
     evaluate_models(json_file_path, num_trials, models)

@@ -16,16 +16,15 @@ class APIAgent(LLMAgent):
     def __init__(self, model_name, temperature=0) -> None:
         super().__init__(model_name, temperature)
 
-        # --- 修改开始 ---
-        # 替换为您自己的 API Key 和 Base URL
-        self.api_key = "sk-OqIPE7A0rEMX8Rwt5NFrxB5TKAruSRGQVw7dUPRh78QpwGUi"
+
+        self.api_key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         self.base_url = "http://123.129.219.111:3000/v1" # 注意通常到 /v1 即可
         
         self.client = OpenAI(
             api_key=self.api_key,
             base_url=self.base_url
         )
-        # --- 修改结束 ---
+
 
         
         self.max_tokens = 8192

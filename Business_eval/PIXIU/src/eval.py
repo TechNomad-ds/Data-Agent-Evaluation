@@ -14,7 +14,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True)
     parser.add_argument("--model_args", default="")
-    parser.add_argument("--tasks", default=None, choices=utils.MultiChoice(tasks.ALL_TASKS))
+    parser.add_argument("--tasks", default=None)  #choices=utils.MultiChoice(tasks.ALL_TASKS)
     parser.add_argument("--model_prompt", default="no_prompt", choices=list(MODEL_PROMPT_MAP.keys()))
     parser.add_argument("--provide_description", action="store_true")
     parser.add_argument("--num_fewshot", type=int, default=0)
@@ -50,7 +50,22 @@ def main():
     if args.tasks is None:
         task_names = tasks.ALL_TASKS
     else:
-        task_names = utils.pattern_match(args.tasks.split(","), tasks.ALL_TASKS)
+        #task_names = utils.pattern_match(args.tasks.split(","), tasks.ALL_TASKS)
+        requested_tasks = args.tasks.split(",")
+        task_names = []
+        for task in requested_tasks:
+            if task in tasks.ALL_TASKS:
+                task_names.append(task)
+            else:
+                # 如果你使用了通配符（如 flare_*），可以加一段正则，如果只是具体名称，这样就够了
+                import fnmatch
+                matches = fnmatch.filter(tasks.ALL_TASKS, task)
+                if matches:
+                    task_names.extend(matches)
+
+        if not task_names:
+            print(f"Error: No tasks matched {args.tasks}. Available tasks: {tasks.ALL_TASKS}")
+            return
 
     print(f"Selected Tasks: {task_names}")
 

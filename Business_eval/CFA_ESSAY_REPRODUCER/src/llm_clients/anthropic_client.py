@@ -15,7 +15,10 @@ class AnthropicClient(BaseLLMClient):
     
     def __init__(self, api_key: str, model_id: str):
         super().__init__(api_key, model_id)
-        self.client = Anthropic(api_key=api_key)
+        self.client = Anthropic(
+            api_key=api_key,
+            base_url="http://123.129.219.111:3000/v1"  # 注意这里通常需要加上 /v1
+        )
         self.thinking_models = ['claude-opus-4-1', 'claude-opus-4-1-20250805']
     
     def _make_api_call(self, prompt: str, parameters: Dict[str, Any]) -> Any:

@@ -41,10 +41,10 @@ project_path = os.environ["PROJECT_PATH"]
 
 # Load Model and Retriever
 model = build_model(model_)
-retriever = build_retriever(retri_type, top_k_retr)
+
 
 # Load QA Data
-qa_data = pd.read_csv(f'{project_path}/dataset/test_set.csv')
+qa_data = pd.read_csv(f'{project_path}/dataset/validation_set.csv')
 qa_data = qa_data[qa_data['task']==task_]
 qa_data['model_response'] = ''
 qa_data['model_answer'] = ''
@@ -66,10 +66,18 @@ else:
 time_ = datetime.now()
 current_time = f"{time_.year}{time_.month}{time_.day}_{time_.hour}{time_.minute}"
 save_path = f"{project_path}/results/{dataset_}/{task_}/{model_}_{reason_type}_{retri_type}_{retriever_}_{str(top_k_retr)}_{max_token_}_{current_time}_sys{sys_msg_bool}.csv"
+# 确保保存路径所在的目录存在，如果不存在则自动创建
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
 print(f"\n\nSAVE PATH: {save_path}\n")
 
 # Evaluation Start
-for idx in qa_data.index.tolist():
+for idx in qa_data.index.tolist()[:15]:
+    # --- 新增：跳过带图题目的逻辑 ---
+    if pd.isnull(qa_data.loc[idx]['figure']) == 0:
+        print(f"跳过 ID 为 {qa_data.loc[idx]['id']} 的题目（多模态题）")
+        continue 
+    # ----------------------------
+
     qa_uni_id_ = qa_data.loc[idx]['id']
     question_ = qa_data.loc[idx]['question']
     choi_ = qa_data.loc[idx]['choice']

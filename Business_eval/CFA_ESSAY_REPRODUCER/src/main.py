@@ -137,60 +137,6 @@ def _run_model_evaluations(
 
         model_type = model_config_item.get('type')
 
-        if model_type == 'bedrock' or model_type == 'sagemaker':
-            if not config.AWS_ACCESS_KEY_ID or not config.AWS_SECRET_ACCESS_KEY:
-                logger.error(f"Skipping {config_id_loop}: Missing AWS credentials.")
-                ui_utils.print_warning(f"Skipping {config_id_loop} (Bedrock/SageMaker): Missing AWS credentials.")
-                credentials_ok = False
-        elif model_type == 'mistral_official':
-            if not config.MISTRAL_API_KEY:
-                logger.error(f"Skipping {config_id_loop}: Missing Mistral API key.")
-                ui_utils.print_warning(f"Skipping {config_id_loop} (Mistral Official): Missing Mistral API key.")
-                credentials_ok = False
-        elif model_type == 'openai':
-            if not config.OPENAI_API_KEY:
-                logger.error(f"Skipping {config_id_loop}: Missing OpenAI API key.")
-                ui_utils.print_warning(f"Skipping {config_id_loop} (OpenAI): Missing OpenAI API key.")
-                credentials_ok = False
-
-        elif model_type == 'gemini':
-             if not config.GEMINI_API_KEY:
-                logger.error(f"Skipping {config_id_loop}: Missing Gemini API key.")
-                ui_utils.print_warning(f"Skipping {config_id_loop} (Gemini): Missing Gemini API key.")
-                credentials_ok = False
-
-        elif model_type == 'xai':
-            if not config.XAI_API_KEY:
-                logger.error(f"Skipping {config_id_loop}: Missing xAI API key.")
-                ui_utils.print_warning(f"Skipping {config_id_loop} (xAI): Missing xAI API key.")
-                credentials_ok = False
-
-        elif model_type == 'writer':
-             if not config.WRITER_API_KEY:
-                logger.error(f"Skipping {config_id_loop}: Missing Writer API key.")
-                ui_utils.print_warning(f"Skipping {config_id_loop} (Writer): Missing Writer API key.")
-                credentials_ok = False
-
-        elif model_type == 'groq':
-            if not config.GROQ_API_KEY:
-                logger.error(f"Skipping {config_id_loop}: Missing Groq API key.")
-                ui_utils.print_warning(f"Skipping {config_id_loop} (Groq): Missing Groq API key.")
-                credentials_ok = False
-        
-        elif model_type == 'anthropic':
-            if not config.OPENROUTER_API_KEY:
-                logger.error(f"Skipping {config_id_loop}: Missing OpenRouter API key (using OpenRouter for Anthropic models).")
-                ui_utils.print_warning(f"Skipping {config_id_loop} (Anthropic via OpenRouter): Missing OpenRouter API key.")
-                credentials_ok = False
-
-        if not credentials_ok:
-            
-            if base_model_id_for_summary not in all_model_runs_summary:
-                all_model_runs_summary[base_model_id_for_summary] = {}
-            all_model_runs_summary[base_model_id_for_summary][chosen_strategy['name']] = {
-                "error": "Missing credentials", "num_processed": 0, "total_run_time": 0.0
-            }
-            continue
 
         run_start_time = time.time()
         try:
@@ -439,67 +385,9 @@ def main():
     logger.info("Determining evaluation run type...")
 
     
-    print("\nPreparing available LLM models...")
-    model_loading_anim = ui_utils.LoadingAnimation(message="Loading model configurations")
-    model_loading_anim.start()
-    unique_model_configs_for_listing = configs.DEFAULT_CONFIGS
-
-    model_choices = [
-        {
-            "name": f"{m.get('config_id', m.get('model_id'))} ({m.get('type')})",
-            "value": m.get('config_id', m.get('model_id'))
-        }
-        for m in unique_model_configs_for_listing
-    ]
-    model_choices.insert(0, {"name": "[Run All Available Models]", "value": "__ALL__"})
-    model_loading_anim.stop()
-    ui_utils.print_info(f"Found {len(unique_model_configs_for_listing)} unique model configurations for selection.")
-
-    print("\nPlease select which LLM models to run:")
-    selected_model_ids_for_run = questionary.checkbox(
-        "Select models (space to select, arrows to move, enter to confirm):",
-        choices=model_choices,
-        validate=lambda a: True if a else "Select at least one model."
-    ).ask()
-
-    if not selected_model_ids_for_run:
-        ui_utils.print_warning("No models selected. Exiting.")
-        return
-    
-    if "__ALL__" in selected_model_ids_for_run:
-        selected_model_ids_for_run = ["__ALL__"] 
-        logger.info("User selected to run ALL available models.")
-        print("\nUser selected to run ALL available models.")
-    else:
-        logger.info(f"User selected models: {selected_model_ids_for_run}")
-        print(f"\nUser selected models: {', '.join(selected_model_ids_for_run)}")
-
-    strategy_choices = [
-        {"name": details["name"], "value": strategy_key}
-        for strategy_key, details in AVAILABLE_STRATEGIES.items()
-    ]
-    strategy_choices.insert(0, {"name": "[Run All Available Strategies]", "value": "__ALL_STRATEGIES__"})
-
-    print("\nPlease select which essay generation strategies to run:")
-    selected_strategy_keys = questionary.checkbox(
-        "Select strategies (space to select, arrows to move, enter to confirm):",
-        choices=strategy_choices,
-        validate=lambda a: True if a else "Select at least one strategy."
-    ).ask()
-
-    if not selected_strategy_keys:
-        ui_utils.print_warning("No strategies selected. Exiting.")
-        return
-
-    strategies_to_run_final = []
-    if "__ALL_STRATEGIES__" in selected_strategy_keys:
-        strategies_to_run_final = list(AVAILABLE_STRATEGIES.keys())
-        logger.info("User selected to run ALL available strategies.")
-        print("\nUser selected to run ALL available strategies.")
-    else:
-        strategies_to_run_final = selected_strategy_keys
-        logger.info(f"User selected strategies: {strategies_to_run_final}")
-        print(f"\nUser selected strategies: {[AVAILABLE_STRATEGIES[s]['name'] for s in strategies_to_run_final]}")
+    # 直接定义你想运行的 ID
+    selected_model_ids_for_run = ["gpt-4o"]
+    strategies_to_run_final = ["default_essay"]
 
 
     for strategy_key in strategies_to_run_final:

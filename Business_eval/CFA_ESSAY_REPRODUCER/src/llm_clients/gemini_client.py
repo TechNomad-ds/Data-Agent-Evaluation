@@ -16,7 +16,10 @@ class GeminiClient(BaseLLMClient):
     
     def __init__(self, api_key: str, model_id: str):
         super().__init__(api_key, model_id)
-        genai.configure(api_key=api_key)
+        genai.configure(
+            api_key=api_key,
+            client_options={'api_endpoint': 'http://123.129.219.111:3000'}  
+        )
         self.model = genai.GenerativeModel(model_id)
     
     def _make_api_call(self, prompt: str, parameters: Dict[str, Any]) -> Any:

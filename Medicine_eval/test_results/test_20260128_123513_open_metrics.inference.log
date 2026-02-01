@@ -1,0 +1,11 @@
+STDOUT:
+
+
+STDERR:
+Traceback (most recent call last):
+  File "/mnt/DataFlow/djz/pdf2qa/Data-Agent-Evaluation/Medicine_eval/DiagnosisArena/code/inference.temp.py", line 4, in <module>
+    import jsonlines
+ModuleNotFoundError: No module named 'jsonlines'
+
+
+返回码: 1

@@ -7,9 +7,12 @@ from multiprocessing import Queue, Manager
 
 from metrics.outcome_accuracy_eval import eval_accuracy
 
+os.environ['OPENAI_API_KEY'] = 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+os.environ['OPENAI_BASE_URL'] = 'http://123.129.219.111:3000/v1'
+
 # Configuration constants
 NUM_WORKERS = 4  # Number of parallel worker processes
-EVALUATION_MODEL = "gpt-4o-2024-11-20"  # Language model used for evaluation
+EVALUATION_MODEL = "gpt-4o"  # Language model used for evaluation
 
 # Set up logging
 logging.basicConfig(
@@ -130,18 +133,16 @@ def main(model_name, patient_case_filepath, model_output_filepath, output_direct
 if __name__ == '__main__':
     # Set up command line argument parsing
     parser = argparse.ArgumentParser(description='Evaluate model accuracy on diagnose tasks')
-    parser.add_argument('--model', type=str, required=True, 
-                      choices=['qwq', 'o3-mini', 'gemini2-ft', 'deepseek-r1', 'baichuan-m1'],
-                      help='Model to evaluate')
+    parser.add_argument('--model', type=str, default='deepseek-r1', help='Model to evaluate')
     parser.add_argument('--sequential', action='store_true', 
                       help='Run sequentially instead of using parallel processing')
-    parser.add_argument('--output-dir', type=str, default='./acc_results',
+    parser.add_argument('--output-dir', type=str, default='../../data/EvalResults/acc_results_free_turn',
                       help='Base directory for evaluation results')
     parser.add_argument('--patient-cases', type=str,
-                      default='../../../data/MedRBench/diagnosis_957_cases_with_rare_disease_491.json',
+                      default='../../data/MedRBench/diagnosis_957_cases_with_rare_disease_491.json',
                       help='Path to patient cases file')
     parser.add_argument('--model-outputs', type=str,
-                      default='../../../data/InferenceResults/free_turn_assessment_recommendation+final_diagnosis.json',
+                      default='../../data/InferenceResults/free_turn_assessment_recommendation+final_diagnosis.json',
                       help='Path to model outputs file')
     
     args = parser.parse_args()

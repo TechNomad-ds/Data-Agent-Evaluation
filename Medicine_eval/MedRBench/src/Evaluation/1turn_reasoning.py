@@ -5,6 +5,9 @@ import argparse
 import multiprocessing
 from multiprocessing import Manager
 
+os.environ['OPENAI_API_KEY'] = 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+os.environ['OPENAI_BASE_URL'] = 'http://123.129.219.111:3000/v1'
+
 from utils import split_reasoning, extract_ancillary_tests
 from metrics.reasoning_eval import (
     eval_reasoning_efficiency_factuality,
@@ -14,7 +17,7 @@ from metrics.reasoning_eval import (
 # Configuration constants
 NUM_WORKERS = 8  # Number of worker processes for parallel execution
 MAX_RETRY_ATTEMPTS = 3  # Maximum retry attempts for API calls
-EVALUATION_MODEL = "gpt-4o-2024-11-20"  # Model to be used for evaluation
+EVALUATION_MODEL = "gpt-4o"  # Model to be used for evaluation
 
 # Set up logging
 logging.basicConfig(
@@ -163,18 +166,16 @@ def main(model_name, patient_case_filepath, model_output_filepath, output_direct
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Evaluate model reasoning on treatment planning tasks')
-    parser.add_argument('--model', type=str, required=True, 
-                      choices=['qwq', 'o3-mini', 'gemini2-ft', 'deepseek-r1', 'baichuan-m1', 'deepseek-r1-thinkingprocess'],
-                      help='Model to evaluate')
+    parser.add_argument('--model', type=str, default='deepseek-r1', help='Model to evaluate')
     parser.add_argument('--sequential', action='store_true', 
                       help='Run sequentially instead of using parallel processing')
-    parser.add_argument('--output-dir', type=str, default='./reasoning_results',
+    parser.add_argument('--output-dir', type=str, default='../../data/EvalResults/reasoning_results_1turn',
                       help='Base directory for evaluation results')
     parser.add_argument('--patient-cases', type=str,
-                      default='../../../data/MedRBench/diagnosis_957_cases_with_rare_disease_491.json',
+                      default='../../data/MedRBench/diagnosis_957_cases_with_rare_disease_491.json',
                       help='Path to patient cases file')
     parser.add_argument('--model-outputs', type=str,
-                      default='../../../data/InferenceResults/1turn_assessment_recommendation+final_diagnosis.json',
+                      default='../../data/InferenceResults/1_turn_assessment_recommendation+final_diagnosis.json',
                       help='Path to model outputs file')
     
     args = parser.parse_args()

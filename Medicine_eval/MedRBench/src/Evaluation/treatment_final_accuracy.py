@@ -5,9 +5,14 @@ import logging
 import multiprocessing
 from metrics.outcome_accuracy_eval import eval_accuracy_with_websearch
 
+os.environ['OPENAI_API_KEY'] = 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+os.environ['OPENAI_BASE_URL'] = 'http://123.129.219.111:3000/v1'
+
+
+
 # Configuration constants
 NUM_WORKERS = 4  # Number of parallel worker processes
-EVALUATION_MODEL = "gpt-4o-2024-11-20"  # Language model used for evaluation
+EVALUATION_MODEL = "gpt-4o"  # Language model used for evaluation
 
 # Set up simple logging
 logging.basicConfig(
@@ -34,10 +39,18 @@ def evaluate_case(case_data, output_directory, model_name):
 
         # Get ground truth and model prediction
         ground_truth = case_data['generate_case']['treatment_plan_results']
-        model_prediction_raw = case_data['results']['content']
-        
+        # model_prediction_raw = case_data['results']['content']
+        model_prediction_raw = case_data.get('result', {}).get('content', "")
+
         # Extract the answer part if it contains the specific format
-        model_prediction = model_prediction_raw.split('### Answer').split('### Answer:')[1].strip()
+        # model_prediction = model_prediction_raw.split('### Answer').split('### Answer:')[1].strip()
+        # 4. 提取答案部分 (修复原代码 split 连用的错误)
+        if '### Answer:' in model_prediction_raw:
+            model_prediction = model_prediction_raw.split('### Answer:')[1].strip()
+        elif '### Answer' in model_prediction_raw:
+            model_prediction = model_prediction_raw.split('### Answer')[1].strip()
+        else:
+            model_prediction = model_prediction_raw
         
         # Evaluate accuracy using imported function
         keywords, search_results, is_accurate = eval_accuracy_with_websearch(
@@ -78,25 +91,37 @@ def main(model_name, patient_case_filepath, model_output_filepath, output_direct
     # Create output directory if it doesn't exist
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
-    
-    # Load patient cases and model outputs
+
+    # 加载原始数据和推理结果
     with open(patient_case_filepath, 'r', encoding='utf-8') as f:
         patient_cases = json.load(f)
     
     with open(model_output_filepath, 'r', encoding='utf-8') as f:
         model_outputs = json.load(f)
     
-    # Identify cases that need to be processed
     cases_to_evaluate = []
     completed_cases = os.listdir(output_directory)
     completed_case_ids = [name.split('.')[0] for name in completed_cases]
     
+    # 修改这里的筛选逻辑
     for case_id in patient_cases.keys():
-        if case_id not in completed_case_ids and case_id in model_outputs and model_name in model_outputs[case_id]:
-            case_data = patient_cases[case_id].copy()  # Create a copy to avoid modifying the original
+        # 跳过已完成的
+        if case_id in completed_case_ids:
+            continue
+        
+        # 关键修改：检查是否存在 'result' 键
+        if case_id in model_outputs and 'result' in model_outputs[case_id]:
+            case_data = patient_cases[case_id].copy()
             case_data['id'] = case_id
-            case_data['results'] = model_outputs[case_id][model_name]
+            # 统一提取推理结果到 case_data 中
+            case_data['result'] = model_outputs[case_id]['result']
             cases_to_evaluate.append(case_data)    
+    
+    logger.info(f'Total cases to evaluate: {len(cases_to_evaluate)}')
+    
+    if len(cases_to_evaluate) == 0:
+        logger.warning("No cases found with 'result' key. Please check your model output JSON.")
+        return   
     
     logger.info(f'Total cases to evaluate: {len(cases_to_evaluate)}')
     
@@ -133,18 +158,17 @@ def main(model_name, patient_case_filepath, model_output_filepath, output_direct
 if __name__ == '__main__':
     # Set up command line argument parsing
     parser = argparse.ArgumentParser(description='Evaluate model accuracy on treatment planning tasks')
-    parser.add_argument('--model', type=str, required=True, 
-                      choices=['qwq', 'o3-mini', 'gemini2-ft', 'deepseek-r1', 'baichuan-m1'],
+    parser.add_argument('--model', type=str, default='deepseek-r1', 
                       help='Model to evaluate')
     parser.add_argument('--sequential', action='store_true', 
                       help='Run sequentially instead of using parallel processing')
-    parser.add_argument('--output-dir', type=str, default='./acc_results',
+    parser.add_argument('--output-dir', type=str, default='../../data/EvalResults/acc_results_treatment',
                       help='Base directory for evaluation results')
     parser.add_argument('--patient-cases', type=str,
-                      default='../../../data/MedRBench/treatment_496_cases_with_rare_disease_165.json',
+                      default='../../data/MedRBench/treatment_496_cases_with_rare_disease_165.json',
                       help='Path to patient cases file')
     parser.add_argument('--model-outputs', type=str,
-                      default='../../../data/InferenceResults/treatment_planning.json',
+                      default='../../data/InferenceResults/oracle_treatment.json',
                       help='Path to model outputs file')
     
     args = parser.parse_args()

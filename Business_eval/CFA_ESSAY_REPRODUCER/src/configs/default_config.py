@@ -79,7 +79,7 @@ ALL_MODEL_CONFIGS = [
     {
         "config_id": "gpt-4o",
         "type": "openrouter",
-        "model_id": "openai/gpt-4o",
+        "model_id": "gpt-4o",
         "parameters": {
             "temperature": 0.1,
             "max_tokens": 8192
@@ -107,7 +107,7 @@ ALL_MODEL_CONFIGS = [
     {
         "config_id": "gpt-4.1",
         "type": "openrouter",
-        "model_id": "openai/gpt-4.1",
+        "model_id": "gpt-4.1",
         "parameters": {
             "temperature": 0.1,
             "max_tokens": 32768

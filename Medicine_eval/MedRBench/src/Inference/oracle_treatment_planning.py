@@ -26,9 +26,13 @@ O1_API_KEY_LIST = [
 
 DEEPSEEK_R1_URL = "http://10.17.3.65:1025/v1/chat/completions"
 
+MY_MODEL_URL = 'http://123.129.219.111:3000/v1'
+MY_MODEL_API_KEY = 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+MY_MODEL_NAME = 'deepseek-r1'
+
 # Path constants
 DATA_PATH = '../../data/MedRBench/treatment_496_cases_with_rare_disease_165.json'
-TREATMENT_PROMPT_PATH = './treatment_plan_prompt.txt'
+TREATMENT_PROMPT_PATH = './instructions/treatment_plan_prompt.txt'
 OUTPUT_DIR = "oracle_treatment_plan"
 
 # Default settings
@@ -224,7 +228,39 @@ def query_baichuan_model(input_text, system_prompt=DEFAULT_SYSTEM_PROMPT, model=
     except Exception as e:
         print(f"Error querying Baichuan model: {e}")
         return None
-
+    
+def query_my_model(input_text, system_prompt=DEFAULT_SYSTEM_PROMPT):
+    """通用模型调用接口"""
+    client = OpenAI(
+        base_url=MY_MODEL_URL,
+        api_key=MY_MODEL_API_KEY
+    )
+    try:
+        response = client.chat.completions.create(
+            model=MY_MODEL_NAME,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": input_text}
+            ],
+            temperature=0.1,
+            max_tokens=4096
+        )
+        content = response.choices[0].message.content
+        
+        # 解析思维链
+        reasoning = ""
+        if "</think>" in content:
+            parts = content.split("</think>")
+            reasoning = parts[0].replace("<think>", "").strip()
+            answer = parts[1].strip()
+        else:
+            answer = content
+        return answer, reasoning
+    except Exception as e:
+        print(f"API Error: {e}")
+        return None, None    
+    
+    
 # ======================
 # Data Processing Functions
 # ======================
@@ -289,6 +325,27 @@ def process_deepseek_r1_data(data_id, data, prompt_template):
     except Exception as e:
         print(f"Error processing DeepSeek-R1 data {data_id}: {e}")
         return data_id, None
+    
+def process_my_model_treatment_data(data_id, data_item, prompt_template):
+    """处理治疗方案预测数据"""
+    try:
+        result = {}
+        # 治疗方案数据集的层级通常也是 data['generate_case']['case_summary']
+        patient_case = data_item.get('generate_case', {}).get('case_summary', "")
+        
+        if not patient_case:
+            return data_id, None
+            
+        prompt = prompt_template.format(case=patient_case)
+        answer, reasoning = query_my_model(prompt)
+        
+        if answer is not None:
+            result['content'] = answer
+            result['reasoning'] = reasoning
+            return data_id, result
+    except Exception as e:
+        print(f"Error processing data {data_id}: {e}")
+    return data_id, None
 
 # ======================
 # Main Inference Functions
@@ -328,79 +385,39 @@ def run_inference_with_model(model_name, process_func, max_workers=8):
     filename = f"{OUTPUT_DIR}/{model_name.lower()}_all_output.json"
     save_results(datas, filename)
 
-def inference_qwq():
-    """Run treatment inference with QwQ model"""
-    run_inference_with_model("qwq", process_qwq_data, max_workers=8)
-
-def inference_o1():
-    """Run treatment inference with O1/O3-mini model"""
-    run_inference_with_model("o3-mini", process_o1_data, max_workers=8)
-
-def inference_gemini():
-    """Run treatment inference with Gemini model"""
-    run_inference_with_model("gemini", process_gemini_data, max_workers=8)
-
-def inference_deepseek_r1():
-    """Run treatment inference with DeepSeek-R1 model"""
-    run_inference_with_model("r1", process_deepseek_r1_data, max_workers=8)
-
-def inference_baichuan():
-    """Run treatment inference with Baichuan model directly (not using concurrency)"""
-    print("Running treatment inference with Baichuan model")
+def run_oracle_treatment_inference(max_workers=4):
+    """主运行函数 - 治疗方案版"""
+    print(f"Running Oracle Treatment Planning with {MY_MODEL_NAME}")
     
-    try:
-        from transformers import AutoModelForCausalLM, AutoTokenizer
-        import torch
+    # 1. 加载模板 (注意这里的路径变量名与诊断脚本略有不同)
+    prompt_template = load_instruction(TREATMENT_PROMPT_PATH)
+    
+    # 2. 加载数据
+    data = load_data()
+    
+    # 3. 限制测试数量 (只测前2个)
+    items = list(data.items())[:2]
+    
+    # 使用线程池
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_id = {
+            executor.submit(process_my_model_treatment_data, d_id, d_item, prompt_template): d_id 
+            for d_id, d_item in items
+        }
         
-        # Load model
-        model_name = "Baichuan-M1-14B-Instruct"
-        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            device_map='cuda:0',
-            trust_remote_code=True,
-            torch_dtype=torch.bfloat16
-        )
-        
-        # Load prompt template
-        prompt_template = load_instruction(TREATMENT_PROMPT_PATH)
-        if not prompt_template:
-            print(f"Error: Failed to load prompt template")
-            return
-        
-        # Load data
-        datas = load_data()
-        if not datas:
-            print(f"Error: No data to process")
-            return
-        
-        # Ensure output directory exists
-        ensure_output_dir(OUTPUT_DIR)
-        
-        # Process data
-        for key in tqdm(datas.keys(), desc="Processing with Baichuan"):
-              
-            patient_case = datas[key]['generate_case']['case_summary']
-            prompt = prompt_template.format(case=patient_case)
-            
-            response = query_baichuan_model(prompt, model=model, tokenizer=tokenizer)
-            if response:
-                if 'baichuan' not in datas[key]:
-                    datas[key]['baichuan'] = {}
-                datas[key]['baichuan']['content'] = response
-        
-        # Save results
-        filename = f"{OUTPUT_DIR}/baichuan_all_output.json"
-        save_results(datas, filename)
-        
-    except Exception as e:
-        print(f"Error in Baichuan inference: {e}")
+        for future in tqdm(concurrent.futures.as_completed(future_to_id), total=len(items), desc="Treatment Inference"):
+            data_id, result = future.result()
+            if result:
+                # 存入结果，Key 名遵循脚本习惯使用小写模型名
+                data[data_id][f'result'] = result
+
+    # 4. 保存结果
+    ensure_output_dir(OUTPUT_DIR)
+    output_file = "oracle_treatment.json"
+    save_results(data, output_file)
+    print(f"Successfully saved treatment results to {output_file}")
+
 
 if __name__ == "__main__":
     # Run inference with all models
-    inference_deepseek_r1()
-    inference_qwq()
-    inference_o1()
-    inference_gemini()
-    # Only run this if you have the Baichuan model and GPU support
-    inference_baichuan()
+    run_oracle_treatment_inference(max_workers=4)

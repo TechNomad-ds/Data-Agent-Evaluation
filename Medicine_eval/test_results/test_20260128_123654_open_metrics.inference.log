@@ -1,0 +1,19 @@
+STDOUT:
+Couldn't reach 'SII-SPIRAL-MED/DiagnosisArena' on the Hub (LocalEntryNotFoundError)
+
+
+STDERR:
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'), '(Request ID: 91321dcb-3966-474e-81ac-bfeeeacc8edf)')' thrown while requesting HEAD https://huggingface.co/datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'), '(Request ID: e4e7ca6f-eef1-447d-b7ea-57f8c1bfe76b)')' thrown while requesting HEAD https://huggingface.co/datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'), '(Request ID: f65fa917-271b-43be-aa07-3fbbb59e643e)')' thrown while requesting HEAD https://huggingface.co/datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'), '(Request ID: f05fd93e-3e02-4309-b417-1c6254c5aa37)')' thrown while requesting HEAD https://huggingface.co/datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'), '(Request ID: 82a58842-f547-4a2b-ac1c-94cc0c9b583a)')' thrown while requesting HEAD https://huggingface.co/datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))'), '(Request ID: 4ea27d89-f7a5-463d-8ffd-319ea6ac3aae)')' thrown while requesting HEAD https://huggingface.co/datasets/SII-SPIRAL-MED/DiagnosisArena/resolve/main/README.md
+
+
+返回码: 0

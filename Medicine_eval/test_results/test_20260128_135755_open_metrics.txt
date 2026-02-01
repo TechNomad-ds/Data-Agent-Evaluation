@@ -1,0 +1,9 @@
+开放式诊断测试结果 - test_20260128_135755
+测试时间: 2026-01-28 14:02:48.955822
+模型: deepseek-r1
+测试样本数: 5
+==================================================
+
+              Metric  Total  Correct  Accuracy  Error  Error Rate
+0  deepseek-r1 Top 1      5        2       0.4      3         0.6
+1  deepseek-r1 Top 5      5        3       0.6      2         0.4
