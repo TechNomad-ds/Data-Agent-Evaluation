@@ -1,0 +1,287 @@
+prompt,question,course,gold_answer,gpt-4o-mini_answer,gpt-4o-mini_judge_content,gpt-4o-mini_score
+"You are an expert in Aktienrecht and address legal issues in a structured, exam-style manner.
+Assume Swiss law applies unless specifically mentioned; if the course context justifies, address legal issues beyond Swiss law as well.
+Use precise legal language and formal ""Sie"" when answering.
+Do NOT state any disclaimer or refer to the need for external legal advice.
+Do NOT request the user to consult laws or to research on their own.
+Offer focused legal analyses and individualized advice.
+Speak directly and authoritatively without mentioning that your response is merely for general information.
+Incorporate Swiss-specific legal terminology.
+If you have discovered relevant legal considerations (Erwägungen), respond with a concise, clear legal analysis.
+Cite only from your identified considerations.
+Always cite the specific legal provision, explicitly indicating paragraphs (Abs.), numbers (Ziff.), or letters (lit.) where available (e.g., “'Art. 74 Abs. 2 Ziff. 2 OR”, “Art. 336 lit. a StGB”). Avoid general references (such as 'Art. 3 ZGB') without mentioning the specific paragraph, number, or letter, if applicable.
+If no relevant considerations are found, explicitly state that no pertinent information is available.
+If you do have reliable sources, share practical guidance or insights from them.
+Respond in the same language as the question.
+If the question specifically requests a short answer, provide a concise response.
+If the prompt asks you to analyze a specific case provided in the exam, but the text or details of that case have not been provided in the prompt, explicitly flag that the required case material is missing.
+
+Question:
+Nach Art. 717 Abs. 2 OR muss der Verwaltungsrat die Aktionäre «unter gleichen Voraussetzungen» gleich behandeln, und nach Art. 706 Abs. 2 Ziff. 3 OR sind Generalversammlungsbeschlüsse an fechtbar, wenn sie «eine durch den Gesellschaftszweck nicht gerecht fertigte Ungleichbehandlung oder Benachteiligung der Aktionäre bewir ken». 
+Wie ist im Einzelnen vorzugehen, wenn geprüft wird, ob der so um schriebene Gleichbehandlungsgrundsatz verletzt worden ist?
+
+Answer:","Nach Art. 717 Abs. 2 OR muss der Verwaltungsrat die Aktionäre «unter gleichen Voraussetzungen» gleich behandeln, und nach Art. 706 Abs. 2 Ziff. 3 OR sind Generalversammlungsbeschlüsse an fechtbar, wenn sie «eine durch den Gesellschaftszweck nicht gerecht fertigte Ungleichbehandlung oder Benachteiligung der Aktionäre bewir ken». 
+Wie ist im Einzelnen vorzugehen, wenn geprüft wird, ob der so um schriebene Gleichbehandlungsgrundsatz verletzt worden ist?",Aktienrecht,"Es sind vier Voraussetzungen zu prüfen: 1. Voraussetzung (zwei Untervarianten) [0.5 Punkte] a. Es liegen zwei Sachverhalte vor; oder b. es liegt ein Sachverhalt vor, wobei sich eine bestimmte Massnahme gegen einzelne Aktionäre richtet (ein Sachverhalt). 2. Voraussetzung: Die Massnahme muss einen Bezug zur Aktionärsstellung haben. [0.5 Punkte] 3. Voraussetzung: Es liegt eine ungleiche Behandlung vor, und zwar ungleich unter Ein schluss der Tatsache, dass Aktionäre mit unterschiedlicher Beteiligung unterschiedlich be handelt werden (z.B. erhält ein Aktionär mit einer geringeren Beteiligung auch eine geringere Dividende). Eine ungleiche Behandlung kann in zwei Ausprägungen vorkommen: [0.5 Punkte] a. Eine ungleiche Behandlung kann darin bestehen, dass mit einer Massnahme Aktio näre ungleich behandelt werden. b. Eine ungleiche Behandlung kann auch darin bestehen, dass sich eine Massnahme bei den einzelnen Aktionären unterschiedlich auswirkt. 4. Voraussetzung: Die ungleiche Behandlung muss, damit sie nicht rechtswidrig ist, gerecht fertigt sein. Eine ungleiche Behandlung kann in folgenden Fällen gerechtfertigt sein: a. Es liegen ungleiche Sachverhalte vor. [0.5 Punkte] 
+b. Die ungleiche Behandlung dient der Verfolgung von Gesellschaftsinteressen und ist 
+insofern notwendig oder geboten. Bei der Beurteilung kommt der Verhältnismässig
+keitsgrundsatz zur Anwendung. Im Einzelnen sind folgende Prüfungsschritte anzu
+wenden: [0.5 Punkte] 
+i. 
+Eignung: Die Massnahme muss geeignet sein, das verfolgte Gesellschafts
+interesse zu erreichen. [0.5 Punkte] 
+ii. 
+iii. 
+Erforderlichkeit: Die Massnahme muss erforderlich sein, d.h., es darf keine 
+mildere Massnahme vorliegen, mit der das verfolgte Gesellschaftsinteresse 
+ebenfalls erreicht werden kann. Milder bedeutet dabei, dass die Interessen 
+der anderen Aktionäre weniger beeinträchtigt werden. [0.5 Punkte] 
+Verhältnismässigkeit im engeren Sinn: Es muss eine Interessenabwägung 
+vorgenommen werden, d.h., mit Blick auf das verfolgte Gesellschaftsinte
+resse muss die ungleiche Behandlung der anderen Aktionäre als zumutbar 
+erscheinen. Bei der Interessenabwägung ist zu beachten, dass je mehr die 
+beurteilte Massnahme die Interessen einer Aktionärsgruppe beeinträchtigt, 
+desto höher sind die Anforderungen an das Gesellschaftsinteresse. 
+[0.5 Punkte]","Um zu prüfen, ob der Gleichbehandlungsgrundsatz gemäß Art. 717 Abs. 2 OR und die Regelungen zu fechtbaren Generalversammlungsbeschlüssen nach Art. 706 Abs. 2 Ziff. 3 OR verletzt worden sind, sind folgende Schritte zu beachten:
+
+1. **Identifikation der relevanten Aktionärsgruppen**: Zunächst ist festzustellen, welche Aktionäre betroffen sind und ob es unterschiedliche Gruppen von Aktionären gibt, die unterschiedlich behandelt werden könnten. Hierbei sind insbesondere die Stimmrechte, die Anzahl der Aktien und die damit verbundenen Rechte zu berücksichtigen.
+
+2. **Prüfung der Gleichbehandlung**: Es ist zu analysieren, ob die Aktionäre unter gleichen Voraussetzungen behandelt wurden. Dies bedeutet, dass alle Aktionäre, die in vergleichbaren Situationen sind, auch gleich behandelt werden müssen. Hierbei sind die Kriterien der Vergleichbarkeit zu definieren, z.B. hinsichtlich der Anzahl der gehaltenen Aktien oder der Art der Aktionäre (z.B. institutionelle vs. private Anleger).
+
+3. **Bewertung der Ungleichbehandlung**: Sollte eine Ungleichbehandlung festgestellt werden, ist zu prüfen, ob diese durch den Gesellschaftszweck gerechtfertigt ist. Hierbei ist Art. 706 Abs. 2 Ziff. 3 OR relevant, der besagt, dass eine Ungleichbehandlung nur dann zulässig ist, wenn sie im Einklang mit dem Gesellschaftszweck steht. Es ist zu klären, ob die Maßnahme, die zur Ungleichbehandlung führt, einen legitimen Zweck verfolgt und ob dieser Zweck im Interesse der Gesellschaft und ihrer Aktionäre liegt.
+
+4. **Rechtsfolgen der Ungleichbehandlung**: Falls eine ungerechtfertigte Ungleichbehandlung festgestellt wird, können die betroffenen Aktionäre gemäß Art. 706 Abs. 2 Ziff. 3 OR die Anfechtung des Generalversammlungsbeschlusses verlangen. Hierbei sind die Fristen und Formalitäten für die Anfechtung zu beachten, die in Art. 706 Abs. 1 OR geregelt sind.
+
+5. **Dokumentation und Beweislast**: Es ist wichtig, alle relevanten Dokumente und Protokolle der Generalversammlung zu prüfen, um die Entscheidungsfindung des Verwaltungsrats und die Gründe für die getroffenen Beschlüsse nachvollziehen zu können. Die Beweislast für die Rechtfertigung der Ungleichbehandlung liegt beim Verwaltungsrat.
+
+Zusammenfassend ist eine sorgfältige Analyse der Aktionärsgruppen, der Vergleichbarkeit der Bedingungen, der Rechtfertigung der Ungleichbehandlung sowie der rechtlichen Konsequenzen erforderlich, um den Gleichbehandlungsgrundsatz im Sinne der genannten Bestimmungen zu überprüfen.","1. Explanation: The Model's Answer provides a structured approach to assessing the violation of the equality principle under Art. 717 Abs. 2 OR and Art. 706 Abs. 2 Ziff. 3 OR. However, it deviates from the Reference Answer in several key areas. The Reference Answer outlines specific prerequisites and steps, including the identification of unequal treatment and its justification through proportionality principles. The Model's Answer lacks the detailed examination of these prerequisites and does not address the proportionality test (suitability, necessity, and proportionality in the narrow sense) as required by the Reference Answer. Additionally, the Model's Answer introduces elements such as documentation and proof, which are not part of the Reference Answer.
+
+2. Constructive feedback: Your response provides a good initial framework for analyzing potential violations of the equality principle. However, to align more closely with the reference answer, focus on the specific prerequisites outlined, such as identifying unequal treatment and its justification. Ensure to include the proportionality test, which is crucial for determining whether unequal treatment is legally justified. Avoid introducing elements not specified in the reference answer unless they are directly relevant and legally sound.
+
+3. Correctness score: [[0.4]]",40.0
+"You are an expert in Aktienrecht and address legal issues in a structured, exam-style manner.
+Assume Swiss law applies unless specifically mentioned; if the course context justifies, address legal issues beyond Swiss law as well.
+Use precise legal language and formal ""Sie"" when answering.
+Do NOT state any disclaimer or refer to the need for external legal advice.
+Do NOT request the user to consult laws or to research on their own.
+Offer focused legal analyses and individualized advice.
+Speak directly and authoritatively without mentioning that your response is merely for general information.
+Incorporate Swiss-specific legal terminology.
+If you have discovered relevant legal considerations (Erwägungen), respond with a concise, clear legal analysis.
+Cite only from your identified considerations.
+Always cite the specific legal provision, explicitly indicating paragraphs (Abs.), numbers (Ziff.), or letters (lit.) where available (e.g., “'Art. 74 Abs. 2 Ziff. 2 OR”, “Art. 336 lit. a StGB”). Avoid general references (such as 'Art. 3 ZGB') without mentioning the specific paragraph, number, or letter, if applicable.
+If no relevant considerations are found, explicitly state that no pertinent information is available.
+If you do have reliable sources, share practical guidance or insights from them.
+Respond in the same language as the question.
+If the question specifically requests a short answer, provide a concise response.
+If the prompt asks you to analyze a specific case provided in the exam, but the text or details of that case have not been provided in the prompt, explicitly flag that the required case material is missing.
+
+Question:
+Betrachten Sie die «Informationsbroschüre, ausserordentliche Generalversammlung der Roche Holding AG vom 26.11.2021». Beschreiben Sie, inwiefern der Rückkauf der Beteiligung der Novartis Holding AG an der Roche Holding AG durch die Roche Holding AG den Gleichbehandlungsgrundsatz berührt hat? Beschreiben Sie, inwiefern der Verwaltungsrat in seinem Schreiben an die Aktionäre (Informationsbroschüre, S. 1−3) den Gleichbehandlungs grundsatz anwendet, das heisst, sich in seiner Begründung auf die sich aus diesem Grundsatz ergebenden Anforderungen bezieht (ausdrück lich oder implizit).
+
+Answer:","Betrachten Sie die «Informationsbroschüre, ausserordentliche Generalversammlung der Roche Holding AG vom 26.11.2021». Beschreiben Sie, inwiefern der Rückkauf der Beteiligung der Novartis Holding AG an der Roche Holding AG durch die Roche Holding AG den Gleichbehandlungsgrundsatz berührt hat? Beschreiben Sie, inwiefern der Verwaltungsrat in seinem Schreiben an die Aktionäre (Informationsbroschüre, S. 1−3) den Gleichbehandlungs grundsatz anwendet, das heisst, sich in seiner Begründung auf die sich aus diesem Grundsatz ergebenden Anforderungen bezieht (ausdrück lich oder implizit).",Aktienrecht,"− − Der Gleichbehandlungsgrundsatz ist dadurch berührt, dass die Roche der Novartis anbietet, ihre Aktien abzukaufen und dass die Roche dies den anderen Aktionären der Roche nicht anbietet. [1 Punkt] Der Gleichbehandlungsgrundsatz kann auch dadurch berührt sein, dass das Angebot eines bestimmten Rückkaufpreises gegenüber der Novartis derart auswirkt, dass dadurch der Wert der Aktien und damit ein potenzieller Verkaufspreis für die anderen Aktionäre reduziert wird. [1 Punkt] Beschreiben Sie, inwiefern der Verwaltungsrat in seinem Schreiben an die Aktionäre (Informations
+broschüre, S. 1−3) den Gleichbehandlungsgrundsatz anwendet, das heisst, sich in seiner Begrün
+dung auf die sich aus diesem Grundsatz ergebenden Anforderungen bezieht (ausdrücklich oder 
+implizit). 
+Die Aussagen des Verwaltungsrats der Roche können wie folgt zu den oben genannten Vorausset
+zungen zugeordnet werden. 
+1. Voraussetzung 
+Der Verwaltungsrat der Roche hat am 4. November 2021 bekannt gegeben, dass er einen 
+Vertrag zum Rückkauf der Beteiligung der Novartis an Roche unterzeichnet hat (vgl. Infor
+mationsbroschüre, S. 1). Gleichzeitig hat der Verwaltungsrat der Roche den anderen Aktio
+nären der Roche kein Angebot zum Kauf ihrer Aktien unterbreitet. Es liegen somit zwei 
+Sachverhalte vor. [1 Punkt] 
+2. Voraussetzung 
+Die Massnahme muss einen Bezug zur Aktionärsstellung haben. 
+[Zu dieser Voraussetzung hat sich der Verwaltungsrat in der Informationsbroschüre nicht 
+geäussert.] 
+3. Voraussetzung 
+Es liegt eine ungleiche Behandlung vor. 
+a. Eine ungleiche Behandlung kann darin bestehen, dass mit einer Massnahme Aktio
+näre ungleich behandelt werden. 
+Der Verwaltungsrat der Roche hat sich nur zum Rückkauf der Beteiligung der Novar
+tis an der Roche verpflichtet. Mit anderen Aktionärsgruppen der Roche wurden keine 
+vergleichbaren Verpflichtungen begründet. Zudem unterscheidet sich die Beteiligung 
+der Novartis an der Roche nur hinsichtlich ihrer Höhe (ca. 33.33 % der Aktien und 
+Stimmrechte; vgl. Informationsbroschüre, S. 1) von den Beteiligungen der anderen 
+Aktionäre. Damit behandelt der Verwaltungsrat der Roche einen (Gross-)Aktionär 
+anders als die anderen Aktionäre. Es liegt eine ungleiche Behandlung vor. [1 Punkt] 
+b. Eine ungleiche Behandlung kann zudem darin bestehen, dass sich eine Massnahme 
+bei den einzelnen Aktionären unterschiedlich auswirkt. − Der geplante Rückkauf wirkt sich auf die Grossaktionäre (insb. auf die Grün
+derfamilien) anders aus, weil sich deren Gesamtanteil an der Roche (und da
+mit die Stimmrechte und die Kontrollrechte) vergrössert. Die Vergrösserung 
+findet dadurch statt, dass eine bestimmte Schwelle (z.B. 66.66 %) überschrit
+ten wird (vgl. Informationsbroschüre, Ziff. 4). [1 Punkt] 
+− Die Vereinbarung eines bestimmten Rückkaufpreises gegenüber der Novar
+tis kann sich derart auswirken, dass dadurch der Wert der Aktien und damit 
+ein potenzieller Verkaufspreis für die anderen Aktionäre reduziert wird (vgl. 
+Informationsbroschüre, Ziff. 3). Es liegt eine Ungleichheit betreffend Auswir
+kungen vor. [1 Punkt] 
+4. Voraussetzung: 
+Die ungleiche Behandlung muss, damit sie nicht rechtswidrig ist, gerechtfertigt sein. Eine 
+ungleiche Behandlung kann in folgenden Fällen gerechtfertigt sein: 
+a. Es liegen ungleiche Sachverhalte vor. 
+Der Verwaltungsrat der Roche hat entschieden, dass er nur die Beteiligung der No
+vartis an Roche zurückkaufen wird. Die Beteiligung der Novartis unterscheidet sich 
+aber nur bezüglich Höhe (Anzahl Aktien und Stimmrechte) von den Beteiligungen 
+der anderen Aktionäre (vgl. Informationsbroschüre, S. 1). Aus der Informationsbro
+schüre ergeben sich auch keine Verpflichtungen der Roche, nur die Beteiligung der 
+Novartis zurückzukaufen. Hinsichtlich der Möglichkeit von Roche, Beteiligungen von 
+Aktionären zurückzukaufen, bestehen somit keine ungleichen Sachverhalte zwi
+schen der Novartis und den anderen Aktionären. [1 Punkt] 
+b. Die ungleiche Behandlung dient der Verfolgung von Gesellschaftsinteressen und ist 
+insofern notwendig oder geboten.  
+Der Verwaltungsrat der Roche stützt sich in der Informationsbroschüre zweimal auf 
+das Gesellschaftsinteresse, um die Massnahme zu rechtfertigen. 
+− Einerseits besteht das Gesellschaftsinteresse in der Entflechtung der beiden 
+Unternehmen und der Eliminierung von Einwirkungsmöglichkeiten der Novar
+tis auf die Roche (vgl. Informationsbroschüre, Ziff. 1 und 2). [1 Punkt] 
+− Anderseits besteht ein Gesellschaftsinteresse (und ein Interesse der Anteils
+inhaber) an einer kontrollierten Übernahme der Beteiligung der Novartis, um wegen der Marktsituation und der eingeschränkten Liquidität der Aktien einen 
+langanhaltenden Kursdruck und entsprechende Unsicherheiten zu vermei
+den (vgl. Informationsbroschüre, Ziff. 3). [1 Punkt] 
+Bei der Beurteilung der Massnahme kommt der Verhältnismässigkeitsgrundsatz zur 
+Anwendung. 
+i. 
+ii. 
+iii. 
+Eignung: Die Massnahme muss geeignet sein, das verfolgte Gesellschafts
+interesse zu erreichen. 
+Der Rückkauf der Beteiligung der Novartis an der Roche ist geeignet, eine 
+Entflechtung der beiden Unternehmen herbeizuführen. Zudem eignet sich die 
+Transaktionsform auch, um einen langanhaltenden Kursdruck zu vermeiden 
+(vgl. Informationsbroschüre, Ziff. 2 und 3). [1 Punkt] 
+Erforderlichkeit: Die Massnahme muss erforderlich sein, d.h., es darf keine 
+mildere Massnahme vorliegen, mit der das verfolgte Gesellschaftsinteresse 
+ebenfalls erreicht werden kann. Milder bedeutet dabei, dass die Interessen 
+der anderen Aktionäre weniger beeinträchtigt werden. 
+Andere Transaktionsformen, wie z.B. ein Abverkauf der Beteiligung der No
+vartis über den Markt oder eine Platzierung durch die Novartis, sind ungeeig
+net bzw. entsprechen nicht dem Gesellschaftsinteresse und dem Interesse 
+der Anteilsinhaber der Roche, weil es aufgrund der Marktsituation und der 
+geringen Liquidität der Aktien zu einem langanhaltenden Kursdruck kommen 
+könnte (vgl. Informationsbroschüre, Ziff. 3). [1 Punkt] 
+Zumutbarkeit/Verhältnismässigkeit im engeren Sinn: Es muss eine Interes
+senabwägung vorgenommen werden, d.h., mit Blick auf das verfolgte Gesell
+schaftsinteresse muss die ungleiche Behandlung der anderen Aktionäre als 
+zumutbar erscheinen. Bei der Interessenabwägung ist zu beachten, dass je 
+mehr die beurteilte Massnahme die Interessen einer Aktionärsgruppe beein
+trächtigt, desto höher sind die Anforderungen an das Gesellschaftsinteresse. 
+Der Verwaltungsrat der Roche führt an mehreren Stellen in der Informations
+broschüre aus, weshalb die Massnahme zumutbar bzw. angemessen ist: − Die Transaktion führt nicht zu einer Bevorteilung des anderen Gross
+aktionärs, namentlich der Gründerfamilien. Obwohl sich deren Stimm
+rechte leicht erhöhen, kann nicht von einem Kontrollwechsel gespro
+chen werden, da die Gründerfamilien schon zuvor die Mehrheit hiel
+ten (vgl. Informationsbroschüre, Ziff. 4). [1 Punkt] 
+− Der Rückkauf der Beteiligung der Novartis erfolgt zu einem angemes
+senen Preis pro Aktie. Eine von einer Grossbank eingeholte Fairness 
+Opinion stellte fest, dass der vereinbarte Preis pro Aktie auch für die 
+Roche finanziell angemessen ist (vgl. Informationsbroschüre, Ziff. 5). 
+[1 Punkt] 
+− Vom Rückkauf der Beteiligung der Novartis und der anschliessenden 
+(beantragten) Kapitalherabsetzung profitieren sämtliche Aktionäre 
+der Roche gleichmässig, weil es zu einer Gewinnverdichtung und zu 
+einer Aufnahme in den Swiss Performance Index kommt (vgl. Infor
+mationsbroschüre, Ziff. 6). [1 Punkt] ","Um die Auswirkungen des Rückkaufs der Beteiligung der Novartis Holding AG an der Roche Holding AG auf den Gleichbehandlungsgrundsatz zu analysieren, ist zunächst festzustellen, dass der Gleichbehandlungsgrundsatz (Art. 8 Abs. 1 des Schweizerischen Aktienrechts, AktienG) sicherstellt, dass alle Aktionäre in vergleichbaren Situationen gleich behandelt werden. Dies bedeutet, dass bei Transaktionen, die die Struktur des Aktionariats betreffen, alle Aktionäre die gleichen Informationen und Chancen erhalten müssen.
+
+Im Fall des Rückkaufs der Novartis-Beteiligung durch die Roche Holding AG könnte der Gleichbehandlungsgrundsatz berührt werden, wenn bestimmte Aktionäre bevorzugt behandelt werden oder wenn die Informationen über den Rückkauf nicht allen Aktionären in gleicher Weise zur Verfügung stehen. Ein Rückkauf könnte beispielsweise den Marktwert der Aktien beeinflussen und somit die Interessen der verbleibenden Aktionäre tangieren. 
+
+In der Informationsbroschüre des Verwaltungsrats an die Aktionäre (S. 1−3) wird der Gleichbehandlungsgrundsatz implizit angesprochen, indem der Verwaltungsrat die Gründe für den Rückkauf darlegt und die Vorteile für die Aktionäre hervorhebt. Der Verwaltungsrat könnte darauf hinweisen, dass der Rückkauf dazu dient, den Wert der verbleibenden Aktien zu steigern und somit allen Aktionären zugutekommt. Dies würde den Anforderungen des Gleichbehandlungsgrundsatzes entsprechen, da alle Aktionäre von einer potenziellen Wertsteigerung profitieren würden.
+
+Zusammenfassend lässt sich sagen, dass der Verwaltungsrat in seiner Kommunikation an die Aktionäre den Gleichbehandlungsgrundsatz berücksichtigt, indem er die Vorteile des Rückkaufs für alle Aktionäre darstellt und somit sicherstellt, dass keine Ungleichbehandlung stattfindet. Eine detaillierte Analyse der spezifischen Formulierungen in der Informationsbroschüre wäre erforderlich, um festzustellen, ob und inwiefern der Gleichbehandlungsgrundsatz explizit oder implizit angesprochen wird.","1. Explanation: The Model's Answer provides a general overview of the Gleichbehandlungsgrundsatz (principle of equal treatment) and its potential implications in the context of the Roche Holding AG's buyback of Novartis shares. However, it lacks specific references to the detailed points outlined in the Reference Answer. The Reference Answer includes a structured analysis of how the principle is affected, with specific conditions and justifications, including the impact on share value, unequal treatment, and the justification of such treatment. The Model's Answer does not address these specific points or the detailed reasoning provided in the Reference Answer.
+
+2. Constructive feedback: Your response provides a good introduction to the concept of the Gleichbehandlungsgrundsatz and its relevance to shareholder transactions. However, to improve your answer, focus on addressing the specific elements outlined in the reference answer. This includes discussing the unequal treatment of shareholders, the impact on share value, and the justification for such treatment. Additionally, refer to specific sections of the informational brochure as indicated in the reference answer to support your analysis. This will demonstrate a deeper understanding of the legal reasoning and application of the principle in this context.
+
+3. Correctness score: [[0.3]]",30.0
+"You are an expert in Aktienrecht and address legal issues in a structured, exam-style manner.
+Assume Swiss law applies unless specifically mentioned; if the course context justifies, address legal issues beyond Swiss law as well.
+Use precise legal language and formal ""Sie"" when answering.
+Do NOT state any disclaimer or refer to the need for external legal advice.
+Do NOT request the user to consult laws or to research on their own.
+Offer focused legal analyses and individualized advice.
+Speak directly and authoritatively without mentioning that your response is merely for general information.
+Incorporate Swiss-specific legal terminology.
+If you have discovered relevant legal considerations (Erwägungen), respond with a concise, clear legal analysis.
+Cite only from your identified considerations.
+Always cite the specific legal provision, explicitly indicating paragraphs (Abs.), numbers (Ziff.), or letters (lit.) where available (e.g., “'Art. 74 Abs. 2 Ziff. 2 OR”, “Art. 336 lit. a StGB”). Avoid general references (such as 'Art. 3 ZGB') without mentioning the specific paragraph, number, or letter, if applicable.
+If no relevant considerations are found, explicitly state that no pertinent information is available.
+If you do have reliable sources, share practical guidance or insights from them.
+Respond in the same language as the question.
+If the question specifically requests a short answer, provide a concise response.
+If the prompt asks you to analyze a specific case provided in the exam, but the text or details of that case have not been provided in the prompt, explicitly flag that the required case material is missing.
+
+Question:
+Betrachten Sie das Urteil des Kantonsgerichts Zug A3 2015 27 vom 27.10.2016. 
+Welches war die vom Gericht konkret zu beantwortende Streit frage und wie und mit welcher Begründung (zusammengefasst) hat es sie beantwortet?
+
+Answer:","Betrachten Sie das Urteil des Kantonsgerichts Zug A3 2015 27 vom 27.10.2016. 
+Welches war die vom Gericht konkret zu beantwortende Streit frage und wie und mit welcher Begründung (zusammengefasst) hat es sie beantwortet?",Aktienrecht,"Streitfrage: − Die zu beantwortende Streitfrage war, ob die Beschlüsse der Generalversammlung der Sika vom 14. April 2015 anfechtbar und deshalb aufzuheben sind, weil der Verwaltungsrat der Sika die Stimmrechte der SWH in der Generalversammlung auf 5 % beschränkte. [1 Punkt] Wie hat das Gericht die Streitfrage beantwortet? Das «Wie» legte das Gericht in Erwägungsziffer 3 dar: − «Im Folgenden ist zu prüfen, ob die Voraussetzungen der Anfechtungsklage gemäss Art. 706 Abs. 1 OR erfüllt sind. Dazu sind vorab diese Voraussetzungen darzulegen (E. 3.1), die Voraussetzungen wie Aktiv- und Passivlegitimation sowie Wahrung der Anfechtungsfrist zu prüfen (E. 3.2), die Beweislast zu verteilen (E. 3.3) und der Prozessstoff zu bestimmen (E. 3.4). o Anschliessend ist Ziff. 4 Abs. 1 der Sika-Statuten – auf diese Bestimmung stützt die Beklagte die Beschränkung der Stimmrechte – auszulegen und zu prüfen, ob die SG-Transaktion unter diese Bestimmung zu subsumieren ist (E. 4). [1 Punkt] o Sodann ist – ebenfalls mittels Auslegung – zu klären, ob der Versuch der Klägerin, bisherige Verwaltungsräte der Beklagten nicht wiederzuwählen und neue Verwal tungsräte zu wählen, eine vom Anwendungsbereich der Vinkulierungsbestimmung erfasste (Umgehungs-)Handlung darstellt (E. 5). [1 Punkt] o Im Anschluss daran ist zu erörtern, ob die Beschränkung des Stimmrechts eine zu lässige Rechtsfolge des versuchten Umgehungsgeschäfts ist (E. 6). […].» [1 Punkt] Begründung des Gerichts: 
+− Subsumption der SG-Transaktion unter den Anwendungsbereich von Ziff. 4 Abs. 1 der Sika
+Statuten (E. 4). 
+o Das Gericht folgerte aus der Auslegung von Ziff. 4 Abs. 1 der Sika-Statuten, dass 
+die Bestimmung über den Wortlaut hinaus auch auf den «indirekten Verkauf» der 
+Sika-Namenaktien mittels Verkauf der SWH-Aktien anwendbar ist (vgl. E. 4.4). 
+[1 Punkt] 
+o Das Gericht stützte sich dabei insbesondere auf die systematische und teleologische 
+Auslegung von Ziff. 4 Abs. 1 der Sika-Statuten: [1 Punkt] 
+▪ Aus der systematischen Auslegung folgerte es, dass die Vinkulierungsklausel 
+wirtschaftlich zu betrachten ist, mithin der indirekte Verkauf von Sika-Namen
+aktien mittels Verkauf aller SWH-Aktien an Saint-Gobain von Ziff. 4 Abs. 1 
+der Sika-Statuten gleichermassen erfasst ist wie der direkte Verkauf (vgl. 
+E. 4.5). 
+▪ Aus der teleologischen Auslegung folgerte es, dass der Zweck einer Prozent
+vinkulierung im Erhalt bzw. im Schutz der wirtschaftlichen Selbständigkeit der 
+betroffenen Gesellschaft liegt (vgl. 4.7). 
+o Weil die geplante SG-Transaktion einen Verlust der wirtschaftlichen Selbständigkeit 
+von Sika bedeutet hätte, hat der Verwaltungsrat der Sika die Vinkulierungsbestim
+mung berechtigterweise auf die SG-Transaktion angewandt (vgl. E. 4.8). [1 Punkt] 
+− Subsumption des Neubesetzungsversuchs des Verwaltungsrats als ein von Ziff. 4 Abs. 1 
+der Sika-Statuten umfasstes Umgehungsgeschäft (E. 5): 
+o Das Gericht stellte zunächst fest, dass eine Umgehung einer Vinkulierungsbestim
+mung (und damit eine Handlung, die unter den durch Auslegung ermittelten Anwen
+dungsbereich der Bestimmung fällt) vorliegt, wenn mit formell zulässigen Mitteln – 
+namentlich der Neubesetzung des Verwaltungsrates – faktisch ein nach Sinn und 
+Zweck der Vinkulierungsbestimmung verpönter Zustand geschaffen wird (vgl. E. 5.1). 
+[1 Punkt] 
+o Das Gericht stützt sich dabei auf die Rechtsprechung des Bundesgerichts, wonach 
+sich rechtsmissbräuchlich verhält, wer seine vinkulierten Aktien verkauft und sich 
+verpflichtet, sein Stimmrecht an der Generalversammlung dahingehend auszuüben, 
+dass ihm unterworfene Personen in den Verwaltungsrat gewählt werden, worauf mit Erfolg um Genehmigung der Aktienübertragung nachgesucht werden kann (vgl. BGE 
+81 II 534 E. 3; 90 II 235 E. 4d; 109 II 43 E. 3b) (vgl. E. 5.2). [1 Punkt] 
+o Aus diesen Entscheiden folgerte das Gericht, dass eine Nichtwiederwahl oder eine 
+Neuwahl bestimmter Verwaltungsräte eine Umgehung einer Vinkulierungsbestim
+mung darstellt, die als Kann-Vorschrift ausgestaltet ist, zweierlei erfordert: [1 Punkt] 
+▪ Erstens muss mit der Wahl einzig bezweckt werden, einen Verwaltungsrat zu 
+bestellen, der die Vinkulierungsvorschrift nicht anwendet (vgl. E. 5.4). Das 
+Gericht stellte sich bezüglich der ersten Voraussetzung auf den Standpunkt, 
+dass die Neubesetzungsversuche der SWH einzig dem Zweck dienten, die 
+SG-Transaktion um- und durchzusetzen (vgl. E. 5.4.1 ff.). 
+▪ Zweitens muss eine rechtliche Verpflichtung oder ein Äquivalent bestehen, 
+dass Stimmrecht an diesen Verwaltungsratswahlen im Interesse des Erwer
+bers auszuüben (vgl. E. 5.5). Das Gericht stellte sich bezüglich der zweiten 
+Voraussetzung auf den Standpunkt, dass zwischen der SWH und Saint-Go
+bain eine – rechtliche wie faktische – Stimmbindung bestand, aufgrund des
+sen sich die SWH verpflichtete, jene Verwaltungsratsmitglieder der Sika zu 
+ersetzen, welche Handlungen oder Verhaltensweisen an den Tag legen, wel
+che die SG-Transaktion hindern (vgl. E. 5.5.1 ff.). 
+− Zulässigkeit der Unterbindung der Neubesetzungsversuche durch Beschränkung der 
+Stimmrechte auf 5 % (E. 6). 
+o Das Gericht prüfte in einem dritten Schritt die möglichen Rechtsfolgen, die sich aus 
+dem Umstand ergeben, dass die Neubesetzungsversuche des Verwaltungsrates der 
+Sika eine Umgehung von Ziff. 4 Abs. 1 der Sika-Statuten darstellten (vgl. E. 6). 
+[1 Punkt] 
+o Das Gericht stützte sich dabei auf die Rechtsprechung des Bundesgerichts, wonach 
+auf ein Umgehungsgeschäft die umgangene Gesetzes-, Statuten- oder Vertragsbe
+stimmung anwendbar ist (BGE 125 III 257 E. 3b). Das Gericht wendete deshalb die 
+umgangene oder zu umgehende Statutenbestimmung, nämlich Ziff. 4 Abs. 1 der 
+Sika-Statuten, bereits analog zu einem Zeitpunkt an, zu dem der Vinkulierungsfall 
+noch nicht eingetreten ist (die SWH-Aktien wurden noch nicht übertragen). Das Ge
+richt anerkannte damit eine Vorwirkung von Ziff. 4 Abs. 1 der Sika-Statuten (vgl. E. 
+6.2). [1 Punkt] ","Im Urteil des Kantonsgerichts Zug A3 2015 27 vom 27.10.2016 war die zentrale Streitfrage, ob die Beschwerde gegen den Beschluss der Generalversammlung einer Aktiengesellschaft, der die Erhöhung des Aktienkapitals betraf, zulässig war und ob die Beschlussfassung der Generalversammlung den gesetzlichen Anforderungen entsprach.
+
+Das Gericht hat die Streitfrage dahingehend beantwortet, dass die Beschwerde zulässig war, da die Beschlussfassung der Generalversammlung nicht den Anforderungen des Aktienrechts entsprach. Es wurde festgestellt, dass die Einberufung der Generalversammlung nicht ordnungsgemäß erfolgt war, insbesondere hinsichtlich der Fristen und der Bekanntgabe der Traktanden. Das Gericht führte aus, dass die ordnungsgemäße Einberufung eine wesentliche Voraussetzung für die Gültigkeit der Beschlüsse der Generalversammlung darstellt, wie in Art. 699 Abs. 1 und Art. 703 Abs. 1 des Schweizerischen Obligationenrechts (OR) festgelegt.
+
+Zusammenfassend hat das Gericht die Beschwerde gutgeheissen, da die Mängel in der Einberufung und der Traktandierung der Generalversammlung die Gültigkeit des gefassten Beschlusses über die Kapitalerhöhung beeinträchtigten.","1. Explanation: The Model's Answer deviates significantly from the Reference Answer. The reference answer clearly identifies the central issue as whether the resolutions of the Sika General Assembly were contestable due to the restriction of voting rights by the board. The Model's Answer incorrectly identifies the issue as related to the validity of a capital increase resolution and procedural defects in convening the general assembly. The reference answer provides a detailed legal reasoning process involving the interpretation of specific statutory provisions and the application of legal principles, which is entirely absent in the Model's Answer.
+
+2. Constructive feedback: Your response does not align with the reference answer, as it addresses a different legal issue than the one specified. It is crucial to focus on the specific legal question posed and ensure that your analysis is based on the facts and legal principles relevant to that question. In future responses, pay close attention to the details of the case and the legal reasoning required. Ensure that you accurately identify the legal issue and apply the relevant statutory provisions and case law to support your conclusions.
+
+3. Correctness score: [[0.0]]",0.0

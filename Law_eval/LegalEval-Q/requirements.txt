@@ -1,0 +1,6 @@
+torch
+flask
+transformers
+ipykernel
+openai
+modelscope
