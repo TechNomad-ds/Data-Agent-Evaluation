@@ -2,7 +2,7 @@ import re
 import os
 
 # ==================== 全局变量设置区 ====================
-NEW_API_KEY = "sk-ptwvi0XgJUL6JyjyMS9faFUSDbw5vxC1hX0EqQvxeUUG0Kv7"
+NEW_API_KEY = "sk-xxxxxxxxxxxxx"
 NEW_BASE_URL = "http://123.129.219.111:3000/v1"
 NEW_MODEL_NAME = "deepseek-r1"
 IS_FULL_EVAL = False  # True 为全量测试, False 为少量测试

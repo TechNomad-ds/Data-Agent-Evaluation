@@ -18,7 +18,7 @@ from utils import generate_prompts
 from evaluation import evaluate
 
 # ================= 配置区 =================
-API_KEY = "sk-ptwvi0XgJUL6JyjyMS9faFUSDbw5vxC1hX0EqQvxeUUG0Kv7"
+API_KEY = "sk-xxxxxxxxxxxxx"
 BASE_URL = "http://123.129.219.111:3000/v1" 
 MODEL_NAME = "deepseek-r1"
 

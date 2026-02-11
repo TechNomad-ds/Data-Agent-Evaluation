@@ -10,7 +10,7 @@ import argparse
 # 1. 全局配置 (请根据实际情况修改)
 # ==========================================
 API_BASE_URL = "http://123.129.219.111:3000/v1"
-API_KEY = "sk-ptwvi0XgJUL6JyjyMS9faFUSDbw5vxC1hX0EqQvxeUUG0Kv7"
+API_KEY = "sk-xxxxxxxxxxxxx"
 JUDGE_MODEL_NAME = "gpt-4o"  # 裁判模型，通常使用更强的模型
 
 GENE_ARGS = {
